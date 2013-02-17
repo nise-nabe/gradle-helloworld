@@ -3,6 +3,6 @@ gradle-helloworld
 
 ```
  $ gradle jar
- $ java -jar build/libs/heroku-java-sample.jar
+ $ java -jar build/libs/gradle-helloworld.jar
  Hello World!
 ```
