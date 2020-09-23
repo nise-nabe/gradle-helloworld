@@ -6,6 +6,8 @@ plugins {
     kotlin("kapt") apply false
     kotlin("plugin.spring") apply false
 
+    id("org.springframework.boot") apply false
+
     id("com.diffplug.spotless") apply false
 }
 
