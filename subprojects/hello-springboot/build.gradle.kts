@@ -13,6 +13,7 @@ plugins {
 
 dependencies {
     implementation(platform(SpringBootPlugin.BOM_COORDINATES))
+    developmentOnly(platform(SpringBootPlugin.BOM_COORDINATES))
     kapt(platform(SpringBootPlugin.BOM_COORDINATES))
 
 
@@ -37,6 +38,6 @@ tasks.bootJar {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_14.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
