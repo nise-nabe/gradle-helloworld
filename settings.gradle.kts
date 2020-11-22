@@ -13,7 +13,7 @@ pluginManagement {
 
         id("org.springframework.boot") version "2.4.0"
 
-        id("com.diffplug.spotless") version "5.6.1"
+        id("com.diffplug.spotless") version "5.8.2"
     }
 }
 
