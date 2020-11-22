@@ -11,7 +11,7 @@ pluginManagement {
         kotlin("plugin.spring") version kotlinVersion
         kotlin("plugin.noarg") version kotlinVersion
 
-        id("org.springframework.boot") version "2.3.5.RELEASE"
+        id("org.springframework.boot") version "2.3.6.RELEASE"
 
         id("com.diffplug.spotless") version "5.6.1"
     }
