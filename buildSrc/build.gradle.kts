@@ -1,5 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.gradle.kotlin.dsl.plugins.precompiled.PrecompiledScriptPlugins as PrecompiledScriptPlugins1
+import org.gradle.kotlin.dsl.plugins.precompiled.PrecompiledScriptPlugins
 
 plugins {
     java
@@ -21,7 +21,7 @@ allprojects {
 
 subprojects {
     apply(plugin = "org.gradle.kotlin.kotlin-dsl")
-    apply<PrecompiledScriptPlugins1>()
+    apply<PrecompiledScriptPlugins>()
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
