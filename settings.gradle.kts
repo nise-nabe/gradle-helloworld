@@ -22,6 +22,7 @@ rootProject.name = "HelloWorld"
 include("hello-kotlin")
 include("hello-typescript")
 include("hello-springboot")
+include("hello-springboot-webmvc-tomcat")
 include("hello-httpclient")
 
 for (project in rootProject.children) {
