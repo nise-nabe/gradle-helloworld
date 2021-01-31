@@ -1,5 +1,5 @@
 plugins {
-    idea
+    id("org.jetbrains.gradle.plugin.idea-ext")
 }
 
 tasks.wrapper {
