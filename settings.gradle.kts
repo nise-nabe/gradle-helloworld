@@ -17,6 +17,12 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
 rootProject.name = "HelloWorld"
 
 include("hello-kotlin")

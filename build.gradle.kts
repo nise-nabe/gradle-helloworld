@@ -16,10 +16,6 @@ tasks.wrapper {
 }
 
 allprojects {
-    repositories {
-        mavenCentral()
-    }
-
     configurations.all {
         resolutionStrategy {
             cacheChangingModulesFor(0, TimeUnit.SECONDS)
