@@ -11,7 +11,7 @@ dependencies {
     testImplementation(kotlin("test-junit5"))
 }
 
-tasks.withType<KotlinCompile> {
+tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_14.toString()
     }
