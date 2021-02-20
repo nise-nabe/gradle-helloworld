@@ -17,5 +17,5 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-gradle-plugin:2.4.3")
 
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.9.0")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.10.2")
 }
