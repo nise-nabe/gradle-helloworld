@@ -15,7 +15,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.4.2")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.4.3")
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:5.9.0")
 }
