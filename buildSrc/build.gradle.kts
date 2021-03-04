@@ -11,7 +11,6 @@ dependencies {
 
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.4.31"))
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
