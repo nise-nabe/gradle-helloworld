@@ -31,7 +31,7 @@ dependencies {
 
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("com.ninja-squad:springmockk:3.0.0")
+    testImplementation("com.ninja-squad:springmockk:3.0.1")
 }
 
 
