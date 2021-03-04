@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    kotlin("jvm")
+    id("com.nisecoder.gradle.kotlin")
 }
 
 dependencies {
