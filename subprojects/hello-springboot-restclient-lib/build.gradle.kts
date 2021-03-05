@@ -4,6 +4,31 @@ plugins {
     id("com.nisecoder.gradle.springboot")
 }
 
+sourceSets {
+    create("springboot") {
+        val mainSourceSet = sourceSets[SourceSet.MAIN_SOURCE_SET_NAME]
+        val mainOutput = objects.fileCollection().from(mainSourceSet.output)
+
+        compileClasspath += mainOutput
+        runtimeClasspath += mainOutput
+
+        configurations.getByName(apiConfigurationName)
+                .extendsFrom(configurations.getByName(mainSourceSet.apiConfigurationName))
+    }
+}
+
+java {
+    registerFeature("springboot") {
+        usingSourceSet(sourceSets["springboot"])
+    }
+}
+
 dependencies {
     api("org.springframework:spring-web")
+}
+
+dependencies {
+    val springbootApi by configurations.getting {}
+    springbootApi(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+    springbootApi("org.springframework.boot:spring-boot-starter")
 }
