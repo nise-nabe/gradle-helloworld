@@ -1,6 +1,6 @@
 plugins {
-    java
-    kotlin("jvm")
+    `java-library`
+    id("com.nisecoder.gradle.kotlin")
     id("com.nisecoder.gradle.springboot")
 }
 

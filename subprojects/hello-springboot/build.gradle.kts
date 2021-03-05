@@ -8,11 +8,6 @@ plugins {
 }
 
 dependencies {
-    implementation(platform(SpringBootPlugin.BOM_COORDINATES))
-    developmentOnly(platform(SpringBootPlugin.BOM_COORDINATES))
-    kapt(platform(SpringBootPlugin.BOM_COORDINATES))
-
-
     kapt("org.springframework.boot:spring-boot-autoconfigure-processor")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
