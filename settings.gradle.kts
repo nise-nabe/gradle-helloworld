@@ -14,6 +14,7 @@ include("hello-springboot-webmvc-jetty")
 include("hello-springboot-restclient-lib")
 include("hello-httpclient")
 include("hello-apply-plugin")
+include("hello-grpc")
 
 for (project in rootProject.children) {
     project.projectDir = file("subprojects/${project.name}")
