@@ -12,6 +12,8 @@ sourceSets {
         compileClasspath += mainOutput
         runtimeClasspath += mainOutput
 
+        configurations.getByName(implementationConfigurationName)
+                .extendsFrom(configurations.getByName(mainSourceSet.implementationConfigurationName))
         configurations.getByName(apiConfigurationName)
                 .extendsFrom(configurations.getByName(mainSourceSet.apiConfigurationName))
     }
