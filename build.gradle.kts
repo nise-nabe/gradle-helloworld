@@ -7,6 +7,8 @@ tasks.wrapper {
 }
 
 allprojects {
+    group = "com.nisecoder.helloworld"
+
     configurations.all {
         resolutionStrategy {
             cacheChangingModulesFor(0, TimeUnit.SECONDS)
