@@ -1,4 +1,4 @@
-package com.nisecoder.gradle
+package com.nisecoder.helloworld.gradle
 
 import org.gradle.kotlin.dsl.support.serviceOf
 import org.gradle.tooling.events.OperationCompletionListener
