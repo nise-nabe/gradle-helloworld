@@ -1,5 +1,5 @@
 plugins {
-    id("com.nisecoder.gradle.grpc")
+    id("com.nisecoder.helloworld.gradle.grpc")
 }
 
 dependencies {

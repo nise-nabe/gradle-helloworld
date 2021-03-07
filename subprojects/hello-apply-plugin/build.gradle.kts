@@ -1,4 +1,4 @@
 
 plugins {
-    id("com.nisecoder.gradle.test-service")
+    id("com.nisecoder.helloworld.gradle.test-service")
 }
