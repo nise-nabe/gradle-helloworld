@@ -5,7 +5,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 plugins {
     java
     id("org.springframework.boot")
-    id("com.nisecoder.gradle.springboot-base")
+    id("com.nisecoder.helloworld.gradle.springboot-base")
 }
 
 dependencies {
