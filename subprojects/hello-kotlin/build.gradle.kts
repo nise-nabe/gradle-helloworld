@@ -1,6 +1,6 @@
 plugins {
     java
-    id("com.nisecoder.gradle.kotlin")
+    id("com.nisecoder.helloworld.gradle.kotlin")
 }
 
 dependencies {

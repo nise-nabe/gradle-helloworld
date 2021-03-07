@@ -1,9 +1,7 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     java
-    id("com.nisecoder.gradle.kotlin")
-    id("com.nisecoder.gradle.springboot")
+    id("com.nisecoder.helloworld.gradle.kotlin")
+    id("com.nisecoder.helloworld.gradle.springboot")
 }
 
 dependencies {

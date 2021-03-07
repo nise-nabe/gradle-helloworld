@@ -1,7 +1,7 @@
 plugins {
     `java-library`
-    id("com.nisecoder.gradle.kotlin")
-    id("com.nisecoder.gradle.springboot-lib")
+    id("com.nisecoder.helloworld.gradle.kotlin")
+    id("com.nisecoder.helloworld.gradle.springboot-lib")
 }
 
 sourceSets {

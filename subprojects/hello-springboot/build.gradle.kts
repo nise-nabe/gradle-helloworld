@@ -1,10 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     java
     kotlin("jvm")
-    id("com.nisecoder.gradle.springboot")
+    id("com.nisecoder.helloworld.gradle.springboot")
 }
 
 dependencies {
