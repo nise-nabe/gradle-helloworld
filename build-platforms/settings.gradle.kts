@@ -5,3 +5,5 @@ pluginManagement {
 }
 
 rootProject.name = "build-platforms"
+
+include("platform-grpc")
