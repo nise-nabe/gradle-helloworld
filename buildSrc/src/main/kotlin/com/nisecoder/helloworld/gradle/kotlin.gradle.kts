@@ -1,4 +1,4 @@
-package com.nisecoder.gradle
+package com.nisecoder.helloworld.gradle
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 

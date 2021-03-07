@@ -1,4 +1,4 @@
-package com.nisecoder.gradle
+package com.nisecoder.helloworld.gradle
 
 import org.jetbrains.kotlin.gradle.plugin.KotlinPluginWrapper
 import org.springframework.boot.gradle.plugin.SpringBootPlugin

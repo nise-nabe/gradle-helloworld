@@ -1,13 +1,12 @@
-package com.nisecoder.gradle
+package com.nisecoder.helloworld.gradle
 
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
-    java
-    id("org.springframework.boot")
+    `java-library`
     id("com.nisecoder.gradle.springboot-base")
 }
 
 dependencies {
-    developmentOnly(platform(SpringBootPlugin.BOM_COORDINATES))
+    api(platform(SpringBootPlugin.BOM_COORDINATES))
 }

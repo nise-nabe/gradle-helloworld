@@ -1,7 +1,6 @@
+package com.nisecoder.helloworld.gradle
+
 import com.google.protobuf.gradle.ExecutableLocator
-import org.gradle.api.NamedDomainObjectContainer
-import org.gradle.api.artifacts.component.ModuleComponentSelector
-import org.gradle.kotlin.dsl.*
 
 plugins {
     id("com.google.protobuf")
