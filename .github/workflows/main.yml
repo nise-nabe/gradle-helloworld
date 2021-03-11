@@ -17,4 +17,9 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 15
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
       - run: ./gradlew check
