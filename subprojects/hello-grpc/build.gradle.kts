@@ -1,5 +1,6 @@
 plugins {
-    id("com.nisecoder.helloworld.gradle.grpc")
+    `java-library`
+    id("com.nisecoder.helloworld.gradle.grpc-resolvable")
 }
 
 dependencies {
