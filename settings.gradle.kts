@@ -8,6 +8,9 @@ dependencyResolutionManagement {
                 includeGroup("org.springframework")
                 includeGroup("org.springframework.boot")
             }
+            metadataSources {
+                gradleMetadata()
+            }
         }
 
         maven {
@@ -17,6 +20,9 @@ dependencyResolutionManagement {
                 snapshotsOnly()
                 includeGroup("org.springframework")
                 includeGroup("org.springframework.boot")
+            }
+            metadataSources {
+                gradleMetadata()
             }
         }
 
