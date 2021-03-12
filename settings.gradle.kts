@@ -39,5 +39,11 @@ include("hello-grpc")
 include("hello-mybatis")
 
 for (project in rootProject.children) {
-    project.projectDir = file("subprojects/${project.name}")
+    val projectPath = if (project.name.startsWith("hello-springboot")) {
+        file("subprojects/springboot/${project.name}")
+    } else {
+        file("subprojects/${project.name}")
+    }
+
+    project.projectDir = projectPath
 }
