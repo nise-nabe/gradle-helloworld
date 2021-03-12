@@ -16,6 +16,7 @@ include("hello-springboot-restclient-lib")
 include("hello-httpclient")
 include("hello-apply-plugin")
 include("hello-grpc")
+include("hello-mybatis")
 
 for (project in rootProject.children) {
     project.projectDir = file("subprojects/${project.name}")
