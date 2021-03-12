@@ -1,4 +1,4 @@
-package com.nisecoder.spring.restclient
+package com.nisecoder.helloworld.spring.restclient
 
 import org.springframework.web.client.RestTemplate
 

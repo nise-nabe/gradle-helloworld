@@ -1,11 +1,11 @@
-package com.nisecoder
+package com.nisecoder.helloworld
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class HelloSpringBootWebMvcJettyApplication
+class HelloSpringBootWebMvcTomcatApplication
 
 fun main(args: Array<String>) {
-    runApplication<HelloSpringBootWebMvcJettyApplication>(*args)
+    runApplication<HelloSpringBootWebMvcTomcatApplication>(*args)
 }
