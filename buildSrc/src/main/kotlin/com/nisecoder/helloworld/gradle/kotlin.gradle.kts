@@ -15,6 +15,7 @@ tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         languageVersion = "1.4"
         jvmTarget = JavaVersion.VERSION_15.toString()
+        javaParameters = true
     }
 }
 
