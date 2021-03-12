@@ -6,5 +6,5 @@ import org.gradle.tooling.events.OperationCompletionListener
 
 serviceOf<BuildEventsListenerRegistry>()
      .onTaskCompletion(provider { OperationCompletionListener {
-    logger.lifecycle("${it.descriptor.name}:finish")
+    logger.debug("${it.descriptor.name}:finish")
 }})
