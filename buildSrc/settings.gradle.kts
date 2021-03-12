@@ -7,9 +7,6 @@ pluginManagement {
                 releasesOnly()
                 includeGroup("org.springframework.boot")
             }
-            metadataSources {
-                gradleMetadata()
-            }
         }
 
         maven {
@@ -18,9 +15,6 @@ pluginManagement {
             mavenContent {
                 snapshotsOnly()
                 includeGroup("org.springframework.boot")
-            }
-            metadataSources {
-                gradleMetadata()
             }
         }
 
