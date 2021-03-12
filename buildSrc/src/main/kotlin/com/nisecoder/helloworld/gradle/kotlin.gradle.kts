@@ -16,6 +16,7 @@ tasks.withType<KotlinCompile>().configureEach {
         languageVersion = "1.4"
         jvmTarget = JavaVersion.VERSION_15.toString()
         javaParameters = true
+        useIR = true
     }
 }
 
