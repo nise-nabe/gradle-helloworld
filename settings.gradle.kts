@@ -27,6 +27,7 @@ dependencyResolutionManagement {
 rootProject.name = "HelloWorld"
 
 includeBuild("build-platforms")
+includeBuild("build-conventions")
 include("hello-kotlin")
 include("hello-typescript")
 include("hello-springboot")
