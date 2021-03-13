@@ -7,5 +7,5 @@ plugins {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3")
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.+")
 }
