@@ -9,9 +9,9 @@ repositories {
 dependencies {
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.0")
 
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
-    implementation("org.jetbrains.kotlin:kotlin-allopen:1.4.31")
-    implementation("org.jetbrains.kotlin:kotlin-noarg:1.4.31")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    implementation("org.jetbrains.kotlin:kotlin-allopen")
+    implementation("org.jetbrains.kotlin:kotlin-noarg")
 
     implementation("org.springframework.boot:spring-boot-gradle-plugin:2.4.3")
 
