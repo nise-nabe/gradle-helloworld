@@ -13,11 +13,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.4.3")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.4.+")
 
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.10.2")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.+")
 
-    implementation("com.google.protobuf:protobuf-gradle-plugin:0.8.15")
+    implementation("com.google.protobuf:protobuf-gradle-plugin:0.+")
 }
 
 kotlinDslPluginOptions {
