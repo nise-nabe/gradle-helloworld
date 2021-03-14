@@ -25,3 +25,18 @@ dependencies {
 
     testImplementation(kotlin("test-junit5"))
 }
+
+tasks.test {
+    maxParallelForks = (Runtime.getRuntime().availableProcessors() / 2).takeIf { it > 0 } ?: 1
+
+    reports {
+        junitXml.apply {
+            isEnabled = true
+            outputLocation.set(rootProject.layout.buildDirectory.dir("test-results/junit/${project.name}"))
+        }
+        html.apply {
+            isEnabled = true
+            outputLocation.set(rootProject.layout.buildDirectory.dir("reports/test/test/${project.name}"))
+        }
+    }
+}
