@@ -1,9 +1,15 @@
 version: 2
 jobs:
-  build:
+  gradle-check:
     docker:
       - image: circleci/openjdk:11-jdk
 
     steps:
       - checkout
-      - ./gradlew check
+      - run: ./gradlew check
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - gradle-check
