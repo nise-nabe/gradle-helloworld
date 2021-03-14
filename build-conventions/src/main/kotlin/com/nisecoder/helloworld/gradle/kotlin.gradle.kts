@@ -36,7 +36,7 @@ tasks.test {
         }
         html.apply {
             isEnabled = true
-            outputLocation.set(rootProject.layout.buildDirectory.dir("reports/test/test/${project.name}"))
+            outputLocation.set(rootProject.layout.buildDirectory.dir("reports/tests/test/${project.name}"))
         }
     }
 }
