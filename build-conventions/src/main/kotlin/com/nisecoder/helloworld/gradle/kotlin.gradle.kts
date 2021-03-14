@@ -14,7 +14,7 @@ val compiler: Provider<JavaCompiler> = javaToolchains.compilerFor {
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         languageVersion = "1.4"
-        jvmTarget = JavaVersion.VERSION_15.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
         javaParameters = true
         useIR = true
     }
