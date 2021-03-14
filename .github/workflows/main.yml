@@ -31,6 +31,8 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/jdks
+            ~/.gradle/nodejs
+            ~/.gradle/yarn
           key: ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-cache-
@@ -38,8 +40,7 @@ jobs:
         name: gralde kotlin js
         with:
           path: |
-            ~/.gradle/nodejs
-            ~/.gradle/yarn
+            build/js
           key: ${{ runner.os }}-gradle-kotlinjs-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-kotlinjs-
