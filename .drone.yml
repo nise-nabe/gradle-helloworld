@@ -1,0 +1,8 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: test
+    image: adoptopenjdk:11-jdk-hotspot
+    commands:
+      - ./gradlew check
