@@ -3,6 +3,6 @@ name: default
 
 steps:
   - name: gradle check
-    image: adoptopenjdk:11-jdk-hotspot
+    image: adoptopenjdk:15-jdk-hotspot
     commands:
       - ./gradlew check
