@@ -22,7 +22,7 @@ jobs:
         with:
           path: |
             ~/.gradle/wrapper
-          key: {{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-wrapper-
       - uses: actions/cache@v2
