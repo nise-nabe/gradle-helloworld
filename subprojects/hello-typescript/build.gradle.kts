@@ -1,5 +1,7 @@
 plugins {
     kotlin("js")
+    id("com.nisecoder.helloworld.gradle.build-basic")
+
 }
 
 

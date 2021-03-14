@@ -1,5 +1,6 @@
 plugins {
     java
+    id("com.nisecoder.helloworld.gradle.build-basic")
     id("com.nisecoder.helloworld.gradle.kotlin")
     id("com.nisecoder.helloworld.gradle.springboot")
 }

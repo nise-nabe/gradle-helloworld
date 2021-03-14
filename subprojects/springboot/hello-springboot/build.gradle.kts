@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     java
     kotlin("jvm")
+    id("com.nisecoder.helloworld.gradle.build-basic")
     id("com.nisecoder.helloworld.gradle.springboot")
 }
 
