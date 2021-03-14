@@ -18,11 +18,19 @@ jobs:
         with:
           java-version: 15
       - uses: actions/cache@v2
+        name: gradle wrapper
+        with:
+          path: |
+            ~/.gradle/wrapper
+          key: {{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-wrapper-
+      - uses: actions/cache@v2
+        name: gralde cache
         with:
           path: |
             ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          key: ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-
+            ${{ runner.os }}-gradle-cache-
       - run: ./gradlew check
