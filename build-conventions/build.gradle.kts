@@ -21,5 +21,5 @@ dependencies {
 }
 
 kotlinDslPluginOptions {
-    jvmTarget.set(JavaVersion.VERSION_15.toString())
+    jvmTarget.set(JavaVersion.VERSION_11.toString())
 }
