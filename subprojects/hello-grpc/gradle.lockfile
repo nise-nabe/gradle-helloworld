@@ -1,0 +1,7 @@
+# This is a Gradle generated file for dependency locking.
+# Manual edits can break the build and are not advised.
+# This file is expected to be part of source control.
+com.google.protobuf:protobuf-java:3.15.5=compileClasspath,compileProtoPath,testCompileClasspath,testCompileProtoPath,testRuntimeClasspath
+com.google.protobuf:protoc:3.15.5=protobufToolsLocator_protoc,protoc
+io.grpc:protoc-gen-grpc-java:1.36.0=protoc
+empty=annotationProcessor,protobuf,testAnnotationProcessor,testProtobuf
