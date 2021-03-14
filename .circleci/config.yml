@@ -6,7 +6,35 @@ jobs:
 
     steps:
       - checkout
+      - restore_cache:
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - restore_cache:
+          keys:
+            - v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
+            - v1-gradle-cache-{{ .Branch }}-
+            - v1-gradle-cache-
+      - restore_cache:
+          keys:
+            - v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
+            - v1-gradle-kotlinjs-{{ .Branch }}-
+            - v1-gradle-kotlinjs-
       - run: ./gradlew check
+      - save_cache:
+          paths:
+            - ~/.gradle/wrapper
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          when: always
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+            - ~/.gradle/jdks
+            - ~/.gradle/nodejs
+            - ~/.gradle/yarn
+          key: v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
+      - save_cache:
+          paths:
+            - build/js
+          key: v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
       - store_test_results:
           path: build/test-results/junit/
       - store_artifacts:
