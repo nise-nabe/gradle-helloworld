@@ -24,7 +24,7 @@ jobs:
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-wrapper-
+            ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
       - uses: actions/cache@v2
         name: gralde cache
         with:
@@ -35,6 +35,7 @@ jobs:
             ~/.gradle/yarn
           key: ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
+            ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
             ${{ runner.os }}-gradle-cache-
       - uses: actions/cache@v2
         name: gralde cache
