@@ -29,7 +29,8 @@ jobs:
         name: gralde cache
         with:
           path: |
-            ~/.gradle/caches
+            ~/.gradle/caches/module-2
+            ~/.gradle/caches/build-cache-1
             ~/.gradle/jdks
             ~/.gradle/nodejs
             ~/.gradle/yarn
