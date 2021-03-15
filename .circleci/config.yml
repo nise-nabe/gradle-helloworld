@@ -15,6 +15,11 @@ jobs:
             - v1-gradle-cache-
       - restore_cache:
           keys:
+            - v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
+            - v1-gradle-build-cache-{{ .Branch }}-
+            - v1-gradle-build-cache-
+      - restore_cache:
+          keys:
             - v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
             - v1-gradle-kotlinjs-{{ .Branch }}-
             - v1-gradle-kotlinjs-
@@ -27,11 +32,14 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle/caches/module-2
-            - ~/.gradle/caches/build-cache-1
             - ~/.gradle/jdks
             - ~/.gradle/nodejs
             - ~/.gradle/yarn
           key: v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
+      - save_cache:
+          paths:
+            - ~/.gradle/caches/build-cache-1
+          key: v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
       - save_cache:
           paths:
             - build/js

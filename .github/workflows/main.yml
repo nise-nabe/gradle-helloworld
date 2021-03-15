@@ -30,13 +30,21 @@ jobs:
         with:
           path: |
             ~/.gradle/caches/module-2
-            ~/.gradle/caches/build-cache-1
             ~/.gradle/jdks
             ~/.gradle/nodejs
             ~/.gradle/yarn
           key: ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-cache-
+      - uses: actions/cache@v2
+        name: gralde cache
+        with:
+          path: |
+            ~/.gradle/caches/build-cache-1
+          key: ${{ runner.os }}-gradle-build-cache-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-build-cache-${{ github.sha }}
+            ${{ runner.os }}-gradle-build-cache-
       - uses: actions/cache@v2
         name: gralde kotlin js
         with:
