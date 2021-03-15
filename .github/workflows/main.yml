@@ -18,26 +18,6 @@ jobs:
         with:
           java-version: 15
       - uses: actions/cache@v2
-        name: gradle wrapper
-        with:
-          path: |
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
-      - uses: actions/cache@v2
-        name: gralde cache
-        with:
-          path: |
-            ~/.gradle/caches/module-2
-            ~/.gradle/jdks
-            ~/.gradle/nodejs
-            ~/.gradle/yarn
-          key: ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
-            ${{ runner.os }}-gradle-cache-
-      - uses: actions/cache@v2
         name: gralde build cache
         with:
           path: |
@@ -54,4 +34,8 @@ jobs:
           key: ${{ runner.os }}-gradle-kotlinjs-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-kotlinjs-
-      - run: ./gradlew check
+      - uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: check
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
