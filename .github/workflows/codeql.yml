@@ -4,11 +4,11 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ $default-branch, $protected-branches ]
+    branches: [ master ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ master ]
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: 0 0 * * 0
 
   workflow_dispatch:
 
