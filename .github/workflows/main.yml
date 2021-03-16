@@ -28,9 +28,10 @@ jobs:
         with:
           path: |
             ~/.gradle/caches/build-cache-1
-          key: ${{ runner.os }}-gradle-build-cache-${{ github.sha }}
+          key: ${{ runner.os }}-gradle-build-cache-${{ matrix.java-version }}-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-gradle-build-cache-${{ github.sha }}
+            ${{ runner.os }}-gradle-build-cache-${{ matrix.java-version }}-${{ github.sha }}
+            ${{ runner.os }}-gradle-build-cache-${{ matrix.java-version }}-
             ${{ runner.os }}-gradle-build-cache-
       - uses: actions/cache@v2
         name: gralde cache
