@@ -24,6 +24,14 @@ dependencyResolutionManagement {
     }
 }
 
+// includeBuild repositories need to be add in root project to resolve for runtime classpath
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
+
 rootProject.name = "HelloWorld"
 
 includeBuild("build-platforms")

@@ -3,6 +3,7 @@ plugins {
 }
 
 repositories {
+    google()
     gradlePluginPortal()
 }
 
@@ -18,6 +19,8 @@ dependencies {
     implementation("com.diffplug.spotless:spotless-plugin-gradle:5.+")
 
     implementation("com.google.protobuf:protobuf-gradle-plugin:0.+")
+
+    implementation("com.android.tools.build:gradle:4.1.3")
 }
 
 kotlinDslPluginOptions {
