@@ -22,4 +22,14 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("lib") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
+}
+
 rootProject.name = "build-conventions"
+
+enableFeaturePreview("VERSION_CATALOGS")

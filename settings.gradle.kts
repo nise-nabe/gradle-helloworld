@@ -56,3 +56,5 @@ for (project in rootProject.children) {
 
     project.projectDir = projectPath
 }
+
+enableFeaturePreview("VERSION_CATALOGS")
