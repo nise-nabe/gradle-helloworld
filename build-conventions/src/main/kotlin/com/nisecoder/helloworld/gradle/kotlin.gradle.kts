@@ -21,7 +21,7 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 dependencies {
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.4.31"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.4.32"))
 
     testImplementation(kotlin("test-junit5"))
 }
