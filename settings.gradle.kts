@@ -46,6 +46,8 @@ include("hello-httpclient")
 include("hello-apply-plugin")
 include("hello-grpc")
 include("hello-mybatis")
+include("hello-provider")
+include("hello-consumer")
 
 for (project in rootProject.children) {
     val projectPath = if (project.name.startsWith("hello-springboot")) {
@@ -58,3 +60,4 @@ for (project in rootProject.children) {
 }
 
 enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
