@@ -17,6 +17,8 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget = JavaVersion.VERSION_11.toString()
         javaParameters = true
         useIR = true
+
+        jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
     }
 }
 
