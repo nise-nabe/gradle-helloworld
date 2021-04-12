@@ -22,6 +22,8 @@ pluginManagement {
     }
 }
 
+enableFeaturePreview("VERSION_CATALOGS")
+
 dependencyResolutionManagement {
     versionCatalogs {
         create("lib") {
@@ -31,5 +33,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "build-conventions"
-
-enableFeaturePreview("VERSION_CATALOGS")
