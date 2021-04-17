@@ -23,3 +23,8 @@ dependencies {
     implementation(platform("com.linecorp.armeria:armeria-bom:1.6.+"))
     implementation("com.linecorp.armeria:armeria")
 }
+
+dependencies {
+    implementation("io.ktor:ktor-client-core:1.5.3")
+    implementation("io.ktor:ktor-client-cio:1.5.3")
+}
