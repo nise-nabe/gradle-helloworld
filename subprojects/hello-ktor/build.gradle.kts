@@ -1,7 +1,11 @@
 plugins {
-    `java-library`
+    application
     id("com.nisecoder.helloworld.gradle.build-basic")
     id("com.nisecoder.helloworld.gradle.kotlin")
+}
+
+application {
+    mainClass.set("io.ktor.server.netty.EngineMain")
 }
 
 dependencies {
