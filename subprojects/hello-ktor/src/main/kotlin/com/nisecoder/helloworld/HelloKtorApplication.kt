@@ -7,7 +7,6 @@ import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.netty.EngineMain
 
-
 fun main(args: Array<String>) = EngineMain.main(args)
 
 fun Application.module(testing: Boolean = false) {

@@ -12,4 +12,12 @@ dependencies {
     implementation("io.ktor:ktor-server-core:1.5.3")
     implementation("io.ktor:ktor-server-netty:1.5.3")
     implementation("ch.qos.logback:logback-classic:1.2.3")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    testImplementation("io.ktor:ktor-server-test-host:1.5.3")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
