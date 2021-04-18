@@ -49,6 +49,8 @@ include("hello-mybatis")
 include("hello-provider")
 include("hello-consumer")
 include("hello-ktor")
+include("hello-crs")
+
 
 for (project in rootProject.children) {
     val projectPath = if (project.name.startsWith("hello-springboot")) {
