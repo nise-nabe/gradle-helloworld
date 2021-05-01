@@ -62,4 +62,4 @@ workflows:
       - gradle-check:
           matrix:
             parameters:
-              jdk-version: [ 11, 15, 16]
+              jdk-version: [ 11, 15, 16 ]
