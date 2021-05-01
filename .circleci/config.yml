@@ -5,10 +5,10 @@ jobs:
     parameters:
       jdk-version:
         type: integer
-        default: 11
+        default: 11.0
 
     docker:
-      - image: circleci/openjdk:<<parameters.jdk-version>>-buster
+      - image: cimg/openjdk:<<parameters.jdk-version>>
 
     steps:
       - checkout
@@ -62,4 +62,4 @@ workflows:
       - gradle-check:
           matrix:
             parameters:
-              jdk-version: [ 11, 15, 16 ]
+              jdk-version: [ 11.0, 15.0, 16.0 ]
