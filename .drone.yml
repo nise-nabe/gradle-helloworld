@@ -1,5 +1,5 @@
 kind: pipeline
-name: default
+name: gradle-check-11
 
 steps:
   - name: gradle check
@@ -11,7 +11,7 @@ steps:
 ---
 
 kind: pipeline
-name: default
+name: gradle-check-15
 
 steps:
   - name: gradle check
@@ -23,7 +23,7 @@ steps:
 ---
 
 kind: pipeline
-name: default
+name: gradle-check-16
 
 steps:
   - name: gradle check
