@@ -23,6 +23,8 @@ dependencies {
     implementation("com.android.tools.build:gradle:4.1.3")
 
     implementation("gradle.plugin.com.github.bjornvester:xjc-gradle-plugin:1.6.0")
+
+    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:4.6.0")
 }
 
 kotlinDslPluginOptions {
