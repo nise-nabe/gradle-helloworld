@@ -11,3 +11,11 @@ plugins {
 dependencies {
     developmentOnly(platform(SpringBootPlugin.BOM_COORDINATES))
 }
+
+tasks.bootJar {
+    launchScript()
+}
+
+tasks.test {
+    useJUnitPlatform()
+}

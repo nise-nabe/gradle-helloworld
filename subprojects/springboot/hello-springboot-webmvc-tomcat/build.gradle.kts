@@ -24,16 +24,8 @@ dependencies {
 }
 
 
-tasks.bootJar {
-    launchScript()
-}
-
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
