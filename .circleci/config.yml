@@ -2,8 +2,13 @@ version: 2.1
 
 jobs:
   gradle-check:
+    parameters:
+      jdk-version:
+        type: integer
+        default: 11
+
     docker:
-      - image: circleci/openjdk:15-buster
+      - image: circleci/openjdk:<<parameters.jdk-version>>-buster
 
     steps:
       - checkout
@@ -54,4 +59,5 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - gradle-check
+      - gradle-check:
+          jdk-version: [11, 15, 16]
