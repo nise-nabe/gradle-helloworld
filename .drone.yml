@@ -3,6 +3,30 @@ name: default
 
 steps:
   - name: gradle check
+    image: adoptopenjdk:11-jdk-hotspot
+    commands:
+      - ./gradlew check
+
+
+---
+
+kind: pipeline
+name: default
+
+steps:
+  - name: gradle check
     image: adoptopenjdk:15-jdk-hotspot
+    commands:
+      - ./gradlew check
+
+
+---
+
+kind: pipeline
+name: default
+
+steps:
+  - name: gradle check
+    image: adoptopenjdk:16-jdk-hotspot
     commands:
       - ./gradlew check
