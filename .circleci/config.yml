@@ -4,7 +4,7 @@ jobs:
   gradle-check:
     parameters:
       jdk-version:
-        type: integer
+        type: string
         default: 11.0
 
     docker:
