@@ -60,4 +60,6 @@ workflows:
   workflow:
     jobs:
       - gradle-check:
-          jdk-version: [11, 15, 16]
+          matrix:
+            parameters:
+              jdk-version: [ 11, 15, 16]
