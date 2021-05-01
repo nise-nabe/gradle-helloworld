@@ -5,7 +5,7 @@ jobs:
     parameters:
       jdk-version:
         type: string
-        default: 11.0
+        default: "11.0"
 
     docker:
       - image: cimg/openjdk:<<parameters.jdk-version>>
@@ -62,4 +62,4 @@ workflows:
       - gradle-check:
           matrix:
             parameters:
-              jdk-version: [ 11.0, 15.0, 16.0 ]
+              jdk-version: [ "11.0", "15.0", "16.0" ]
