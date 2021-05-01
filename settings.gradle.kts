@@ -51,6 +51,8 @@ include("hello-consumer")
 include("hello-ktor")
 include("hello-crs")
 include("hello-tax-return")
+include("hello-springboot-graphql")
+
 
 for (project in rootProject.children) {
     val projectPath = if (project.name.startsWith("hello-springboot")) {
