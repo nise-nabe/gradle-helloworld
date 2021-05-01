@@ -21,6 +21,8 @@ dependencies {
     implementation("com.google.protobuf:protobuf-gradle-plugin:0.+")
 
     implementation("com.android.tools.build:gradle:4.1.3")
+
+    implementation("gradle.plugin.com.github.bjornvester:xjc-gradle-plugin:1.6.0")
 }
 
 kotlinDslPluginOptions {
