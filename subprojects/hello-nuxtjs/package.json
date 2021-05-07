@@ -1,6 +1,13 @@
 {
   "private": true,
-  "dependencies": {
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "devDependencies": {
+    "nuxt": "^2.15.4",
     "yarn": "^1.22.10"
   }
 }
