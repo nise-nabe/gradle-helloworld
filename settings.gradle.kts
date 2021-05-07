@@ -52,6 +52,7 @@ include("hello-ktor")
 include("hello-crs")
 include("hello-tax-return")
 include("hello-springboot-graphql")
+include("hello-nuxtjs")
 
 
 for (project in rootProject.children) {

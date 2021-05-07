@@ -25,6 +25,8 @@ dependencies {
     implementation("gradle.plugin.com.github.bjornvester:xjc-gradle-plugin:1.6.0")
 
     implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:4.6.0")
+
+    implementation("com.github.node-gradle:gradle-node-plugin:3.1.0")
 }
 
 kotlinDslPluginOptions {
