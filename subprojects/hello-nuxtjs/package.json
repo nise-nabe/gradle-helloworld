@@ -1,4 +1,5 @@
 {
+  "private": true,
   "dependencies": {
     "yarn": "^1.22.10"
   }
