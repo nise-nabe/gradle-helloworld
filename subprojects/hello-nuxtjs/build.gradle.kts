@@ -5,4 +5,5 @@ plugins {
 
 node {
     download.set(true)
+    version.set("16.1.0")
 }
