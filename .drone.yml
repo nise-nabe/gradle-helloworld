@@ -18,15 +18,3 @@ steps:
     image: adoptopenjdk:15-jdk-hotspot
     commands:
       - ./gradlew check
-
-
----
-
-kind: pipeline
-name: gradle-check-16
-
-steps:
-  - name: gradle check
-    image: adoptopenjdk:16-jdk-hotspot
-    commands:
-      - ./gradlew check
