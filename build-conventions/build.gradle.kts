@@ -36,6 +36,8 @@ dependencies {
     implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2") {
         because("asciidoc convention plugin")
     }
+
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.16.0")
 }
 
 kotlinDslPluginOptions {

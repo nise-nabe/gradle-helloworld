@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    id("com.nisecoder.helloworld.gradle.code-quality")
 }
 
 val compiler: Provider<JavaCompiler> = javaToolchains.compilerFor {

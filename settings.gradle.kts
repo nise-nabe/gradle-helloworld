@@ -20,6 +20,17 @@ dependencyResolutionManagement {
             }
         }
 
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
+                }
+            }
+            filter {
+                includeModule("org.jetbrains.kotlinx", "kotlinx-html-jvm")
+            }
+        }
+
         mavenCentral()
     }
 }
