@@ -7,6 +7,7 @@ plugins {
 }
 
 detekt {
+    buildUponDefaultConfig = true
     parallel = true
     reports {
         html.enabled = false
