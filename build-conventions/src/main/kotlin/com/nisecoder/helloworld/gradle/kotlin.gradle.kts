@@ -7,8 +7,8 @@ plugins {
 }
 
 val compiler: Provider<JavaCompiler> = javaToolchains.compilerFor {
-    val jdk15 = JavaLanguageVersion.of(15)
-    languageVersion.set(jdk15)
+    @Suppress("MagicNumber")
+    languageVersion.set(JavaLanguageVersion.of(15))
     vendor.set(JvmVendorSpec.ADOPTOPENJDK)
 }
 
