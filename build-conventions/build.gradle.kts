@@ -27,6 +27,10 @@ dependencies {
     implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:4.6.0")
 
     implementation("com.github.node-gradle:gradle-node-plugin:3.1.0")
+
+    implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2") {
+        because("asciidoc.gradle.kts")
+    }
 }
 
 kotlinDslPluginOptions {
