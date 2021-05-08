@@ -36,7 +36,7 @@ tasks.register<Detekt>("detektAll") {
         sarif.enabled = true
     }
 
-    basePath = "."
+    basePath = rootProject.path
 
     jvmTarget = JavaVersion.VERSION_11.toString()
 
