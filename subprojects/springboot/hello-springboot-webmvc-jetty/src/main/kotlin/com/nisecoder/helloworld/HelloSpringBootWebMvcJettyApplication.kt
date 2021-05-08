@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class HelloSpringBootWebMvcJettyApplication
 
 fun main(args: Array<String>) {
-    runApplication<HelloSpringBootWebMvcJettyApplication>(*args)
+    runApplication<HelloSpringBootWebMvcJettyApplication>(args = args)
 }

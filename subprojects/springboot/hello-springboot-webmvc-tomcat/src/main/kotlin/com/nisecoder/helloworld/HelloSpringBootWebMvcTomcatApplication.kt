@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class HelloSpringBootWebMvcTomcatApplication
 
 fun main(args: Array<String>) {
-    runApplication<HelloSpringBootWebMvcTomcatApplication>(*args)
+    runApplication<HelloSpringBootWebMvcTomcatApplication>(args = args)
 }
