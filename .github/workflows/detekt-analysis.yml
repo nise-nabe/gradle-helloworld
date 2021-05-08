@@ -27,6 +27,7 @@ jobs:
         arguments: detektAll
         wrapper-cache-enabled: true
         dependencies-cache-enabled: true
+      continue-on-error: true
     - uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: ${{ github.workspace }}/build/reports/detekt/detekt.sarif
