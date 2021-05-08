@@ -36,6 +36,8 @@ tasks.register<Detekt>("detektAll") {
         sarif.enabled = true
     }
 
+    basePath = "."
+
     jvmTarget = JavaVersion.VERSION_11.toString()
 
     setSource(subprojects.filter {
