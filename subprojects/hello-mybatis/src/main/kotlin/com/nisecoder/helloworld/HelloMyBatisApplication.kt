@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class HelloMyBatisApplication
 
 fun main(args: Array<String>) {
-    runApplication<HelloMyBatisApplication>(*args)
+    runApplication<HelloMyBatisApplication>(args = args)
 }
