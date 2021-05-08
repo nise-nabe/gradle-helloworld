@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit
 
 plugins {
     id("org.jetbrains.gradle.plugin.idea-ext")
+    id("com.nisecoder.helloworld.gradle.asciidoc")
 }
 
 tasks.withType<Wrapper> {

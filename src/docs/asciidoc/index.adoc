@@ -1,0 +1,8 @@
+= Gradle HelloWorld
+:toc: left
+
+== Introduction
+
+This project is playground using Gradle.
+
+link:hello-asciidoc/index.html[Hello Asciidoc]
