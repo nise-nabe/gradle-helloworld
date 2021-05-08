@@ -1,5 +1,7 @@
 package com.nisecoder.helloworld.gradle
 
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
     id("io.gitlab.arturbosch.detekt")
 }
@@ -12,4 +14,8 @@ detekt {
         txt.enabled = false
         sarif.enabled = true
     }
+}
+
+tasks.withType<Detekt>().configureEach {
+    jvmTarget = JavaVersion.VERSION_11.toString()
 }
