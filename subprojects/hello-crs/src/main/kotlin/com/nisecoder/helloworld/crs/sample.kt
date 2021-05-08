@@ -19,7 +19,11 @@ fun main() {
             "crs:TransmittingCountry" { text("JP") }
             "crs:ReceivingCountry" { text("JP") }
             "crs:MessageType" { text("CRS") }
-            "crs:Contact" { text("TARO KOKUZEI 03-3581-4161(extXXXX) National Tax Agency, 3-1-1 Kasumigaseki, Chiyoda-ku, Tokyo, 100-8978, JAPAN") }
+            "crs:Contact" { text(listOf(
+                "TARO KOKUZEI",
+                "03-3581-4161(extXXXX)",
+                "National Tax Agency, 3-1-1 Kasumigaseki, Chiyoda-ku, Tokyo, 100-8978, JAPAN"
+            ).joinToString(" ")) }
             "crs:MessageRefId" { text("JP2020JPCN7000012050002002") }
             "crs:MessageTypeIndic" { text("CRS702") }
             "crs:ReportingPeriod" { text("2020-12-31") }
