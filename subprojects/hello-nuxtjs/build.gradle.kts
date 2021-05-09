@@ -10,10 +10,18 @@ node {
     version.set("16.1.0")
 }
 
+val yarnNuxtBuildTask = tasks.register<YarnTask>("yarnNuxtBuild") {
+    args.set(listOf("nuxt", "build"))
+}
+
 val yarnNuxtGenerateTask = tasks.register<YarnTask>("yarnNuxtGenerate") {
     args.set(listOf("nuxt", "generate"))
 }
 
 tasks.build {
+    dependsOn(yarnNuxtBuildTask)
+}
+
+tasks.assemble {
     dependsOn(yarnNuxtGenerateTask)
 }
