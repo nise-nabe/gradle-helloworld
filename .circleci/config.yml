@@ -63,3 +63,7 @@ workflows:
           matrix:
             parameters:
               jdk-version: [ "11.0", "15.0" ]
+          filters:
+            branches:
+              only: master
+
