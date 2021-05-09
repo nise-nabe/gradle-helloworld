@@ -14,6 +14,6 @@ val yarnNuxtGenerateTask = tasks.register<YarnTask>("yarnNuxtGenerate") {
     args.set(listOf("nuxt", "generate"))
 }
 
-tasks.assemble {
+tasks.build {
     dependsOn(yarnNuxtGenerateTask)
 }
