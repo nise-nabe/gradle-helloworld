@@ -18,10 +18,18 @@ val yarnNuxtGenerateTask = tasks.register<YarnTask>("yarnNuxtGenerate") {
     args.set(listOf("nuxt", "generate"))
 }
 
+val yarnJest = tasks.register<YarnTask>("yarnJest") {
+    args.set(listOf("jest", "--passWithNoTests"))
+}
+
 tasks.build {
     dependsOn(yarnNuxtBuildTask)
 }
 
 tasks.assemble {
     dependsOn(yarnNuxtGenerateTask)
+}
+
+tasks.check {
+    dependsOn(yarnJest)
 }
