@@ -65,6 +65,7 @@ include("hello-tax-return")
 include("hello-springboot-graphql")
 include("hello-nuxtjs")
 include("hello-asciidoc")
+include("hello-fritz2")
 
 
 for (project in rootProject.children) {

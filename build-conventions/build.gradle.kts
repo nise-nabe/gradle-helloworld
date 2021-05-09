@@ -38,6 +38,8 @@ dependencies {
     }
 
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.16.0")
+
+    implementation("dev.fritz2:fritz2-gradle-plugin:0.10")
 }
 
 kotlinDslPluginOptions {
