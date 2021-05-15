@@ -66,6 +66,7 @@ include("hello-springboot-graphql")
 include("hello-nuxtjs")
 include("hello-asciidoc")
 include("hello-fritz2")
+include("hello-github-actions")
 
 
 for (project in rootProject.children) {
