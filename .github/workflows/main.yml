@@ -53,7 +53,7 @@ jobs:
           key: ${{ runner.os }}-gradle-kotlinjs-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-kotlinjs-
-      - uses: eskatos/gradle-command-action@v1
+      - uses: eskatos/gradle-command-action@v1.3.3
         with:
           arguments: check --stacktrace
           wrapper-cache-enabled: true
