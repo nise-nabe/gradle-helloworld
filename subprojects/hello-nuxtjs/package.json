@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.6",
-    "nuxt": "^2.15.5",
+    "nuxt": "^2.15.6",
     "yarn": "^1.22.10",
     "webpack": "^4.46.0",
     "@nuxt/components": "^2.1.8",
