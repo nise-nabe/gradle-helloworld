@@ -7,7 +7,7 @@
     "start": "nuxt start"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.0",
+    "@nuxt/types": "^2.15.6",
     "nuxt": "^2.15.5",
     "yarn": "^1.22.10",
     "webpack": "^4.46.0",
