@@ -1,6 +1,5 @@
 package com.nisecoder.helloworld.gradle
 
-import gradle.kotlin.dsl.accessors._0bd82debbfba65caa505ce324b6ffa87.sourceSets
 import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.api.tasks.wrapper.Wrapper
 import java.util.concurrent.TimeUnit
