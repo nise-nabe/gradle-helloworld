@@ -23,3 +23,11 @@ services:
     image: line/centraldogma
     ports:
       - 36462:36462
+  teamcity-server:
+    image: jetbrains/teamcity-server
+    ports:
+    - 8111:8111
+  teamcity-agent:
+    image: jetbrains/teamcity-agent
+    environment:
+      SERVER_URL: http://teamcity-server:8111
