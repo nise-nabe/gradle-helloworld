@@ -35,11 +35,11 @@ tasks.test {
 
     reports {
         junitXml.apply {
-            isEnabled = true
+            required.set(true)
             outputLocation.set(rootProject.layout.buildDirectory.dir("test-results/junit/${project.name}"))
         }
         html.apply {
-            isEnabled = true
+            required.set(true)
             outputLocation.set(rootProject.layout.buildDirectory.dir("reports/tests/test/${project.name}"))
         }
     }
