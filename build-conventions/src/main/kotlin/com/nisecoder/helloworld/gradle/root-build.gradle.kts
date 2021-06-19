@@ -42,6 +42,8 @@ tasks.register<Detekt>("detektAll") {
     setSource(subprojects.filter {
         it.pluginManager.hasPlugin("com.nisecoder.helloworld.gradle.kotlin")
     }.map {
-        it.sourceSets[SourceSet.MAIN_SOURCE_SET_NAME].allJava.sourceDirectories
+        (it as ExtensionAware).extensions.getByType<SourceSetContainer>()
+    }.map {
+        it[SourceSet.MAIN_SOURCE_SET_NAME].allJava.sourceDirectories
     })
 }
