@@ -23,6 +23,10 @@ services:
     image: line/centraldogma
     ports:
       - 36462:36462
+  fluentd:
+    image: fluentd
+    ports:
+      - 24224:24224
   teamcity-server:
     image: jetbrains/teamcity-server
     ports:
