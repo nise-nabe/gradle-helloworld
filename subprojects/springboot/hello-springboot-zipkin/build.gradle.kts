@@ -6,6 +6,8 @@ plugins {
 }
 
 dependencies {
+    implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2020.0.+"))
+
     kapt("org.springframework.boot:spring-boot-autoconfigure-processor")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
@@ -13,6 +15,7 @@ dependencies {
         exclude(group = "org.springframework.boot", module = "spring-boot-starter-tomcat")
     }
     implementation("org.springframework.boot:spring-boot-starter-jetty")
+    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
 
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
