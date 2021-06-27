@@ -8,6 +8,6 @@ import org.springframework.web.servlet.function.router
 class ZipkinApplicationRouter {
     @Bean
     fun zipkinAppRouter(helloHandler: HelloHandler) = router {
-        GET("", helloHandler::handle)
+        GET("") { helloHandler.handle() }
     }
 }
