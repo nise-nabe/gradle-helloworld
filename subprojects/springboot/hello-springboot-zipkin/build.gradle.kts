@@ -7,6 +7,7 @@ plugins {
 
 dependencies {
     implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2020.0.+"))
+    implementation("io.github.microutils:kotlin-logging-jvm:2.0.8")
 
     kapt("org.springframework.boot:spring-boot-autoconfigure-processor")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
