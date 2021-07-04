@@ -16,5 +16,10 @@ dependencies {
 }
 
 tasks.test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        if (System.getenv("DRONE_CI") == "true" ||
+                System.getenv("JENKINS_URL") != null) {
+            excludeTags("containers")
+        }
+    }
 }
