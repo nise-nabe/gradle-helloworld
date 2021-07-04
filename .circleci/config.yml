@@ -1,8 +1,5 @@
 version: 2.1
 
-# testcontainers
-machine: true
-
 jobs:
   gradle-check:
     parameters:
@@ -10,8 +7,9 @@ jobs:
         type: string
         default: "11.0"
 
-    docker:
-      - image: cimg/openjdk:<<parameters.jdk-version>>
+    # testcontainers
+    machine:
+      image: ubuntu-2004:202104-01
 
     steps:
       - checkout
