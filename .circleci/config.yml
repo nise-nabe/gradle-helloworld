@@ -14,7 +14,7 @@ workflows:
           test_results_path: build/report/tests/test
           matrix:
             parameters:
-              tags: [ "11.0", "15.0" ]
+              tag: [ "11.0", "15.0" ]
           filters:
             branches:
               only: master
