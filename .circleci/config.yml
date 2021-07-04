@@ -7,7 +7,6 @@ orbs:
   gradle: circleci/gradle@2.2.0
 
 workflows:
-  version: 2
   workflow:
     jobs:
       - gradle/test:
