@@ -1,69 +1,18 @@
 version: 2.1
 
-jobs:
-  gradle-check:
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
-
-    docker:
-      - image: cimg/openjdk:<<parameters.jdk-version>>
-
-    steps:
-      - checkout
-      - restore_cache:
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-      - restore_cache:
-          keys:
-            - v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-cache-{{ .Branch }}-
-            - v1-gradle-cache-
-      - restore_cache:
-          keys:
-            - v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-build-cache-{{ .Branch }}-
-            - v1-gradle-build-cache-
-      - restore_cache:
-          keys:
-            - v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-kotlinjs-{{ .Branch }}-
-            - v1-gradle-kotlinjs-
-      - run: ./gradlew check
-      - save_cache:
-          paths:
-            - ~/.gradle/wrapper
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-          when: always
-      - save_cache:
-          paths:
-            - ~/.gradle/caches/module-2
-            - ~/.gradle/jdks
-            - ~/.gradle/nodejs
-            - ~/.gradle/yarn
-          key: v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
-      - save_cache:
-          paths:
-            - ~/.gradle/caches/build-cache-1
-          key: v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
-      - save_cache:
-          paths:
-            - build/js
-          key: v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
-      - store_test_results:
-          path: build/test-results/junit/
-      - store_artifacts:
-          path: build/reports/tests/test/
+orbs:
+  gradle: circleci/gradle@2.2.0
 
 workflows:
   version: 2
   workflow:
     jobs:
-      - gradle-check:
+      - gradle/test:
+          store_artifacts: build/test-results/tests/test
+          store_test_results: build/report/tests/test
           matrix:
             parameters:
-              jdk-version: [ "11.0", "15.0" ]
+              tags: [ "11.0", "15.0" ]
           filters:
             branches:
               only: master
-
