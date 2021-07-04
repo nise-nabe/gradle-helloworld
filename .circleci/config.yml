@@ -10,8 +10,6 @@ workflows:
   workflow:
     jobs:
       - gradle/test:
-          store_artifacts: build/test-results/tests/test
-          test_results_path: build/report/tests/test
           matrix:
             parameters:
               tag: [ "11.0", "15.0" ]
