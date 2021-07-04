@@ -9,8 +9,8 @@ application {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core:1.5.4")
-    implementation("io.ktor:ktor-server-netty:1.5.4")
+    implementation("io.ktor:ktor-server-core:1.6.1")
+    implementation("io.ktor:ktor-server-netty:1.6.1")
     implementation("ch.qos.logback:logback-classic:1.2.3")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
