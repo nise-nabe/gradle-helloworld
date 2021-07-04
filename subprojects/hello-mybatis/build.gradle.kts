@@ -11,6 +11,7 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java:8.0.+")
 
     testImplementation("org.testcontainers:testcontainers:1.+")
+    testImplementation("org.testcontainers:mysql:1.+")
     testImplementation("org.testcontainers:junit-jupiter:1.+")
 }
 
