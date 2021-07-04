@@ -1,5 +1,8 @@
 version: 2.1
 
+# testcontainers
+machine: true
+
 orbs:
   gradle: circleci/gradle@2.2.0
 
