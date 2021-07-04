@@ -7,7 +7,7 @@ import org.testcontainers.junit.jupiter.Testcontainers
 import kotlin.test.assertTrue
 
 @Testcontainers
-@Tag("container")
+@Tag("containers")
 class IntegrationTests {
     @Container
     val container = mysql {
