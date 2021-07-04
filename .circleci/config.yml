@@ -3,6 +3,11 @@ version: 2.1
 # testcontainers
 machine: true
 
+executors:
+  openjdk:
+    docker:
+      - image: 'cimg/openjdk:<<parameters.jdk-version>>
+
 orbs:
   gradle: circleci/gradle@2.2.0
 
@@ -10,9 +15,10 @@ workflows:
   workflow:
     jobs:
       - gradle/test:
+          executor: openjdk
           matrix:
             parameters:
-              tag: [ "11.0", "15.0" ]
+              jdk-version: [ "11.0", "15.0" ]
           filters:
             branches:
               only: master
