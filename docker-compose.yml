@@ -2,36 +2,44 @@ version: '3'
 
 services:
   nginx:
+    container_name: : hello_nginx
     image: nginx
     ports:
       - 80:80
   redis:
+    container_name: hello_redis
     image: redis
     ports:
       - 6379:6379
   mysql:
+    container_name: hello_mysql
     image: mysql
     ports:
       - 3316:3316
     environment:
       MYSQL_ROOT_PASSWORD: password
   zipkin:
+    container_name: hello_zipkin
     image: openzipkin/zipkin
     ports:
       - 9411:9411
   centraldogma:
+    container_name: hello_centraldogma
     image: line/centraldogma
     ports:
       - 36462:36462
   fluentd:
+    container_name: hello_fluentd
     image: fluentd
     ports:
       - 24224:24224
   teamcity-server:
+    container_name: hello_teamcity_server
     image: jetbrains/teamcity-server
     ports:
     - 8111:8111
   teamcity-agent:
+    container_name: hello_teamcity_agent
     image: jetbrains/teamcity-agent
     environment:
       SERVER_URL: http://teamcity-server:8111
