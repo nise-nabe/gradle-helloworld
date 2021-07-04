@@ -5,6 +5,10 @@ machine: true
 
 executors:
   openjdk:
+    parameters:
+      jdk-version:
+        type: string
+        default: "11.0"
     docker:
       - image: 'cimg/openjdk:<<parameters.jdk-version>>'
 
@@ -16,7 +20,7 @@ workflows:
     jobs:
       - gradle/test:
           executor: openjdk
-          matrix:
+           matrix:
             parameters:
               jdk-version: [ "11.0", "15.0" ]
           filters:
