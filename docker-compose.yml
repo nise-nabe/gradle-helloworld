@@ -43,3 +43,9 @@ services:
     image: jetbrains/teamcity-agent
     environment:
       SERVER_URL: http://teamcity-server:8111
+  jenkins:
+    container_name: hello_jenkins
+    image: jenkins/jenkins:lts-jdk11
+    ports:
+      - 8112:8080
+      - 50000:50000
