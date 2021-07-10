@@ -1,5 +1,5 @@
 package com.nisecoder.helloworld
 
 class HelloLib {
-    fun hello(): String = "Hello"
+    fun hello(name: String): String = "Hello $name"
 }
