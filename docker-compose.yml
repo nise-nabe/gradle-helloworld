@@ -41,6 +41,8 @@ services:
   centraldogma:
     container_name: hello-centraldogma
     image: line/centraldogma
+    volumes:
+      - ./docker/centraldogma/datadir:/opt/centraldogma/data
     ports:
       - 36462:36462
     networks:
