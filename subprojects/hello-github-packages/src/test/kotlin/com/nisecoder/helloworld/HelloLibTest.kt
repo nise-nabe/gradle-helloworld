@@ -8,6 +8,6 @@ internal class HelloLibTest {
     fun helloTest() {
         val helloLib = HelloLib()
 
-        assertEquals("Hello", helloLib.hello("test"))
+        assertEquals("Hello test", helloLib.hello("test"))
     }
 }
