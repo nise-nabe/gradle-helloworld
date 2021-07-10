@@ -1,70 +1,99 @@
 version: '3'
 
+networks:
+  app:
+  ci:
+  monitoring:
+
 services:
   nginx:
-    container_name: hello_nginx
+    container_name: hello-nginx
     image: nginx
     ports:
       - 80:80
+    networks:
+      - app
   redis:
-    container_name: hello_redis
+    container_name: hello-redis
     image: redis
     ports:
       - 6379:6379
+    networks:
+      - app
   mysql:
-    container_name: hello_mysql
+    container_name: hello-mysql
     image: mysql
     ports:
       - 3316:3316
     environment:
       MYSQL_ROOT_PASSWORD: password
+    networks:
+      - app
   zipkin:
-    container_name: hello_zipkin
+    container_name: hello-zipkin
     image: openzipkin/zipkin
     ports:
       - 9411:9411
+    networks:
+      - monitoring
   centraldogma:
-    container_name: hello_centraldogma
+    container_name: hello-centraldogma
     image: line/centraldogma
     ports:
       - 36462:36462
+    networks:
+      - app
   fluentd:
-    container_name: hello_fluentd
+    container_name: hello-fluentd
     image: fluentd
     ports:
       - 24224:24224
+    networks:
+      - app
   teamcity-server:
-    container_name: hello_teamcity_server
+    container_name: hello-teamcity-server
     image: jetbrains/teamcity-server
     ports:
     - 8111:8111
+    networks:
+      - ci
   teamcity-agent:
-    container_name: hello_teamcity_agent
+    container_name: hello-teamcity-agent
     image: jetbrains/teamcity-agent
     environment:
       SERVER_URL: http://teamcity-server:8111
+    networks:
+      - ci
   teamcity-agent-java11:
     build:
       context: docker/teamcity-agent-java11
       dockerfile: Dockerfile
-    container_name: hello_teamcity_agent_java11
+    container_name: hello-teamcity-agent-java11
     environment:
       SERVER_URL: http://teamcity-server:8111
       JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
       TEAMCITY_JRE: /usr/lib/jvm/java-11-openjdk-amd64
+    networks:
+      - ci
   jenkins:
-    container_name: hello_jenkins
+    container_name: hello-jenkins
     image: jenkins/jenkins:lts-jdk11
     ports:
       - 8112:8080
       - 50000:50000
+    networks:
+      - ci
   grafana:
-    container_name: hello_grafana
+    container_name: hello-grafana
     image: grafana/grafana
     ports:
     - 3000:3000
+    networks:
+      - monitoring
   grafana-loki:
-    container_name: hello_grafana_loki
+    container_name: hello-grafana-loki
     image: grafana/loki
     ports:
       - 3100:3100
+    networks:
+      - monitoring
