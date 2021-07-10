@@ -23,6 +23,8 @@ services:
   mysql:
     container_name: hello-mysql
     image: mysql
+    volumes:
+      - ./docker/mysql/datadir:/var/lib/mysql
     ports:
       - 3316:3316
     environment:
