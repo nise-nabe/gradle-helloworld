@@ -1,0 +1,30 @@
+name: "Publishing to Github Packages using Gradle"
+
+on:
+  push:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Java for Publishing
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: 11
+
+      - name: Publish to Github Packages
+        uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: publish
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+        env:
+          USERNAME: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
