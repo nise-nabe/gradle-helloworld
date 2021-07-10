@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hello_database
+    username: hello_user
+    password: hello_password
+    hikari:
+      data-source-properties:
+        # https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-configuration-properties.html
+        useSSL: false
+        characterEncoding: UTF-8
