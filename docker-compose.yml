@@ -53,8 +53,10 @@ services:
   teamcity-server:
     container_name: hello-teamcity-server
     image: jetbrains/teamcity-server
+    volumes:
+      - ./docker/teamcity_server/datadir:/data/teamcity_server/datadir
     ports:
-    - 8111:8111
+      - 8111:8111
     networks:
       - ci
   teamcity-agent:
