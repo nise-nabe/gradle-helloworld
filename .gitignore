@@ -4,6 +4,7 @@ docker/jenkins/jenkins_home
 docker/centraldogma/datadir
 docker/mysql/datadir
 docker/grafana/datadir
+docker/fluentd/log
 
 # Created by https://www.toptal.com/developers/gitignore/api/intellij+all,kotlin,java,node,macos,windows,gradle
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,kotlin,java,node,macos,windows,gradle

@@ -50,6 +50,8 @@ services:
   fluentd:
     container_name: hello-fluentd
     image: fluentd
+    volumes:
+      - ./docker/fluentd/log:/fluentd/log
     ports:
       - 24224:24224
     networks:
