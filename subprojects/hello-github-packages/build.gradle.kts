@@ -5,6 +5,8 @@ plugins {
     `maven-publish`
 }
 
+version = "1.0-SNAPSHOT"
+
 tasks.test {
     useJUnitPlatform()
 }
