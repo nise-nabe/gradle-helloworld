@@ -63,3 +63,8 @@ services:
     image: grafana/grafana
     ports:
     - 3000:3000
+  grafana-loki:
+    container_name: hello_grafana_loki
+    image: grafana/loki
+    ports:
+      - 3100:3100
