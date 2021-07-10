@@ -55,6 +55,7 @@ services:
     image: jetbrains/teamcity-server
     volumes:
       - ./docker/teamcity_server/datadir:/data/teamcity_server/datadir
+      - ./docker/teamcity_server/logs:/opt/teamcity/logs
     ports:
       - 8111:8111
     networks:
