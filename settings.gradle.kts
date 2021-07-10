@@ -68,6 +68,7 @@ include("hello-nuxtjs")
 include("hello-asciidoc")
 include("hello-fritz2")
 include("hello-github-actions")
+include("hello-github-packages")
 
 
 for (project in rootProject.children) {
