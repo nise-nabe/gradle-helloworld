@@ -101,6 +101,13 @@ services:
       - ./docker/jenkins/jenkins_home:/var/jenkins_home
     networks:
       - ci
+  jenkins-agent:
+    container_name: hello-jenkins-agent
+    image: jenkins/ssh-agent:jdk11
+    environment:
+      JENKINS_AGENT_SSH_PUBKEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/lGrmR+Q+XoOnyXK1Ip4VzI/P7WJdnA2oJQPF8QcUzqpQPrEgB4MY1knnDgL2X21IIl7Qjbrgw2pMFecG15W8xKk3R5a1IGUCBHovmOIKv6bUqnidKq5vWVhOcZpzA1bRFwDuHaquCWHkFrHHq/IUaI4/UllCZ7dBrDdHTXWqWL9RMbZc5H94yjU3RFUgK7MRHi4oD4Ya4LK2UDyIVKmBaktO5hCOM6+Ado11KAPdmnj5P2rquHp/OhGIoV1P4B21v4YjVCFMbz/16RgjjWSTOdJc/jmwkxDIglbT+C6r8A0QBtOq9zY25L3fXp+3BdoJFFU8ivf0E9sW67g1G0qlSUAvy3n4r1DylXH8+F96iByCuQ9HLSIuhCos7oruKQgIjLgH6vxnGILqR+gpIKvNIADAralYG7ZpdYin6mqsvm3dg52scpFuqn1z+eWb6U4pmUgxlDfay0Iw+k9ZWwc1QQdnI+94MDm89LeraRR0+eLddknyXlT85fzT4ZWpyos=
+    networks:
+      - ci
   grafana:
     container_name: hello-grafana
     image: grafana/grafana
