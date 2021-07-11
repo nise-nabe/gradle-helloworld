@@ -55,6 +55,6 @@ jobs:
             ${{ runner.os }}-gradle-kotlinjs-
       - uses: eskatos/gradle-command-action@v1.3.3
         with:
-          arguments: check --stacktrace
+          arguments: check --scan
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true
