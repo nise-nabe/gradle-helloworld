@@ -48,9 +48,9 @@ jobs:
       - <<: *restore_gradle_wrapper_cache
       - restore_cache:
           keys:
-            - v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-cache-{{ .Branch }}-
-            - v1-gradle-cache-
+            - v2-gradle-cache-{{ .Branch }}-{{ .Revision }}
+            - v2-gradle-cache-{{ .Branch }}-
+            - v2-gradle-cache-
       - restore_cache:
           keys:
             - v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
@@ -68,7 +68,7 @@ jobs:
           paths:
             - ~/.gradle/caches/module-2
             - ~/.gradle/jdks
-          key: v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
+          key: v2-gradle-cache-{{ .Branch }}-{{ .Revision }}
       - <<: *save_gradle_node_plugin_cache
       - save_cache:
           paths:
