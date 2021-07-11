@@ -16,6 +16,26 @@ save_gradle_wrapper_cache: &save_gradle_wrapper_cache
     key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
     when: always
 
+restore_gradle_caches: &restore_gradle_caches
+  restore_cache:
+    keys:
+      - v1-gradle-caches-{{ .Branch }}-{{ .Revision }}
+      - v1-gradle-caches-{{ .Branch }}-
+      - v1-gradle-caches-
+
+run_before_gradle_caches: &run_before_gradle_caches
+  run:
+    name: run before gradle caches
+    command: |
+      rm -f ~/.gradle/caches/modules-2/modules-2.lock
+      rm -rf ~/.gradle/caches/*/plugin-resolution/
+
+save_gradle_caches: &save_gradle_caches
+  save_cache:
+    paths:
+      - ~/.gradle/caches
+    key: v1-gradle-caches-{{ .Branch }}-{{ .Revision }}
+
 restore_gradle_node_plugin_cache: &restore_gradle_node_plugin_cache
   restore_cache:
     keys:
@@ -23,14 +43,12 @@ restore_gradle_node_plugin_cache: &restore_gradle_node_plugin_cache
       - v1-gradle-node-plugin-{{ .Branch }}-
       - v1-gradle-node-plugin-
 
-save_gradle_node_plugin_cache: &save_gradle_node_plugin_cache
+save_yarn_cache: &save_yarn_cache
   save_cache:
     paths:
-      - ~/.gradle/nodejs
-      - ~/.gradle/yarn
       # yarn cache config
       - ~/.yarn/cache/v6
-    key: v1-gradle-node-plugin-{{ .Branch }}-{{ .Revision }}
+    key: v1-yarn-{{ .Branch }}-{{ .Revision }}
 
 jobs:
   gradle-check:
@@ -46,34 +64,18 @@ jobs:
     steps:
       - checkout
       - <<: *restore_gradle_wrapper_cache
-      - restore_cache:
-          keys:
-            - v2-gradle-cache-{{ .Branch }}-{{ .Revision }}
-            - v2-gradle-cache-{{ .Branch }}-
-            - v2-gradle-cache-
-      - restore_cache:
-          keys:
-            - v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-build-cache-{{ .Branch }}-
-            - v1-gradle-build-cache-
+      - <<: *restore_gradle_caches
       - <<: *restore_gradle_node_plugin_cache
       - restore_cache:
           keys:
             - v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
             - v1-gradle-kotlinjs-{{ .Branch }}-
             - v1-gradle-kotlinjs-
-      - run: ./gradlew check
+      - run: ./gradlew check --scan
       - <<: *save_gradle_wrapper_cache
-      - save_cache:
-          paths:
-            - ~/.gradle/caches/module-2
-            - ~/.gradle/jdks
-          key: v2-gradle-cache-{{ .Branch }}-{{ .Revision }}
-      - <<: *save_gradle_node_plugin_cache
-      - save_cache:
-          paths:
-            - ~/.gradle/caches/build-cache-1
-          key: v1-gradle-build-cache-{{ .Branch }}-{{ .Revision }}
+      - <<: *run_before_gradle_caches
+      - <<: *save_gradle_caches
+      - <<: *save_yarn_cache
       - save_cache:
           paths:
             - build/js
