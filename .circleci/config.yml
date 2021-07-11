@@ -28,6 +28,7 @@ save_gradle_node_plugin_cache: &save_gradle_node_plugin_cache
     paths:
       - ~/.gradle/nodejs
       - ~/.gradle/yarn
+      - ~/.yarn/cache/v6
     key: v1-gradle-node-plugin-{{ .Branch }}-{{ .Revision }}
 
 jobs:
