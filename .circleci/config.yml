@@ -19,8 +19,8 @@ save_gradle_wrapper_cache: &save_gradle_wrapper_cache
 restore_gradle_caches: &restore_gradle_caches
   restore_cache:
     keys:
-      - v1-gradle-caches-{{ .Branch }}-{{ .Revision }}
-      - v1-gradle-caches-{{ .Branch }}-
+      - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+      - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-
       - v1-gradle-caches-
 
 # https://docs.gradle.org/current/userguide/travis-ci.html
@@ -35,7 +35,7 @@ save_gradle_caches: &save_gradle_caches
   save_cache:
     paths:
       - ~/.gradle/caches
-    key: v1-gradle-caches-{{ .Branch }}-{{ .Revision }}
+    key: v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
 
 restore_yarn_cache: &restore_yarn_cache
   restore_cache:
@@ -69,8 +69,8 @@ jobs:
       - <<: *restore_yarn_cache
       - restore_cache:
           keys:
-            - v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-kotlinjs-{{ .Branch }}-
+            - v1-gradle-kotlinjs-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+            - v1-gradle-kotlinjs-<< parameters.jdk-version >>-{{ .Branch }}-
             - v1-gradle-kotlinjs-
       - run: ./gradlew check --scan
       - <<: *save_gradle_wrapper_cache
@@ -80,7 +80,7 @@ jobs:
       - save_cache:
           paths:
             - build/js
-          key: v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
+          key: v1-gradle-kotlinjs-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
       - store_test_results:
           path: build/test-results/junit/
       - store_artifacts:
