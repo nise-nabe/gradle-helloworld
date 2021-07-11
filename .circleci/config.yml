@@ -23,6 +23,7 @@ restore_gradle_caches: &restore_gradle_caches
       - v1-gradle-caches-{{ .Branch }}-
       - v1-gradle-caches-
 
+# https://docs.gradle.org/current/userguide/travis-ci.html
 run_before_gradle_caches: &run_before_gradle_caches
   run:
     name: run before gradle caches
@@ -36,12 +37,12 @@ save_gradle_caches: &save_gradle_caches
       - ~/.gradle/caches
     key: v1-gradle-caches-{{ .Branch }}-{{ .Revision }}
 
-restore_gradle_node_plugin_cache: &restore_gradle_node_plugin_cache
+restore_yarn_cache: &restore_yarn_cache
   restore_cache:
     keys:
-      - v1-gradle-node-plugin-{{ .Branch }}-{{ .Revision }}
-      - v1-gradle-node-plugin-{{ .Branch }}-
-      - v1-gradle-node-plugin-
+      - v1-yarn-{{ .Branch }}-{{ .Revision }}
+      - v1-yarn-{{ .Branch }}-
+      - v1-yarn-
 
 save_yarn_cache: &save_yarn_cache
   save_cache:
@@ -65,7 +66,7 @@ jobs:
       - checkout
       - <<: *restore_gradle_wrapper_cache
       - <<: *restore_gradle_caches
-      - <<: *restore_gradle_node_plugin_cache
+      - <<: *restore_yarn_cache
       - restore_cache:
           keys:
             - v1-gradle-kotlinjs-{{ .Branch }}-{{ .Revision }}
