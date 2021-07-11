@@ -43,6 +43,10 @@ pluginManagement {
     }
 }
 
+plugins {
+    id("com.gradle.enterprise") version("3.6.3")
+}
+
 rootProject.name = "HelloWorld"
 
 includeBuild("build-platforms")
@@ -84,3 +88,10 @@ for (project in rootProject.children) {
 
 enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+gradleEnterprise {
+    buildScan {
+        termsOfServiceUrl = "https://gradle.com/terms-of-service"
+        termsOfServiceAgree = "yes"
+    }
+}
