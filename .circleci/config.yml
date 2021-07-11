@@ -1,5 +1,22 @@
 version: 2.1
 
+## cache strategy
+# gradle build cache
+# gradle wrapper
+# gradle node plugin's binary files
+
+restore_gradle_wrapper_cache: &restore_gradle_wrapper_cache
+  restore_cache:
+    key: v0-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+
+save_gradle_wrapper_cache: &save_gradle_wrapper_cache
+  save_cache:
+    paths:
+      - ~/.gradle/wrapper
+    key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+    when: always
+
+
 jobs:
   gradle-check:
     parameters:
@@ -13,8 +30,7 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - <<: *restore_gradle_wrapper_cache
       - restore_cache:
           keys:
             - v1-gradle-cache-{{ .Branch }}-{{ .Revision }}
@@ -31,11 +47,7 @@ jobs:
             - v1-gradle-kotlinjs-{{ .Branch }}-
             - v1-gradle-kotlinjs-
       - run: ./gradlew check
-      - save_cache:
-          paths:
-            - ~/.gradle/wrapper
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-          when: always
+      - <<: *save_gradle_wrapper_cache
       - save_cache:
           paths:
             - ~/.gradle/caches/module-2
