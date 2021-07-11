@@ -69,6 +69,7 @@ include("hello-asciidoc")
 include("hello-fritz2")
 include("hello-github-actions")
 include("hello-github-packages")
+include("hello-github-packages-consumer")
 
 
 for (project in rootProject.children) {
