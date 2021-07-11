@@ -13,16 +13,19 @@ node {
 val yarnTask = tasks.named<YarnTask>("yarn")
 
 val yarnNuxtBuildTask = tasks.register<YarnTask>("yarnNuxtBuild") {
+    group = "nuxt"
     dependsOn(yarnTask)
     args.set(listOf("nuxt", "build"))
 }
 
 val yarnNuxtGenerateTask = tasks.register<YarnTask>("yarnNuxtGenerate") {
+    group = "nuxt"
     dependsOn(yarnTask)
     args.set(listOf("nuxt", "generate"))
 }
 
 val yarnJest = tasks.register<YarnTask>("yarnJest") {
+    group = "verification"
     dependsOn(yarnTask)
     args.set(listOf("jest", "--passWithNoTests"))
 }
