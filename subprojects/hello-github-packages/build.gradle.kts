@@ -14,12 +14,9 @@ tasks.test {
 publishing {
     repositories {
         maven {
-            name = "gitHubPackages"
+            name = "HelloGithubPackage"
             url = uri("https://maven.pkg.github.com/nise-nabe/gradle-helloworld")
-            credentials {
-                username = project.findProperty("gpr.user")?.toString() ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key")?.toString() ?: System.getenv("TOKEN")
-            }
+            credentials(PasswordCredentials::class)
         }
     }
 
