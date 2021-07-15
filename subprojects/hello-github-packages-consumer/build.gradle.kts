@@ -22,5 +22,5 @@ repositories {
 }
 
 dependencies {
-    implementation("com.nisecoder.helloworld:hello-github-packages:1.0-SNAPSHOT")
+    implementation("com.nisecoder.helloworld:hello-github-packages:1.0")
 }
