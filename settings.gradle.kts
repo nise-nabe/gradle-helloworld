@@ -74,6 +74,7 @@ include("hello-fritz2")
 include("hello-github-actions")
 include("hello-github-packages")
 include("hello-github-packages-consumer")
+include("hello-testng")
 
 
 for (project in rootProject.children) {
