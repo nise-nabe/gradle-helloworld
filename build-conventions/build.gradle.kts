@@ -25,7 +25,7 @@ dependencies {
         because("xsd convention plugin")
     }
 
-    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:4.6.0") {
+    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.0.3") {
         because("graphql convention plugin")
     }
 
