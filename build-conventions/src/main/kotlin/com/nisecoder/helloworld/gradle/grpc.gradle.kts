@@ -13,11 +13,11 @@ plugins {
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.15.5"
+        artifact = "com.google.protobuf:protoc:3.17.3"
     }
     plugins {
         id("grpc") {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.35.0"
+            artifact = "io.grpc:protoc-gen-grpc-java:1.39.0"
         }
     }
 }
