@@ -3,7 +3,7 @@ package com.nisecoder.helloworld.gradle
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
-    java
+    application
     id("org.springframework.boot")
     id("com.nisecoder.helloworld.gradle.springboot-base")
 }
