@@ -15,7 +15,7 @@ tasks.test {
 
     maxParallelForks = (Runtime.getRuntime().availableProcessors() / 2).takeIf { it > 0 } ?: 1
     reports {
-        html.isEnabled = false
-        junitXml.isEnabled = false
+        html.required.set(false)
+        junitXml.required.set(false)
     }
 }
