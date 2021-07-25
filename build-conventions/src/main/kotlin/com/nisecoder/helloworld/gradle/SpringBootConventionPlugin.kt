@@ -1,6 +1,5 @@
 package com.nisecoder.helloworld.gradle
 
-import com.android.build.gradle.tasks.KOTLIN_KAPT_PLUGIN_ID
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPlugin
@@ -8,7 +7,6 @@ import org.gradle.api.plugins.JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME
 import org.gradle.api.plugins.JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinPluginWrapper
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
@@ -25,7 +23,7 @@ class SpringBootConventionPlugin: Plugin<Project> {
         plugins.withType<KotlinPluginWrapper> {
             plugins.apply("org.jetbrains.kotlin.plugin.spring")
             plugins.apply("org.jetbrains.kotlin.plugin.noarg")
-            plugins.apply(KOTLIN_KAPT_PLUGIN_ID)
+            plugins.apply("org.jetbrains.kotlin.kapt")
 
             dependencies.apply {
                 add("kapt", platform(SpringBootPlugin.BOM_COORDINATES))
