@@ -7,6 +7,10 @@ plugins {
 
 version = "1.1-SNAPSHOT"
 
+dependencies {
+    testImplementation(kotlin("test-junit5"))
+}
+
 tasks.test {
     useJUnitPlatform()
 }
