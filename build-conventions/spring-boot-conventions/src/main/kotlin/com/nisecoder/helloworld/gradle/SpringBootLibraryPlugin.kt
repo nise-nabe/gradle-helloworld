@@ -2,6 +2,7 @@ package com.nisecoder.helloworld.gradle
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaLibraryPlugin
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.SourceSetContainer
@@ -9,7 +10,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
 
 class SpringBootLibraryPlugin: Plugin<Project> {
     override fun apply(project: Project): Unit = project.run {
-        plugins.apply("java-library")
+        plugins.apply(JavaLibraryPlugin::class.java)
         plugins.apply(SpringBootConventionPlugin::class.java)
 
         extensions.configure<SourceSetContainer>("sourceSets") {
@@ -21,6 +22,14 @@ class SpringBootLibraryPlugin: Plugin<Project> {
                 runtimeClasspath += mainOutput
             }
 
+            // in subproject, springbootSourceSet's configuration is not created.
+            extensions.configure<JavaPluginExtension>("java") {
+                registerFeature("springboot") {
+                    usingSourceSet(springbootSourceSet)
+                }
+            }
+
+
             configurations.getByName(springbootSourceSet.implementationConfigurationName)
                 .extendsFrom(configurations.getByName(mainSourceSet.implementationConfigurationName))
             configurations.getByName(springbootSourceSet.apiConfigurationName)
@@ -28,11 +37,6 @@ class SpringBootLibraryPlugin: Plugin<Project> {
 
         }
 
-        extensions.configure<JavaPluginExtension>("java") {
-            registerFeature("springboot") {
-                usingSourceSet(sourceSets.getByName("springboot"))
-            }
-        }
 
         dependencies.add("api", dependencies.platform(BOM_COORDINATES))
         dependencies.add("springbootApi", dependencies.platform(BOM_COORDINATES))

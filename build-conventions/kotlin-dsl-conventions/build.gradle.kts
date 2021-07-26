@@ -43,16 +43,3 @@ dependencies {
 kotlinDslPluginOptions {
     jvmTarget.set(JavaVersion.VERSION_11.toString())
 }
-
-gradlePlugin {
-    plugins {
-        register("com.nisecoder.helloworld.gradle.springboot") {
-            id = "com.nisecoder.helloworld.gradle.springboot"
-            implementationClass = "com.nisecoder.helloworld.gradle.SpringBootApplicationPlugin"
-        }
-        register("com.nisecoder.helloworld.gradle.springboot-lib") {
-            id = "com.nisecoder.helloworld.gradle.springboot-lib"
-            implementationClass = "com.nisecoder.helloworld.gradle.SpringBootLibraryPlugin"
-        }
-    }
-}
