@@ -26,9 +26,9 @@ dependencyResolutionManagement {
             }
         }
 
-        google()
-
         gradlePluginPortal()
+
+        google()
     }
 
     versionCatalogs {
@@ -39,5 +39,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "build-conventions"
+
+include("kotlin-dsl-plugins")
 
 enableFeaturePreview("VERSION_CATALOGS")
