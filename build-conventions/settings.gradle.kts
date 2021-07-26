@@ -40,6 +40,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "build-conventions"
 
-include("kotlin-dsl-plugins")
+include("kotlin-dsl-conventions")
+include("spring-boot-conventions")
 
 enableFeaturePreview("VERSION_CATALOGS")
