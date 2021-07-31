@@ -82,6 +82,7 @@ include("hello-github-packages-consumer")
 include("hello-testng")
 include("hello-fluency")
 include("hello-gradle-plugin")
+include("hello-gradle-settings-plugin")
 
 
 for (project in rootProject.children) {
