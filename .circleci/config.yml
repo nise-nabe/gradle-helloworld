@@ -93,7 +93,7 @@ workflows:
       - gradle-check:
           matrix:
             parameters:
-              jdk-version: [ "11.0", "15.0" ]
+              jdk-version: [ "11.0" ]
           filters:
             branches:
               only: master
