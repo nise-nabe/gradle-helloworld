@@ -1,3 +1,8 @@
+@file:Suppress("UnstableApiUsage")
+
+enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 dependencyResolutionManagement {
     repositories {
         maven {
@@ -87,9 +92,6 @@ for (project in rootProject.children) {
 
     project.projectDir = projectPath
 }
-
-enableFeaturePreview("VERSION_CATALOGS")
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 gradleEnterprise {
     buildScan {

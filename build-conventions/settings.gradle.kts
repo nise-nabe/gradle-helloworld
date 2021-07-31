@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+enableFeaturePreview("VERSION_CATALOGS")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -44,5 +46,3 @@ rootProject.name = "build-conventions"
 
 include("kotlin-dsl-conventions")
 include("spring-boot-conventions")
-
-enableFeaturePreview("VERSION_CATALOGS")
