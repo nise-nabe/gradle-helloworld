@@ -16,7 +16,7 @@ dependencies {
 }
 
 dependencies {
-    implementation("org.apache.httpcomponents.client5:httpclient5:5.0")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.1")
 }
 
 dependencies {
@@ -25,8 +25,8 @@ dependencies {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-client-core:1.5.3")
-    implementation("io.ktor:ktor-client-cio:1.5.3")
+    implementation("io.ktor:ktor-client-core:1.6.1")
+    implementation("io.ktor:ktor-client-cio:1.6.1")
 
-    testImplementation("io.ktor:ktor-client-mock:1.5.3")
+    testImplementation("io.ktor:ktor-client-mock:1.6.1")
 }

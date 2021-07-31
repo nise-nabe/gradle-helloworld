@@ -13,5 +13,5 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-web")
 
-    implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:4.2.0")
+    implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:4.5.0")
 }

@@ -11,11 +11,11 @@ application {
 dependencies {
     implementation("io.ktor:ktor-server-core:1.6.1")
     implementation("io.ktor:ktor-server-netty:1.6.1")
-    implementation("ch.qos.logback:logback-classic:1.2.3")
+    implementation("ch.qos.logback:logback-classic:1.2.5")
 
     testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
     testImplementation("io.ktor:ktor-server-test-host:1.6.1")
 }
 
