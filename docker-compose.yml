@@ -10,14 +10,14 @@ services:
     container_name: hello-nginx
     image: nginx
     ports:
-      - 80:80
+      - "80:80"
     networks:
       - app
   redis:
     container_name: hello-redis
     image: redis
     ports:
-      - 6379:6379
+      - "6379:6379"
     networks:
       - app
   mysql:
@@ -27,7 +27,7 @@ services:
       - ./docker/mysql/datadir:/var/lib/mysql
       - ./subprojects/hello-mybatis/sql/init:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
       # see :hello-mybatis
       MYSQL_ROOT_PASSWORD: password
@@ -42,7 +42,7 @@ services:
     container_name: hello-zipkin
     image: openzipkin/zipkin
     ports:
-      - 9411:9411
+      - "9411:9411"
     networks:
       - monitoring
   centraldogma:
@@ -51,7 +51,7 @@ services:
     volumes:
       - ./docker/centraldogma/datadir:/opt/centraldogma/data
     ports:
-      - 36462:36462
+      - "36462:36462"
     networks:
       - app
   fluentd:
@@ -60,7 +60,7 @@ services:
     volumes:
       - ./docker/fluentd/log:/fluentd/log
     ports:
-      - 24224:24224
+      - "24224:24224"
     networks:
       - app
   teamcity-server:
@@ -70,7 +70,7 @@ services:
       - ./docker/teamcity_server/datadir:/data/teamcity_server/datadir
       - ./docker/teamcity_server/logs:/opt/teamcity/logs
     ports:
-      - 8111:8111
+      - "8111:8111"
     networks:
       - ci
   teamcity-agent:
@@ -95,8 +95,8 @@ services:
     container_name: hello-jenkins
     image: jenkins/jenkins:lts-jdk11
     ports:
-      - 8112:8080
-      - 50000:50000
+      - "8112:8080"
+      - "50000:50000"
     volumes:
       - ./docker/jenkins/jenkins_home:/var/jenkins_home
     networks:
@@ -114,13 +114,13 @@ services:
     volumes:
       - ./docker/grafana/datadir:/var/lib/grafana
     ports:
-    - 3000:3000
+    - "3000:3000"
     networks:
       - monitoring
   grafana-loki:
     container_name: hello-grafana-loki
     image: grafana/loki
     ports:
-      - 3100:3100
+      - "3100:3100"
     networks:
       - monitoring
