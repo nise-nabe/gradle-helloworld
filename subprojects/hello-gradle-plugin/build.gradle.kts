@@ -9,5 +9,10 @@ gradlePlugin {
             id = "com.nisecoder.helloworld.hello"
             implementationClass = "com.nisecoder.helloworld.HelloGradlePlugin"
         }
+
+        register("Hello2GradlePlugin") {
+            id = "com.nisecoder.helloworld.hello2"
+            implementationClass = "com.nisecoder.helloworld.Hello2GradlePlugin"
+        }
     }
 }
