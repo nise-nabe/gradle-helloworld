@@ -19,7 +19,6 @@ tasks.withType<KotlinCompile>().configureEach {
         apiVersion = "1.5"
         jvmTarget = JavaVersion.VERSION_11.toString()
         javaParameters = true
-        useIR = true
 
         jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
     }
