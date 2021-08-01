@@ -1,10 +1,10 @@
 [versions]
-spring-boot = "2.4.+"
+spring-boot = "2.5.+"
 protobuf = "3.15.5"
 grpc = "1.35.0"
 
 [libraries]
-spring-boot-gradle-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot"}
+spring-boot-gradle = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot"}
 spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot"}
 protoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf"}
 grpc = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpc"}
