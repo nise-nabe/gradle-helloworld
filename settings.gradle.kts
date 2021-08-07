@@ -4,6 +4,8 @@ enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+
     repositories {
         maven {
             name = "Spring Release Repository"
@@ -33,6 +35,97 @@ dependencyResolutionManagement {
             }
             filter {
                 includeModule("org.jetbrains.kotlinx", "kotlinx-html-jvm")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://maven.minecraftforge.net/")
+                }
+            }
+
+            filter {
+                includeGroup("cpw.mods")
+                includeGroup("net.minecraftforge")
+                includeGroup("net.jodah")
+            }
+
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://libraries.minecraft.net/")
+                    metadataSources {
+                        artifact()
+                    }
+                }
+            }
+
+            filter {
+                includeGroup("net.minecraft")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://www.jetbrains.com/intellij-repository/releases")
+                    metadataSources {
+                        mavenPom()
+                    }
+                    mavenContent {
+                        releasesOnly()
+                    }
+                }
+            }
+            filter {
+                includeGroup("com.jetbrains.intellij.idea")
+                includeGroup("com.jetbrains.intellij.java")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://cache-redirector.jetbrains.com/intellij-dependencies")
+                }
+            }
+            filter {
+                includeGroup("org.jetbrains.intellij.deps")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "HelloGithubPackage"
+                    url = uri("https://maven.pkg.github.com/nise-nabe/gradle-helloworld")
+                    // %HOMEPATH%/.gradle/gradle.properties
+                    credentials(PasswordCredentials::class)
+                }
+            }
+            filter {
+                includeModule("com.nisecoder.helloworld", "hello-github-packages")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                ivy {
+                    name = "Node.js"
+                    setUrl("https://nodejs.org/dist/")
+                    patternLayout {
+                        artifact("v[revision]/[artifact](-v[revision]-[classifier]).[ext]")
+                    }
+                    metadataSources {
+                        artifact()
+                    }
+                }
+            }
+            filter {
+                includeModule("org.nodejs", "node")
             }
         }
 
