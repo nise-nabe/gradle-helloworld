@@ -40,6 +40,8 @@ dependencies {
     implementation("dev.fritz2:fritz2-gradle-plugin:0.11")
 
     implementation("net.minecraftforge.gradle:ForgeGradle:5.1.18")
+
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.1.4")
 }
 
 kotlinDslPluginOptions {
