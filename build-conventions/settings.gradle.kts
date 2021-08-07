@@ -33,6 +33,18 @@ dependencyResolutionManagement {
         gradlePluginPortal()
 
         google()
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://maven.minecraftforge.net")
+                }
+            }
+            filter {
+                includeGroup("net.minecraftforge.gradle")
+                includeGroup("net.minecraftforge")
+            }
+        }
     }
 
     versionCatalogs {

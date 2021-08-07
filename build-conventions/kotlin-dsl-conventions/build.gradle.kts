@@ -38,6 +38,8 @@ dependencies {
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.17.1")
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.11")
+
+    implementation("net.minecraftforge.gradle:ForgeGradle:5.1.18")
 }
 
 kotlinDslPluginOptions {

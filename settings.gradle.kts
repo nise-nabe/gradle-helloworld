@@ -45,6 +45,17 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://maven.minecraftforge.net")
+                }
+            }
+            filter {
+                includeGroup("net.minecraftforge.gradle")
+                includeGroup("net.minecraftforge")
+            }
+        }
     }
 }
 
@@ -83,6 +94,7 @@ include("hello-testng")
 include("hello-fluency")
 include("hello-gradle-plugin")
 include("hello-gradle-settings-plugin")
+include("hello-minecraft-forge-mod")
 
 
 for (project in rootProject.children) {
