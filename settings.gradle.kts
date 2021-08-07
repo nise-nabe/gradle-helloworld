@@ -95,6 +95,7 @@ include("hello-fluency")
 include("hello-gradle-plugin")
 include("hello-gradle-settings-plugin")
 include("hello-minecraft-forge-mod")
+include("hello-intellij-idea-plugin")
 
 
 for (project in rootProject.children) {
