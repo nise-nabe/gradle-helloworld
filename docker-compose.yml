@@ -124,3 +124,8 @@ services:
       - "3100:3100"
     networks:
       - monitoring
+  intellij-idea:
+    container_name: hello-intellij-idea
+    image: registry.jetbrains.team/p/prj/containers/projector-idea-c
+    ports:
+      - "8887:8887"
