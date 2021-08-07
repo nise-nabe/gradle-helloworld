@@ -3,6 +3,6 @@ plugins {
 }
 
 intellij {
-    version.set("IC-2021.1.3")
+    version.set("IC-2021.2")
     configureDefaultDependencies.set(false)
 }
