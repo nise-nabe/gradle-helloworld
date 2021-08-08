@@ -220,14 +220,20 @@ include("hello-gradle-plugin")
 include("hello-gradle-settings-plugin")
 include("hello-minecraft-forge-mod")
 include("hello-minecraft-spigot-mod")
-include("hello-intellij-idea-plugin")
+include("hello-intellij-idea-plugin-simple")
 
 
 for (project in rootProject.children) {
-    val projectPath = if (project.name.startsWith("hello-springboot")) {
-        file("subprojects/springboot/${project.name}")
-    } else {
-        file("subprojects/${project.name}")
+    val projectPath = when {
+        project.name.startsWith("hello-springboot") -> {
+            file("subprojects/springboot/${project.name}")
+        }
+        project.name.startsWith("hello-intellij-idea-plugin") -> {
+            file("subprojects/intellij-idea-plugin/${project.name}")
+        }
+        else -> {
+            file("subprojects/${project.name}")
+        }
     }
 
     project.projectDir = projectPath
