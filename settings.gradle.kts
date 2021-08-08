@@ -129,6 +129,20 @@ dependencyResolutionManagement {
             }
         }
 
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+                }
+            }
+
+            filter {
+                includeGroup("org.spigotmc")
+                includeGroup("org.bukkit")
+            }
+
+        }
+
         mavenCentral()
     }
 }
@@ -188,6 +202,7 @@ include("hello-fluency")
 include("hello-gradle-plugin")
 include("hello-gradle-settings-plugin")
 include("hello-minecraft-forge-mod")
+include("hello-minecraft-spigot-mod")
 include("hello-intellij-idea-plugin")
 
 
