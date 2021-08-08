@@ -87,13 +87,5 @@ gradlePlugin {
             id = "com.nisecoder.helloworld.gradle.minecraft-mod"
             implementationClass = "com.nisecoder.helloworld.gradle.MinecraftModPlugin"
         }
-        register("test-service") {
-            id = "com.nisecoder.helloworld.gradle.test-service"
-            implementationClass = "com.nisecoder.helloworld.gradle.TestServicePlugin"
-        }
-        register("grpc-resolvable") {
-            id = "com.nisecoder.helloworld.gradle.grpc-resolvable"
-            implementationClass = "com.nisecoder.helloworld.gradle.GrpcResolvablePlugin"
-        }
     }
 }
