@@ -3,6 +3,14 @@ plugins {
     `java-gradle-plugin`
 }
 
+java {
+    toolchain {
+        @Suppress("MagicNumber")
+        languageVersion.set(JavaLanguageVersion.of(11))
+        vendor.set(JvmVendorSpec.ADOPTOPENJDK)
+    }
+}
+
 dependencies {
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.0")
 
