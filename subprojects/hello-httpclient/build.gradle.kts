@@ -25,8 +25,11 @@ dependencies {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-client-core:1.6.1")
-    implementation("io.ktor:ktor-client-cio:1.6.1")
+    implementation(platform("io.ktor:ktor-bom:1.6.1"))
+    testImplementation(platform("io.ktor:ktor-bom:1.6.1"))
 
-    testImplementation("io.ktor:ktor-client-mock:1.6.1")
+    implementation("io.ktor:ktor-client-core")
+    implementation("io.ktor:ktor-client-cio")
+
+    testImplementation("io.ktor:ktor-client-mock")
 }

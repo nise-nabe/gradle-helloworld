@@ -9,14 +9,17 @@ application {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core:1.6.1")
-    implementation("io.ktor:ktor-server-netty:1.6.1")
+    implementation(platform("io.ktor:ktor-bom:1.6.1"))
+    testImplementation(platform("io.ktor:ktor-bom:1.6.1"))
+
+    implementation("io.ktor:ktor-server-core")
+    implementation("io.ktor:ktor-server-netty")
     implementation("ch.qos.logback:logback-classic:1.2.5")
 
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
-    testImplementation("io.ktor:ktor-server-test-host:1.6.1")
+    testImplementation("io.ktor:ktor-server-test-host")
 }
 
 tasks.test {
