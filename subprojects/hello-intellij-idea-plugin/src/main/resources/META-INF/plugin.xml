@@ -1,0 +1,9 @@
+<idea-plugin url="https://www.jetbrains.com/idea">
+    <id>com.nisecoder.helloworld.intellij.plugin</id>
+    <name>Hello World</name>
+    <vendor>nise_nabe</vendor>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.nisecoder.helloworld.intellij.plugin.service.MyApplicationService"/>
+    </extensions>
+</idea-plugin>
