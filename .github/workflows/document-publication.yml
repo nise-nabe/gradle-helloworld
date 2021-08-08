@@ -25,8 +25,8 @@ jobs:
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true
         env:
-          org_gradle_project_hellogithubpackageusername: ${{ github.actor }}
-          org_gradle_project_hellogithubpackagepassword: ${{ secrets.github_token }}
+          ORG_GRADLE_PROJECT_HelloGithubPackageUsername: ${{ github.actor }}
+          ORG_GRADLE_PROJECT_HelloGithubPackagePassword: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish Document to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
