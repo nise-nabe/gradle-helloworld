@@ -57,4 +57,5 @@ dependencyResolutionManagement {
 rootProject.name = "build-conventions"
 
 include("kotlin-dsl-conventions")
+include("java-plugin-conventions")
 include("spring-boot-conventions")
