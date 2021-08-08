@@ -50,7 +50,6 @@ dependencyResolutionManagement {
                 includeGroup("net.minecraftforge")
                 includeGroup("net.jodah")
             }
-
         }
 
         exclusiveContent {
@@ -94,6 +93,24 @@ dependencyResolutionManagement {
             }
             filter {
                 includeGroup("org.jetbrains.intellij.deps")
+            }
+        }
+
+        // for intellij idea plugin's jetbrains runtime jre repository
+        exclusiveContent {
+            forRepository {
+                ivy {
+                    url = uri("https://cache-redirector.jetbrains.com/intellij-jbr")
+                    patternLayout {
+                        artifact("[revision].tar.gz")
+                    }
+                    metadataSources {
+                        artifact()
+                    }
+                }
+            }
+            filter {
+                includeModule("com.jetbrains", "jbre")
             }
         }
 
