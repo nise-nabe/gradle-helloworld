@@ -47,6 +47,7 @@ dependencies {
     implementation("net.minecraftforge.gradle:ForgeGradle:5.1.18")
 
     implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.1.4")
+    implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.2.1")
 }
 
 gradlePlugin {
