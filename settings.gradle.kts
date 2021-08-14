@@ -120,6 +120,8 @@ dependencyResolutionManagement {
                     name = "HelloGithubPackage"
                     url = uri("https://maven.pkg.github.com/nise-nabe/gradle-helloworld")
                     // %HOMEPATH%/.gradle/gradle.properties
+                    // HelloGithubPackageUsername=
+                    // HelloGithubPackagePassword=
                     credentials(PasswordCredentials::class)
                 }
             }
