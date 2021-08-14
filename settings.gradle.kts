@@ -223,6 +223,7 @@ include("hello-gradle-settings-plugin")
 include("hello-minecraft-forge-mod")
 include("hello-minecraft-spigot-mod")
 include("hello-intellij-idea-plugin-simple")
+include("hello-intellij-idea-plugin-new-project-wizard")
 
 
 for (project in rootProject.children) {

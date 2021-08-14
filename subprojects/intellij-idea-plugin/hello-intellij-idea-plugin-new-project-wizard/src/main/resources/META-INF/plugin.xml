@@ -1,0 +1,9 @@
+<idea-plugin url="https://www.jetbrains.com/idea">
+    <id>com.nisecoder.helloworld.intellij.plugin.new.project.wizard</id>
+    <name>New Project Wizard</name>
+    <vendor>nise_nabe</vendor>
+
+    <moduleType id="MY_MODULE" implementationClass="com.nisecoder.helloworld.intellij.plugin.module.MyNewProjectWizardModule"/>
+    <extensions defaultExtensionNs="com.intellij.newProjectWizard">
+    </extensions>
+</idea-plugin>
