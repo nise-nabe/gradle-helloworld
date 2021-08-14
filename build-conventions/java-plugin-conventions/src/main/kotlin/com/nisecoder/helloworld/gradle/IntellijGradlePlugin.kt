@@ -1,19 +1,26 @@
 package com.nisecoder.helloworld.gradle
 
+import org.apache.tools.ant.taskdefs.cvslib.ChangeLogTask
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.named
+import org.gradle.kotlin.dsl.provideDelegate
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.changelog.ChangelogPlugin
+import org.jetbrains.changelog.ChangelogPluginExtension
 import org.jetbrains.intellij.IntelliJPlugin
 import org.jetbrains.intellij.IntelliJPluginExtension
+import org.jetbrains.intellij.tasks.PatchPluginXmlTask
 import org.jetbrains.intellij.tasks.RunIdeTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class IntellijGradlePlugin: Plugin<Project> {
     override fun apply(project: Project): Unit = project.run {
         plugins.apply(IntelliJPlugin::class)
+        plugins.apply(ChangelogPlugin::class)
 
         tasks.withType<KotlinCompile>().configureEach {
             kotlinOptions {
@@ -32,6 +39,11 @@ class IntellijGradlePlugin: Plugin<Project> {
             downloadSources.set(true)
             updateSinceUntilBuild.set(true)
             sameSinceUntilBuild.set(true)
+        }
+
+        tasks.named<PatchPluginXmlTask>("patchPluginXml") {
+            val changelog: ChangelogPluginExtension = extensions.getByType()
+            changeNotes.set(provider { changelog.getLatest().toHTML() })
         }
 
         tasks.named<RunIdeTask>("runIde") {
