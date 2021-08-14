@@ -10,7 +10,11 @@ node {
     version.set("16.6.1")
 }
 
-val yarnTask = tasks.named<YarnTask>("yarn")
+val yarnTask = tasks.named<YarnTask>("yarn") {
+    if ((System.getenv("CI") ?: "") == "true") {
+        args.add("--frozen-lockfile")
+    }
+}
 
 val yarnNuxtBuildTask = tasks.register<YarnTask>("yarnNuxtBuild") {
     group = "nuxt"
