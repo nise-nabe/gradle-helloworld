@@ -5,6 +5,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.getByName
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.named
 import org.gradle.kotlin.dsl.provideDelegate
@@ -41,8 +42,8 @@ class IntellijGradlePlugin: Plugin<Project> {
             sameSinceUntilBuild.set(true)
         }
 
+        val changelog: ChangelogPluginExtension = extensions.getByType()
         tasks.named<PatchPluginXmlTask>("patchPluginXml") {
-            val changelog: ChangelogPluginExtension = extensions.getByType()
             changeNotes.set(provider { changelog.getLatest().toHTML() })
         }
 
