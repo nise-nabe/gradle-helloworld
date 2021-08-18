@@ -19,7 +19,7 @@ jobs:
           java-version: 11
 
       - name: Generate Document
-        uses: gradle/gradle-build-action@v1.3.3
+        uses: gradle/gradle-build-action@v1.4.1
         with:
           arguments: asciidoctor
           wrapper-cache-enabled: true
