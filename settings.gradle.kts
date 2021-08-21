@@ -88,7 +88,7 @@ dependencyResolutionManagement {
         exclusiveContent {
             forRepository {
                 maven {
-                    url = uri("https://cache-redirector.jetbrains.com/intellij-dependencies")
+                    url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-dependencies")
                 }
             }
             filter {
