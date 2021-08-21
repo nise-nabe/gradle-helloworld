@@ -12,7 +12,7 @@ import org.jetbrains.changelog.ChangelogPluginExtension
 import org.jetbrains.intellij.IntelliJPlugin
 import org.jetbrains.intellij.IntelliJPluginExtension
 import org.jetbrains.intellij.tasks.PatchPluginXmlTask
-import org.jetbrains.intellij.tasks.RunIdeTask
+import org.jetbrains.intellij.tasks.RunIdeBase
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class IntellijGradlePlugin: Plugin<Project> {
@@ -44,7 +44,7 @@ class IntellijGradlePlugin: Plugin<Project> {
             changeNotes.set(provider { changelog.getLatest().toHTML() })
         }
 
-        tasks.named<RunIdeTask>("runIde") {
+        tasks.withType<RunIdeBase>().configureEach {
             // avoid warning log
             jvmArgs("--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
         }
