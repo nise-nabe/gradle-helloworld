@@ -93,6 +93,7 @@ dependencyResolutionManagement {
             }
             filter {
                 includeGroup("org.jetbrains.intellij.deps")
+                includeGroup("com.intellij.remoterobot")
             }
         }
 
