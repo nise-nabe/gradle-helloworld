@@ -3,7 +3,11 @@
     <name>New Project Wizard</name>
     <vendor>nise_nabe</vendor>
 
-    <moduleType id="MY_MODULE" implementationClass="com.nisecoder.helloworld.intellij.plugin.module.MyNewProjectWizardModule"/>
-    <extensions defaultExtensionNs="com.intellij.newProjectWizard">
+    <extensions defaultExtensionNs="com.intellij">
+        <moduleBuilder
+                builderClass="com.nisecoder.helloworld.intellij.plugin.module.MyNewProjectWizardModuleBuilder"
+                id="HELLO_STEP"
+                order="first"
+        />
     </extensions>
 </idea-plugin>

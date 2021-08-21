@@ -42,6 +42,13 @@ class IntellijGradlePlugin: Plugin<Project> {
 
         val intellij = extensions.getByType<IntelliJPluginExtension>()
 
+        afterEvaluate {
+            // instead of IntellijPluginExtension.configurationDefaultDependencies
+            intellij.ideaDependency.get().jarFiles.forEach {
+                dependencies.add("compileOnly", files(it.toPath()))
+            }
+        }
+
         val changelog: ChangelogPluginExtension = extensions.getByType()
         tasks.named<PatchPluginXmlTask>("patchPluginXml") {
             changeNotes.set(provider { changelog.getLatest().toHTML() })
