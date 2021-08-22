@@ -70,7 +70,7 @@ dependencyResolutionManagement {
         exclusiveContent {
             forRepository {
                 maven {
-                    url = uri("https://www.jetbrains.com/intellij-repository/releases")
+                    url = uri("https://cache-redirector.jetbrains.com/intellij-repository/releases")
                     metadataSources {
                         mavenPom()
                     }
@@ -88,7 +88,7 @@ dependencyResolutionManagement {
         exclusiveContent {
             forRepository {
                 maven {
-                    url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-dependencies")
+                    url = uri("https://cache-redirector.jetbrains.com/intellij-dependencies")
                 }
             }
             filter {
