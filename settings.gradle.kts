@@ -225,6 +225,7 @@ include("hello-minecraft-forge-mod")
 include("hello-minecraft-spigot-mod")
 include("hello-intellij-idea-plugin-simple")
 include("hello-intellij-idea-plugin-new-project-wizard")
+include("hello-exposed")
 
 
 for (project in rootProject.children) {
