@@ -28,6 +28,7 @@ class MyNewProjectWizardModuleBuilder: ModuleBuilder() {
                 return JLabel("Put your content here")
             }
 
+            @Suppress("detekt.empty-blocks.EmptyFunctionBlock")
             override fun updateDataModel() {}
         }
         )
