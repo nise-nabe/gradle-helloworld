@@ -22,7 +22,7 @@ jobs:
         uses: gradle/gradle-build-action@v1.4.1
         with:
           arguments: asciidoctor
-          wrapper-cache-enabled: true
+          distributions-cache-enabled: true
           dependencies-cache-enabled: true
         env:
           GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs=--illegal-access=permit"
