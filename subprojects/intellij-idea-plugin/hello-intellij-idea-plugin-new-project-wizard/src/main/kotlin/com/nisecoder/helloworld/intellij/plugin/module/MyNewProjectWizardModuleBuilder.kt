@@ -28,7 +28,7 @@ class MyNewProjectWizardModuleBuilder: ModuleBuilder() {
                 return JLabel("Put your content here")
             }
 
-            @Suppress("empty-blocks.EmptyFunctionBlock")
+            @Suppress("EmptyFunctionBlock")
             override fun updateDataModel() {}
         }
         )
