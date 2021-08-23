@@ -225,6 +225,8 @@ include("hello-minecraft-forge-mod")
 include("hello-minecraft-spigot-mod")
 include("hello-intellij-idea-plugin-simple")
 include("hello-intellij-idea-plugin-new-project-wizard")
+include("hello-intellij-idea-plugin-new-framework")
+include("hello-intellij-idea-plugin-tool-window")
 include("hello-exposed")
 
 
