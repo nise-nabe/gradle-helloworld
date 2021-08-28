@@ -21,6 +21,7 @@ class RootBuildPlugin: Plugin<Project> {
         plugins.apply(IdeaExtPlugin::class)
         plugins.apply(AsciidocPlugin::class)
         plugins.apply(CodeQualityPlugin::class)
+        plugins.apply(IntellijSharedIndexPlugin::class)
 
 
         tasks.withType<Wrapper> {
