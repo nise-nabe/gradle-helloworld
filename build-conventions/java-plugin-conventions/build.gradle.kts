@@ -1,4 +1,5 @@
 plugins {
+    idea
     `kotlin-dsl-base`
     `java-gradle-plugin`
 }
@@ -8,6 +9,13 @@ java {
         @Suppress("MagicNumber")
         languageVersion.set(JavaLanguageVersion.of(11))
         vendor.set(JvmVendorSpec.ADOPTOPENJDK)
+    }
+}
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
     }
 }
 
