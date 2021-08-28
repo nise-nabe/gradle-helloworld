@@ -8,17 +8,19 @@ import org.gradle.api.plugins.ExtensionAware
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.wrapper.Wrapper
+import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.gradle.ext.IdeaExtPlugin
 import java.util.concurrent.TimeUnit
 
 class RootBuildPlugin: Plugin<Project> {
     override fun apply(project: Project): Unit = project.run {
-        plugins.apply("org.jetbrains.gradle.plugin.idea-ext")
-        plugins.apply("com.nisecoder.helloworld.gradle.asciidoc")
-        plugins.apply("com.nisecoder.helloworld.gradle.code-quality")
+        plugins.apply(IdeaExtPlugin::class)
+        plugins.apply(AsciidocPlugin::class)
+        plugins.apply(CodeQualityPlugin::class)
 
 
         tasks.withType<Wrapper> {
