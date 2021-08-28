@@ -36,8 +36,8 @@ class KotlinPlugin: Plugin<Project> {
         }
 
         dependencies.apply {
-            add("implementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.21"))
-            add("testImplementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.21"))
+            add("implementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.30"))
+            add("testImplementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.30"))
             add("testImplementation", kotlin("test"))
         }
 
