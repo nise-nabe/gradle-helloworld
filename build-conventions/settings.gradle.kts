@@ -30,6 +30,17 @@ dependencyResolutionManagement {
             }
         }
 
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-shared-indexes-public/")
+                }
+            }
+            filter {
+                includeGroup("com.jetbrains.intellij.indexing.shared")
+            }
+        }
+
         gradlePluginPortal()
 
         google()
