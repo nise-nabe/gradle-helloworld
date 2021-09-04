@@ -47,6 +47,11 @@ class IntellijGradlePlugin: Plugin<Project> {
             intellij.ideaDependency.get().jarFiles.forEach {
                 dependencies.add("compileOnly", files(it.toPath()))
             }
+            intellij.pluginDependencies.get().forEach { plugin ->
+                plugin.jarFiles.forEach {
+                    dependencies.add("compileOnly", files(it.toPath()))
+                }
+            }
         }
 
         val changelog: ChangelogPluginExtension = extensions.getByType()
