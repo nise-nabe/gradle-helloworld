@@ -110,5 +110,9 @@ gradlePlugin {
             id = "com.nisecoder.hello.gradle.intellij-runner"
             implementationClass = "com.nisecoder.helloworld.gradle.IntellijRunnerPlugin"
         }
+        register("shared-index") {
+            id = "com.nisecoder.hello.gradle.shared-index"
+            implementationClass = "com.nisecoder.helloworld.gradle.IntellijSharedIndexPlugin"
+        }
     }
 }
