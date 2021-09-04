@@ -118,6 +118,17 @@ dependencyResolutionManagement {
         exclusiveContent {
             forRepository {
                 maven {
+                    url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-shared-indexes-public/")
+                }
+            }
+            filter {
+                includeGroup("com.jetbrains.intellij.indexing.shared")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
                     name = "HelloGithubPackage"
                     url = uri("https://maven.pkg.github.com/nise-nabe/gradle-helloworld")
                     // %HOMEPATH%/.gradle/gradle.properties
@@ -192,6 +203,24 @@ pluginManagement {
             }
             filter {
                 includeGroup("com.jetbrains.intellij.indexing.shared")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://cache-redirector.jetbrains.com/intellij-repository/releases")
+                    metadataSources {
+                        mavenPom()
+                    }
+                    mavenContent {
+                        releasesOnly()
+                    }
+                }
+            }
+            filter {
+                includeGroup("com.jetbrains.intellij.idea")
+                includeGroup("com.jetbrains.intellij.java")
             }
         }
     }

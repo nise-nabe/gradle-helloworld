@@ -41,6 +41,24 @@ dependencyResolutionManagement {
             }
         }
 
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://cache-redirector.jetbrains.com/intellij-repository/releases")
+                    metadataSources {
+                        mavenPom()
+                    }
+                    mavenContent {
+                        releasesOnly()
+                    }
+                }
+            }
+            filter {
+                includeGroup("com.jetbrains.intellij.idea")
+                includeGroup("com.jetbrains.intellij.java")
+            }
+        }
+
         gradlePluginPortal()
 
         google()

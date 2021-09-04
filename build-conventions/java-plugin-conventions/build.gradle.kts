@@ -106,5 +106,9 @@ gradlePlugin {
             id = "com.nisecoder.helloworld.gradle.minecraft-mod"
             implementationClass = "com.nisecoder.helloworld.gradle.MinecraftModPlugin"
         }
+        register("intellij-runner") {
+            id = "com.nisecoder.hello.gradle.intellij-runner"
+            implementationClass = "com.nisecoder.helloworld.gradle.IntellijRunnerPlugin"
+        }
     }
 }
