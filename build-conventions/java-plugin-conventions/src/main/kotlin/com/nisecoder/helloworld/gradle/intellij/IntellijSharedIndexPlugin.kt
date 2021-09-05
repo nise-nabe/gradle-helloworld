@@ -3,7 +3,6 @@ package com.nisecoder.helloworld.gradle.intellij
 import com.nisecoder.helloworld.gradle.intellij.task.IntellijRunnerTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.Task
 import org.gradle.api.artifacts.Configuration
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.JavaExec
@@ -19,38 +18,12 @@ class IntellijSharedIndexPlugin: Plugin<Project> {
 
         val sharedIndexDir = buildDir.resolve("shared-index")
 
-        val setupTask = registerSetupSharedIndex(sharedIndexDir)
-        val generateSharedIndexTask = registerGenerateSharedIndexTask(sharedIndexDir) {
-            dependsOn(setupTask)
-        }
+        val generateSharedIndexTask = registerGenerateSharedIndexTask(sharedIndexDir)
         registerCdnLayoutTask(sharedIndexDir) {
             dependsOn(generateSharedIndexTask)
         }
     }
 
-    private fun Project.registerSetupSharedIndex(sharedIndexDir: File): TaskProvider<Task> {
-        return tasks.register("setupSharedIndex") {
-            group = "intellij shared index"
-
-            sharedIndexDir.mkdir()
-
-            val ideConfigDir = sharedIndexDir.resolve("ide-config").apply { mkdir() }
-            val ideLogDir = sharedIndexDir.resolve("ide-log").apply { mkdir() }
-            val ideSystem = sharedIndexDir.resolve("ide-system").apply { mkdir() }
-            val ideProperties = sharedIndexDir.resolve("ide.properties")
-            sharedIndexDir.resolve("generate-output").apply { mkdir() }
-
-            ideProperties.createNewFile()
-            val propertyFile = IntellijSharedIndexPlugin::class.java.getResourceAsStream("/shared-index/win/ide.properties")
-            propertyFile?.copyTo(ideProperties.outputStream())
-            // language=properties
-            ideProperties.appendText("""
-                idea.system.path=${ideSystem.absolutePath.escapePath()}
-                idea.config.path=${ideConfigDir.absolutePath.escapePath()}
-                idea.log.path=${ideLogDir.absolutePath.escapePath()}
-            """.trimIndent())
-        }
-    }
 
     /**
      * <IDE command-line launcher> dump-shared-index project
@@ -64,16 +37,21 @@ class IntellijSharedIndexPlugin: Plugin<Project> {
         sharedIndexDir: File,
         block: JavaExec.() -> Unit = {}
     ): TaskProvider<out JavaExec> {
-        val intellijRunnerConfiguration: Configuration = configurations.getByName("intellijRunner")
 
         return tasks.register<IntellijRunnerTask>("generateSharedIndex") {
-            classpath = files(intellijRunnerConfiguration.resolve())
+            intellijRunnerConfiguration = configurations.getByName("intellijRunner")
 
-            environment.put("IDEA_PROPERTIES", "")
+            ideaPropertiesFile = sharedIndexDir.resolve("ide.properties")
 
             args = listOf(
                 "dump-shared-index",
-                "project"
+                "project",
+
+                "--output=${sharedIndexDir.absolutePath}\\generate-output",
+                "--tmp=${sharedIndexDir.absolutePath}\\temp",
+                "--project-dir=${projectDir.absolutePath}",
+                "--project-id=${project.name}",
+                "--commit=-",
             )
 
             block()
@@ -103,6 +81,4 @@ class IntellijSharedIndexPlugin: Plugin<Project> {
             block()
         }
     }
-
-    private fun String.escapePath(): String = replace("\\", "/")
 }
