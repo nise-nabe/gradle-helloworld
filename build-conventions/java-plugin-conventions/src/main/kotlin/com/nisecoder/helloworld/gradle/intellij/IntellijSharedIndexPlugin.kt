@@ -1,4 +1,4 @@
-package com.nisecoder.helloworld.gradle
+package com.nisecoder.helloworld.gradle.intellij
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

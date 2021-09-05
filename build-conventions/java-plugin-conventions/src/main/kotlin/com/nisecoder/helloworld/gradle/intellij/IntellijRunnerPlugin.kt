@@ -1,4 +1,4 @@
-package com.nisecoder.helloworld.gradle
+package com.nisecoder.helloworld.gradle.intellij
 
 import com.nisecoder.helloworld.gradle.transform.LibDirectoryTransform
 import com.nisecoder.helloworld.gradle.transform.UnzipTransform

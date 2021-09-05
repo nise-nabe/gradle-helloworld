@@ -92,7 +92,7 @@ gradlePlugin {
         }
         register("intellij-gradle-plugin") {
             id = "com.nisecoder.helloworld.gradle.intellij-gradle-plugin"
-            implementationClass = "com.nisecoder.helloworld.gradle.IntellijGradlePlugin"
+            implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijGradlePlugin"
         }
         register("nodejs") {
             id = "com.nisecoder.helloworld.gradle.nodejs"
@@ -108,11 +108,11 @@ gradlePlugin {
         }
         register("intellij-runner") {
             id = "com.nisecoder.hello.gradle.intellij-runner"
-            implementationClass = "com.nisecoder.helloworld.gradle.IntellijRunnerPlugin"
+            implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijRunnerPlugin"
         }
         register("shared-index") {
             id = "com.nisecoder.hello.gradle.shared-index"
-            implementationClass = "com.nisecoder.helloworld.gradle.IntellijSharedIndexPlugin"
+            implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijSharedIndexPlugin"
         }
     }
 }

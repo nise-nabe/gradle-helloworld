@@ -1,5 +1,6 @@
 package com.nisecoder.helloworld.gradle
 
+import com.nisecoder.helloworld.gradle.intellij.IntellijSharedIndexPlugin
 import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
