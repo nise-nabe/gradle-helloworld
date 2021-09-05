@@ -1,5 +1,6 @@
 package com.nisecoder.helloworld.gradle.intellij
 
+import com.nisecoder.helloworld.gradle.intellij.task.IntellijRunnerTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
@@ -59,12 +60,13 @@ class IntellijSharedIndexPlugin: Plugin<Project> {
      *   --project-id=<project-name>
      *   --commit=<Git HEAD>
      */
-    private fun Project.registerGenerateSharedIndexTask(sharedIndexDir: File, block: JavaExec.() -> Unit = {}): TaskProvider<JavaExec> {
+    private fun Project.registerGenerateSharedIndexTask(
+        sharedIndexDir: File,
+        block: JavaExec.() -> Unit = {}
+    ): TaskProvider<out JavaExec> {
         val intellijRunnerConfiguration: Configuration = configurations.getByName("intellijRunner")
 
-        return tasks.register<JavaExec>("generateSharedIndex") {
-            group = "intellij"
-            mainClass.set("com.intellij.idea.Main")
+        return tasks.register<IntellijRunnerTask>("generateSharedIndex") {
             classpath = files(intellijRunnerConfiguration.resolve())
 
             environment.put("IDEA_PROPERTIES", "")

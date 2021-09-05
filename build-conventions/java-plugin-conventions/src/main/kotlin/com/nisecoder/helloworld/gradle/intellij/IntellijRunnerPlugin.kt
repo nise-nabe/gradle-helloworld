@@ -1,5 +1,6 @@
 package com.nisecoder.helloworld.gradle.intellij
 
+import com.nisecoder.helloworld.gradle.intellij.task.IntellijRunnerTask
 import com.nisecoder.helloworld.gradle.transform.LibDirectoryTransform
 import com.nisecoder.helloworld.gradle.transform.UnzipTransform
 import org.gradle.api.Plugin
@@ -36,9 +37,7 @@ class IntellijRunnerPlugin: Plugin<Project> {
             it.attributes.attribute(artifactType, ArtifactTypeDefinition.JAR_TYPE)
         }
 
-        tasks.register<JavaExec>("intellijRun") {
-            group = "intellij"
-            mainClass.set("com.intellij.idea.Main")
+        tasks.register<IntellijRunnerTask>("intellijRun") {
             classpath = files(ideaRunnerConfiguration.resolve())
         }
     }
