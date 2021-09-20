@@ -31,7 +31,7 @@ class IntellijGradlePlugin: Plugin<Project> {
         }
 
         extensions.configure<IntelliJPluginExtension>("intellij") {
-            version.set("IC-2021.2")
+            version.set("IC-2021.2.2")
             configureDefaultDependencies.set(false)
 
             type.set("IC")
