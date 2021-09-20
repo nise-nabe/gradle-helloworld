@@ -9,8 +9,8 @@ application {
 }
 
 dependencies {
-    implementation(platform("io.ktor:ktor-bom:1.6.2"))
-    testImplementation(platform("io.ktor:ktor-bom:1.6.2"))
+    implementation(platform("io.ktor:ktor-bom:1.6.3"))
+    testImplementation(platform("io.ktor:ktor-bom:1.6.3"))
 
     implementation("io.ktor:ktor-server-core")
     implementation("io.ktor:ktor-server-netty")
