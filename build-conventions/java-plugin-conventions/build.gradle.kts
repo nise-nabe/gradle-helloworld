@@ -54,7 +54,7 @@ dependencies {
 
     implementation("net.minecraftforge.gradle:ForgeGradle:5.1.18")
 
-    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.1.4")
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.1.6")
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.2.1")
 
     implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.60")
