@@ -6,6 +6,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.named
+import org.gradle.kotlin.dsl.provideDelegate
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.changelog.ChangelogPlugin
 import org.jetbrains.changelog.ChangelogPluginExtension
@@ -31,10 +32,14 @@ class IntellijGradlePlugin: Plugin<Project> {
         }
 
         extensions.configure<IntelliJPluginExtension>("intellij") {
-            version.set("IC-2021.2.2")
+            version.set("2021.2.2")
             configureDefaultDependencies.set(false)
+            if (project.hasProperty("intellijLocalPath")) {
+                val intellijLocalPath: String by project
+                localPath.set(intellijLocalPath)
+            }
 
-            type.set("IC")
+            type.set("IU")
             downloadSources.set(true)
             updateSinceUntilBuild.set(true)
             sameSinceUntilBuild.set(true)
