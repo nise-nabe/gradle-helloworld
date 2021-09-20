@@ -17,9 +17,7 @@ dependencies {
 idea {
     module {
         settings {
-            packagePrefix {
-                this["src/main/kotlin"] = "com.nisecoder.helloworld"
-            }
+            packagePrefix["src/main/kotlin"] = "com.nisecoder.helloworld"
         }
     }
 }
