@@ -7,7 +7,7 @@ plugins {
 
 node {
     download.set(true)
-    version.set("16.6.1")
+    version.set("16.9.1")
 }
 
 val yarnTask = tasks.named<YarnTask>("yarn") {
