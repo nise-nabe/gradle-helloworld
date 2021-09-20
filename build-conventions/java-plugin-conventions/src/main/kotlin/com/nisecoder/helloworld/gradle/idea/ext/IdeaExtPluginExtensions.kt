@@ -3,6 +3,8 @@ package com.nisecoder.helloworld.gradle.idea.ext
 
 import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.get
+import org.gradle.kotlin.dsl.getByType
 import org.gradle.plugins.ide.idea.model.IdeaModule
 import org.gradle.plugins.ide.idea.model.IdeaProject
 import org.jetbrains.gradle.ext.ActionDelegationConfig
@@ -41,8 +43,8 @@ fun ProjectSettings.encoding(block: EncodingConfiguration.() -> Unit)
 fun IdeaModule.settings(block: ModuleSettings.() -> Unit)
         = (this as ExtensionAware).extensions.configure(block)
 
-fun ModuleSettings.packagePrefix(block: PackagePrefixContainer.() -> Unit)
-        = (this as ExtensionAware).extensions.configure(block)
+val ModuleSettings.packagePrefix: PackagePrefixContainer
+    get() = (this as ExtensionAware).extensions.getByType()
 
 fun ModuleSettings.moduleType(block: ModuleTypesConfig.() -> Unit)
         = (this as ExtensionAware).extensions.configure(block)
