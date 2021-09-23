@@ -20,7 +20,7 @@ idea {
 }
 
 dependencies {
-    implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.0")
+    implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.+")
 
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
     implementation("org.jetbrains.kotlin:kotlin-allopen")
@@ -36,28 +36,28 @@ dependencies {
         because("xsd convention plugin")
     }
 
-    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.0.5") {
+    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.+") {
         because("graphql convention plugin")
     }
 
-    implementation("com.github.node-gradle:gradle-node-plugin:3.1.0") {
+    implementation("com.github.node-gradle:gradle-node-plugin:3.+") {
         because("nodejs convention plugin")
     }
 
-    implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2") {
+    implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.+") {
         because("asciidoc convention plugin")
     }
 
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.17.1")
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.+")
 
-    implementation("dev.fritz2:fritz2-gradle-plugin:0.11")
+    implementation("dev.fritz2:fritz2-gradle-plugin:0.+")
 
-    implementation("net.minecraftforge.gradle:ForgeGradle:5.1.18")
+    implementation("net.minecraftforge.gradle:ForgeGradle:5.+")
 
-    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.1.6")
-    implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.2.1")
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.+")
+    implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.+")
 
-    implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.60")
+    implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.+")
 }
 
 gradlePlugin {
