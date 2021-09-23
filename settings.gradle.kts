@@ -268,6 +268,7 @@ include("hello-intellij-idea-plugin-new-project-wizard")
 include("hello-intellij-idea-plugin-new-framework")
 include("hello-intellij-idea-plugin-tool-window")
 include("hello-exposed")
+include("hello-micronaut")
 
 
 for (project in rootProject.children) {
