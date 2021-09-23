@@ -32,15 +32,11 @@ class IntellijGradlePlugin: Plugin<Project> {
         }
 
         extensions.configure<IntelliJPluginExtension>("intellij") {
-            version.set("2021.2.2")
-            configureDefaultDependencies.set(false)
-            if (project.hasProperty("intellijLocalPath")) {
-                val intellijLocalPath: String by project
-                localPath.set(intellijLocalPath)
-            }
+            version.set("IU-2021.2.2")
+            configureDefaultDependencies.set(true)
 
             type.set("IU")
-            downloadSources.set(true)
+            downloadSources.set(false)
             updateSinceUntilBuild.set(true)
             sameSinceUntilBuild.set(true)
         }
