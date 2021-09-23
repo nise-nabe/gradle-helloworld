@@ -34,7 +34,7 @@ class IntellijGradlePlugin: Plugin<Project> {
         extensions.configure<IntelliJPluginExtension>("intellij") {
             type.set("IC")
             version.set("2021.2.2")
-            configureDefaultDependencies.set(true)
+            configureDefaultDependencies.set(false)
             downloadSources.set(true)
 
             if (project.hasProperty("intellijLocalPath")) {
