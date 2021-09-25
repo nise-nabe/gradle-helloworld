@@ -11,6 +11,7 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.getByName
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class KotlinPlugin: Plugin<Project> {
@@ -36,8 +37,8 @@ class KotlinPlugin: Plugin<Project> {
         }
 
         dependencies.apply {
-            add("implementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.30"))
-            add("testImplementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.30"))
+            add("implementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.31"))
+            add("testImplementation", platform("org.jetbrains.kotlin:kotlin-bom:1.5.31"))
             add("testImplementation", kotlin("test"))
         }
 
