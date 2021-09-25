@@ -21,7 +21,7 @@ class KotlinPlugin: Plugin<Project> {
 
         val compiler = extensions.getByName<JavaToolchainService>("javaToolchains") .compilerFor {
                 @Suppress("MagicNumber")
-                languageVersion.set(JavaLanguageVersion.of(15))
+                languageVersion.set(JavaLanguageVersion.of(17))
                 vendor.set(JvmVendorSpec.ADOPTOPENJDK)
         }
 
