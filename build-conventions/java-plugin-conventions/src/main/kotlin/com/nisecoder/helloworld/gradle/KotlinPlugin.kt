@@ -11,7 +11,6 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.getByName
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class KotlinPlugin: Plugin<Project> {
@@ -29,7 +28,7 @@ class KotlinPlugin: Plugin<Project> {
             kotlinOptions {
                 languageVersion = "1.5"
                 apiVersion = "1.5"
-                jvmTarget = JavaVersion.VERSION_11.toString()
+                jvmTarget = JavaVersion.VERSION_17.toString()
                 javaParameters = true
 
                 jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
