@@ -22,7 +22,6 @@ idea {
 dependencies {
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.+")
 
-    implementation(enforcedPlatform("org.jetbrains.kotlin:kotlin-bom:1.5.+"))
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
