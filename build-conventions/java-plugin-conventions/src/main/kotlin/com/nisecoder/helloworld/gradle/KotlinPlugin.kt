@@ -20,7 +20,7 @@ class KotlinPlugin: Plugin<Project> {
 
         val compiler = extensions.getByName<JavaToolchainService>("javaToolchains") .compilerFor {
                 @Suppress("MagicNumber")
-                languageVersion.set(JavaLanguageVersion.of(17))
+                languageVersion.set(JavaLanguageVersion.of(11))
                 vendor.set(JvmVendorSpec.ADOPTOPENJDK)
         }
 
@@ -28,7 +28,7 @@ class KotlinPlugin: Plugin<Project> {
             kotlinOptions {
                 languageVersion = "1.5"
                 apiVersion = "1.5"
-                jvmTarget = JavaVersion.VERSION_17.toString()
+                jvmTarget = JavaVersion.VERSION_11.toString()
                 javaParameters = true
 
                 jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
