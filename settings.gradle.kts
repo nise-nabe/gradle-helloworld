@@ -183,6 +183,20 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "gitHubPackages"
+                    url = uri("https://maven.pkg.github.com/nise-nabe/gradle-plugins")
+                    credentials(PasswordCredentials::class)
+                }
+            }
+            filter {
+                includeGroup("com.nisecoder.gradle.plugin")
+            }
+        }
+
         exclusiveContent {
             forRepository {
                 maven {
@@ -221,6 +235,14 @@ pluginManagement {
             filter {
                 includeGroup("com.jetbrains.intellij.idea")
                 includeGroup("com.jetbrains.intellij.java")
+            }
+        }
+    }
+
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id.startsWith("com.nisecoder.ci-detect")) {
+                useModule("com.nisecoder.gradle.plugin:ci-detect:0.0.2")
             }
         }
     }

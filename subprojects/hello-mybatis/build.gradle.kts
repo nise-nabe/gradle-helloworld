@@ -1,7 +1,11 @@
+import com.nisecoder.gradle.plugin.cidetect.isDrone
+import com.nisecoder.gradle.plugin.cidetect.isJenkins
+
 plugins {
     java
     id("com.nisecoder.helloworld.gradle.kotlin")
     id("com.nisecoder.helloworld.gradle.springboot")
+    id("com.nisecoder.ci-detect")
     kotlin("plugin.spring")
 }
 
@@ -17,9 +21,7 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform {
-        if (System.getenv("DRONE") == "true" ||
-                System.getenv("JENKINS_URL") != null ||
-                System.getenv("TEAMCITY_PROJECT_NAME") != null) {
+        if (isDrone || isJenkins || System.getenv("TEAMCITY_PROJECT_NAME") != null) {
             excludeTags("containers")
         }
     }
