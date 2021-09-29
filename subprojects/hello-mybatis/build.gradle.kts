@@ -25,7 +25,7 @@ dependencies {
 tasks.test {
     useJUnitPlatform {
 
-        if (isDrone || isJenkins || isTeamCity || osdetector.os == "windows") {
+        if (isDrone || isJenkins || isTeamCity || (isGithubActions && osdetector.os == "windows")) {
             excludeTags("containers")
         }
     }
