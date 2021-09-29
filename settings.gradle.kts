@@ -242,7 +242,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.nisecoder.ci-detect")) {
-                useModule("com.nisecoder.gradle.plugin:ci-detect:0.0.2")
+                useModule("com.nisecoder.gradle.plugin:ci-detect:0.0.3")
             }
         }
     }

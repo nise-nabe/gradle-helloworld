@@ -1,5 +1,6 @@
 import com.nisecoder.gradle.plugin.cidetect.isDrone
 import com.nisecoder.gradle.plugin.cidetect.isJenkins
+import com.nisecoder.gradle.plugin.cidetect.isTeamCity
 
 plugins {
     java
@@ -21,7 +22,7 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform {
-        if (isDrone || isJenkins || System.getenv("TEAMCITY_PROJECT_NAME") != null) {
+        if (isDrone || isJenkins || isTeamCity) {
             excludeTags("containers")
         }
     }
