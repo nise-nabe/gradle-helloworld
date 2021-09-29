@@ -22,8 +22,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: asciidoctor
-          distributions-cache-enabled: true
-          dependencies-cache-enabled: true
         env:
           GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs=--illegal-access=permit"
           ORG_GRADLE_PROJECT_HelloGithubPackageUsername: ${{ github.actor }}
