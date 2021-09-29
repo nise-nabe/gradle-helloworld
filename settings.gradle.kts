@@ -187,19 +187,6 @@ pluginManagement {
         exclusiveContent {
             forRepository {
                 maven {
-                    name = "gitHubPackages"
-                    url = uri("https://maven.pkg.github.com/nise-nabe/gradle-plugins")
-                    credentials(PasswordCredentials::class)
-                }
-            }
-            filter {
-                includeGroup("com.nisecoder.gradle.plugin")
-            }
-        }
-
-        exclusiveContent {
-            forRepository {
-                maven {
                     url = uri("https://maven.minecraftforge.net")
                 }
             }
@@ -237,6 +224,20 @@ pluginManagement {
                 includeGroup("com.jetbrains.intellij.java")
             }
         }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "gitHubPackages"
+                    url = uri("https://maven.pkg.github.com/nise-nabe/gradle-plugins")
+                    credentials(PasswordCredentials::class)
+                }
+            }
+            filter {
+                includeGroup("com.nisecoder.gradle.plugin")
+            }
+        }
+
     }
 
     resolutionStrategy {
