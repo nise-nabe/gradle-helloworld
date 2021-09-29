@@ -1,4 +1,5 @@
 import com.nisecoder.gradle.plugin.cidetect.isDrone
+import com.nisecoder.gradle.plugin.cidetect.isGithubActions
 import com.nisecoder.gradle.plugin.cidetect.isJenkins
 import com.nisecoder.gradle.plugin.cidetect.isTeamCity
 
@@ -7,6 +8,7 @@ plugins {
     id("com.nisecoder.helloworld.gradle.kotlin")
     id("com.nisecoder.helloworld.gradle.springboot")
     id("com.nisecoder.ci-detect")
+    id("com.google.osdetector")
     kotlin("plugin.spring")
 }
 
@@ -22,7 +24,8 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform {
-        if (isDrone || isJenkins || isTeamCity) {
+
+        if (isDrone || isJenkins || isTeamCity || osdetector.os == "windows") {
             excludeTags("containers")
         }
     }

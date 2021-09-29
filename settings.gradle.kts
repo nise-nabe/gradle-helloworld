@@ -246,6 +246,11 @@ pluginManagement {
             }
         }
     }
+
+    plugins {
+        id("com.google.osdetector") version "1.7.0"
+    }
+
 }
 
 plugins {
