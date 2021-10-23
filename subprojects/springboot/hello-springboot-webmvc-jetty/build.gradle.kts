@@ -20,10 +20,6 @@ dependencies {
 }
 
 
-tasks.bootJar {
-    launchScript()
-}
-
 tasks.test {
     useJUnitPlatform()
 }

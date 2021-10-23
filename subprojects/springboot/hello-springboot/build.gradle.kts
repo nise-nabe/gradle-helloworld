@@ -15,10 +15,6 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
-tasks.bootJar {
-    launchScript()
-}
-
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
