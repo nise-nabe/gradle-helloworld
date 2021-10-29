@@ -5,7 +5,6 @@ const isProd = process.env.NODE_ENV !== 'production'
 const config: NuxtConfig = {
     components: true,
     target: "static",
-    dev: !isProd,
     build: {
         analyze: {
             analyzerMode: isProd ? "static" : "disabled"
