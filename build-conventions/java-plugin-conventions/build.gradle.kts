@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     idea
     `kotlin-dsl-base`
@@ -9,6 +11,15 @@ java {
         @Suppress("MagicNumber")
         languageVersion.set(JavaLanguageVersion.of(11))
         vendor.set(JvmVendorSpec.ADOPTOPENJDK)
+    }
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    kotlinOptions {
+        languageVersion = "1.5"
+        apiVersion = "1.5"
+        jvmTarget = JavaVersion.VERSION_11.toString()
+        javaParameters = true
     }
 }
 
