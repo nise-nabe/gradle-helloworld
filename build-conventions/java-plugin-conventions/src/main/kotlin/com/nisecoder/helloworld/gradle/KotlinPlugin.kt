@@ -8,10 +8,13 @@ import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.jvm.toolchain.JvmVendorSpec
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.getByName
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.UsesKotlinJavaToolchain
 
 class KotlinPlugin: Plugin<Project> {
     override fun apply(project: Project) : Unit = project.run {
@@ -24,14 +27,21 @@ class KotlinPlugin: Plugin<Project> {
                 vendor.set(JvmVendorSpec.ADOPTOPENJDK)
         }
 
+        tasks.withType<UsesKotlinJavaToolchain>().configureEach {
+            compiler.get().metadata.let { metadata ->
+                kotlinJavaToolchain.jdk.use(
+                    metadata.installationPath.asFile.absolutePath,
+                    metadata.languageVersion
+                )
+            }
+        }
+
         tasks.withType<KotlinCompile>().configureEach {
             kotlinOptions {
                 languageVersion = "1.5"
                 apiVersion = "1.5"
                 jvmTarget = JavaVersion.VERSION_11.toString()
                 javaParameters = true
-
-                jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
             }
         }
 
