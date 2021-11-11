@@ -6,10 +6,9 @@ plugins {
     `java-gradle-plugin`
 }
 
-java {
-    toolchain {
-        @Suppress("MagicNumber")
-        languageVersion.set(JavaLanguageVersion.of(11))
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(11))
         vendor.set(JvmVendorSpec.ADOPTOPENJDK)
     }
 }
@@ -18,7 +17,6 @@ tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         languageVersion = "1.5"
         apiVersion = "1.5"
-        jvmTarget = JavaVersion.VERSION_11.toString()
         javaParameters = true
     }
 }
