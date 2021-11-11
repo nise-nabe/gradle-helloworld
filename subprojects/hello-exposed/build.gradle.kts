@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    val exposedVersion = "0.31.1"
+    val exposedVersion = "0.36.2"
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
