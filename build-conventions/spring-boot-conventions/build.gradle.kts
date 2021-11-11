@@ -13,9 +13,10 @@ dependencies {
     }
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(11))
+        vendor.set(JvmVendorSpec.ADOPTOPENJDK)
     }
 }
 
