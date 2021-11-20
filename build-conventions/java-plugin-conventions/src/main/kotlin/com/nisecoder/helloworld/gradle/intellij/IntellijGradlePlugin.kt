@@ -11,10 +11,12 @@ import org.gradle.kotlin.dsl.withType
 import org.jetbrains.changelog.ChangelogPlugin
 import org.jetbrains.changelog.ChangelogPluginExtension
 import org.jetbrains.intellij.IntelliJPlugin
+import org.jetbrains.intellij.IntelliJPluginConstants
 import org.jetbrains.intellij.IntelliJPluginExtension
 import org.jetbrains.intellij.tasks.PatchPluginXmlTask
 import org.jetbrains.intellij.tasks.PrepareSandboxTask
 import org.jetbrains.intellij.tasks.RunIdeBase
+import org.jetbrains.intellij.tasks.SetupDependenciesTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class IntellijGradlePlugin: Plugin<Project> {
@@ -51,9 +53,6 @@ class IntellijGradlePlugin: Plugin<Project> {
 
         afterEvaluate {
             // instead of IntellijPluginExtension.configurationDefaultDependencies
-            intellij.ideaDependency.get().jarFiles.forEach {
-                dependencies.add("compileOnly", files(it.toPath()))
-            }
             intellij.pluginDependencies.get().forEach { plugin ->
                 plugin.jarFiles.forEach {
                     dependencies.add("compileOnly", files(it.toPath()))
@@ -75,6 +74,11 @@ class IntellijGradlePlugin: Plugin<Project> {
         }
         tasks.named<PrepareSandboxTask>("prepareUiTestingSandbox") {
             destinationDir = project.file("${intellij.sandboxDir.get()}/plugins-uiTest")
+        }
+        tasks.named<SetupDependenciesTask>(IntelliJPluginConstants.SETUP_DEPENDENCIES_TASK_NAME) {
+            idea.get().jarFiles.forEach {
+                dependencies.add("compileOnly", files(it.toPath()))
+            }
         }
 
         tasks.withType<RunIdeBase>().configureEach {
