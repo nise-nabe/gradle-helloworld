@@ -297,6 +297,7 @@ include("hello-intellij-idea-plugin-new-framework")
 include("hello-intellij-idea-plugin-tool-window")
 include("hello-exposed")
 include("hello-micronaut")
+include("hello-archunit")
 
 
 for (project in rootProject.children) {
