@@ -11,7 +11,7 @@
     "@nuxt/test-utils": "^0.2.2",
     "@nuxt/types": "^2.15.8",
     "@types/jest": "^27.0.3",
-    "jest": "^27.2.5",
+    "jest": "^27.4.4",
     "nuxt": "^2.15.8",
     "playwright": "^1.16.3",
     "ts-jest": "^27.1.1",
