@@ -134,3 +134,6 @@ services:
     image: jetbrains/qodana-jvm
     ports:
       - "8200:8080"
+    volumes:
+      - ./:/data/project/
+      - ./results/:/data/results/
