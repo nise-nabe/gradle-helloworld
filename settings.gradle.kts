@@ -298,6 +298,7 @@ include("hello-intellij-idea-plugin-tool-window")
 include("hello-exposed")
 include("hello-micronaut")
 include("hello-archunit")
+include("hello-unboundid")
 
 
 for (project in rootProject.children) {
