@@ -129,9 +129,9 @@ services:
     image: registry.jetbrains.team/p/prj/containers/projector-idea-c
     ports:
       - "8887:8887"
-  quodana:
+  qodana:
     container_name: hello-quodana
-    image: jetbrains/qodana-jvm
+    image: jetbrains/qodana-jvm-community
     ports:
       - "8200:8080"
     volumes:
