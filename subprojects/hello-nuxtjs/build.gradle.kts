@@ -2,7 +2,7 @@ import com.github.gradle.node.yarn.task.YarnTask
 
 plugins {
     id("com.nisecoder.helloworld.gradle.build-basic")
-    id("com.nisecoder.helloworld.gradle.nodejs")
+    id("com.nisecoder.helloworld.gradle.nuxt")
 }
 
 node {
@@ -16,30 +16,10 @@ val yarnTask = tasks.named<YarnTask>("yarn") {
     }
 }
 
-val yarnNuxtBuildTask = tasks.register<YarnTask>("yarnNuxtBuild") {
-    group = "nuxt"
-    dependsOn(yarnTask)
-    args.set(listOf("nuxt", "build"))
-}
-
-val yarnNuxtGenerateTask = tasks.register<YarnTask>("yarnNuxtGenerate") {
-    group = "nuxt"
-    dependsOn(yarnTask)
-    args.set(listOf("nuxt", "generate"))
-}
-
 val yarnJest = tasks.register<YarnTask>("yarnJest") {
     group = "verification"
     dependsOn(yarnTask)
     args.set(listOf("jest", "--passWithNoTests"))
-}
-
-tasks.build {
-    dependsOn(yarnNuxtBuildTask)
-}
-
-tasks.assemble {
-    dependsOn(yarnNuxtGenerateTask)
 }
 
 tasks.check {
