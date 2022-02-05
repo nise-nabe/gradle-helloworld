@@ -83,7 +83,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "build-conventions"
+rootProject.name = "build-logic"
 
 include("kotlin-dsl-conventions")
 include("java-plugin-conventions")
