@@ -261,7 +261,7 @@ plugins {
 rootProject.name = "HelloWorld"
 
 includeBuild("build-platforms")
-includeBuild("build-conventions")
+includeBuild("build-logic")
 include("hello-kotlin")
 include("hello-typescript")
 include("hello-springboot")
