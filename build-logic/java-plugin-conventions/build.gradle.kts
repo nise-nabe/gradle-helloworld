@@ -13,6 +13,10 @@ kotlin {
     }
 }
 
+kotlinDslPluginOptions {
+    jvmTarget.set(JavaVersion.VERSION_11.toString())
+}
+
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         languageVersion = "1.5"
