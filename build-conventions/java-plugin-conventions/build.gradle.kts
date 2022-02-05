@@ -61,8 +61,6 @@ dependencies {
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.+")
 
-    implementation("net.minecraftforge.gradle:ForgeGradle:5.+")
-
     implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.+")
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.+")
 
@@ -110,10 +108,6 @@ gradlePlugin {
         register("xsd") {
             id = "com.nisecoder.helloworld.gradle.xsd"
             implementationClass = "com.nisecoder.helloworld.gradle.XSDPlugin"
-        }
-        register("minecraft-mod") {
-            id = "com.nisecoder.helloworld.gradle.minecraft-mod"
-            implementationClass = "com.nisecoder.helloworld.gradle.MinecraftModPlugin"
         }
         register("intellij-runner") {
             id = "com.nisecoder.hello.gradle.intellij-runner"
