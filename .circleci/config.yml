@@ -5,51 +5,59 @@ version: 2.1
 # gradle wrapper
 # gradle node plugin's binary files
 
-restore_gradle_wrapper_cache: &restore_gradle_wrapper_cache
-  restore_cache:
-    key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+commands:
+  restore_gradle_wrapper_cache:
+    steps:
+      - restore_cache:
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
 
-save_gradle_wrapper_cache: &save_gradle_wrapper_cache
-  save_cache:
-    paths:
-      - ~/.gradle/wrapper
-    key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-    when: always
+  save_gradle_wrapper_cache:
+    steps:
+      - save_cache:
+          paths:
+            - ~/.gradle/wrapper
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          when: always
 
-restore_gradle_caches: &restore_gradle_caches
-  restore_cache:
-    keys:
-      - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-      - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-
-      - v1-gradle-caches-<< parameters.jdk-version >>-
+  restore_gradle_caches:
+    steps:
+      - restore_cache:
+          keys:
+            - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+            - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-
+            - v1-gradle-caches-<< parameters.jdk-version >>-
 
 # https://docs.gradle.org/current/userguide/travis-ci.html
-run_before_gradle_caches: &run_before_gradle_caches
-  run:
-    name: run before gradle caches
-    command: |
-      rm -f ~/.gradle/caches/modules-2/modules-2.lock
-      rm -rf ~/.gradle/caches/*/plugin-resolution/
+  run_before_gradle_caches:
+    steps:
+    - run:
+        name: run before gradle caches
+        command: |
+          rm -f ~/.gradle/caches/modules-2/modules-2.lock
+          rm -rf ~/.gradle/caches/*/plugin-resolution/
 
-save_gradle_caches: &save_gradle_caches
-  save_cache:
-    paths:
-      - ~/.gradle/caches
-    key: v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+  save_gradle_caches:
+    steps:
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
 
-restore_yarn_cache: &restore_yarn_cache
-  restore_cache:
-    keys:
-      - v1-yarn-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-      - v1-yarn-<< parameters.jdk-version >>-{{ .Branch }}-
-      - v1-yarn-<< parameters.jdk-version >>-
+  restore_yarn_cache:
+    steps:
+      - restore_cache:
+          keys:
+          - v1-yarn-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+          - v1-yarn-<< parameters.jdk-version >>-{{ .Branch }}-
+          - v1-yarn-<< parameters.jdk-version >>-
 
-save_yarn_cache: &save_yarn_cache
-  save_cache:
-    paths:
-      # yarn cache config
-      - ~/.yarn/cache/v6
-    key: v1-yarn-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+  save_yarn_cache:
+    steps:
+      - save_cache:
+          paths:
+            # yarn cache config
+            - ~/.yarn/cache/v6
+          key: v1-yarn-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
 
 jobs:
   gradle-check:
@@ -64,19 +72,19 @@ jobs:
 
     steps:
       - checkout
-      - <<: *restore_gradle_wrapper_cache
-      - <<: *restore_gradle_caches
-      - <<: *restore_yarn_cache
+      - restore_gradle_wrapper_cache
+      - restore_gradle_caches
+      - restore_yarn_cache
       - restore_cache:
           keys:
             - v1-gradle-kotlinjs-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
             - v1-gradle-kotlinjs-<< parameters.jdk-version >>-{{ .Branch }}-
             - v1-gradle-kotlinjs-<< parameters.jdk-version >>-
       - run: ./gradlew check --scan
-      - <<: *save_gradle_wrapper_cache
-      - <<: *run_before_gradle_caches
-      - <<: *save_gradle_caches
-      - <<: *save_yarn_cache
+      - save_gradle_wrapper_cache
+      - run_before_gradle_caches
+      - save_gradle_caches
+      - save_yarn_cache
       - save_cache:
           paths:
             - build/js
