@@ -4,6 +4,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "generate": "NODE_ENV=production nuxt generate",
+    "generate_win": "set NODE_ENV=production && nuxt generate",
     "start": "nuxt start",
     "test": "jest"
   },
