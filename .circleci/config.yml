@@ -7,11 +7,13 @@ version: 2.1
 
 commands:
   restore_gradle_wrapper_cache:
+    name: Restoring Gradle Wrapper Cache
     steps:
       - restore_cache:
           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
 
   save_gradle_wrapper_cache:
+    name: Saving Gradle Wrapper Cache
     steps:
       - save_cache:
           paths:
@@ -20,6 +22,7 @@ commands:
           when: always
 
   restore_gradle_caches:
+    name: Restoring Gradle Cache
     parameters:
       jdk-version:
         type: string
@@ -41,6 +44,7 @@ commands:
           rm -rf ~/.gradle/caches/*/plugin-resolution/
 
   save_gradle_caches:
+    name: Saving Gradle Cache
     parameters:
       jdk-version:
         type: string
@@ -52,6 +56,7 @@ commands:
           key: v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
 
   restore_yarn_cache:
+    name: Restoring Yarn Cache
     parameters:
       jdk-version:
         type: string
@@ -64,6 +69,7 @@ commands:
           - v1-yarn-<< parameters.jdk-version >>-
 
   save_yarn_cache:
+    name: Saving Yarn Cache
     parameters:
       jdk-version:
         type: string
