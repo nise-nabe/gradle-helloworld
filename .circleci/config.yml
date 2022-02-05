@@ -20,6 +20,10 @@ commands:
           when: always
 
   restore_gradle_caches:
+    parameters:
+      jdk-version:
+        type: string
+        default: "11.0"
     steps:
       - restore_cache:
           keys:
@@ -37,6 +41,10 @@ commands:
           rm -rf ~/.gradle/caches/*/plugin-resolution/
 
   save_gradle_caches:
+    parameters:
+      jdk-version:
+        type: string
+        default: "11.0"
     steps:
       - save_cache:
           paths:
@@ -44,6 +52,10 @@ commands:
           key: v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
 
   restore_yarn_cache:
+    parameters:
+      jdk-version:
+        type: string
+        default: "11.0"
     steps:
       - restore_cache:
           keys:
@@ -52,6 +64,10 @@ commands:
           - v1-yarn-<< parameters.jdk-version >>-
 
   save_yarn_cache:
+    parameters:
+      jdk-version:
+        type: string
+        default: "11.0"
     steps:
       - save_cache:
           paths:
