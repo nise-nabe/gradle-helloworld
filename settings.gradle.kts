@@ -299,6 +299,7 @@ include("hello-exposed")
 include("hello-micronaut")
 include("hello-archunit")
 include("hello-unboundid")
+include("hello-vite")
 
 
 for (project in rootProject.children) {
