@@ -1,6 +1,5 @@
 package com.nisecoder.helloworld.gradle
 
-import com.github.gradle.node.NodePlugin
 import com.nisecoder.helloworld.gradle.nuxt.NuxtBuildTask
 import com.nisecoder.helloworld.gradle.nuxt.NuxtExtension
 import com.nisecoder.helloworld.gradle.nuxt.NuxtGenerateTask
@@ -15,7 +14,7 @@ import org.gradle.kotlin.dsl.register
 class NuxtPlugin: Plugin<Project> {
     override fun apply(project: Project): Unit = project.run {
         plugins.apply(BasePlugin::class)
-        plugins.apply(NodePlugin::class)
+        plugins.apply(NodeJSPlugin::class)
 
         val nuxt = extensions.create<NuxtExtension>("nuxt").apply {
             val baseDir = project.layout.projectDirectory

@@ -10,15 +10,9 @@ node {
     version.set("16.13.2")
 }
 
-val yarnTask = tasks.named<YarnTask>("yarn") {
-    if ((System.getenv("CI") ?: "") == "true") {
-        args.add("--frozen-lockfile")
-    }
-}
-
 val yarnJest = tasks.register<YarnTask>("yarnJest") {
     group = "verification"
-    dependsOn(yarnTask)
+    dependsOn(tasks.named("yarn"))
     args.set(listOf("jest", "--passWithNoTests"))
 }
 
