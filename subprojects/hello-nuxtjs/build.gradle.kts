@@ -10,9 +10,15 @@ node {
     version.set("16.13.2")
 }
 
+
+val playwrightDepsTask = tasks.register<YarnTask>("playwrightDeps") {
+    args.set(listOf("playwright", "install-deps"))
+    dependsOn(tasks.named("yarn"))
+}
+
 val yarnJest = tasks.register<YarnTask>("yarnJest") {
     group = "verification"
-    dependsOn(tasks.named("yarn"))
+    dependsOn(tasks.named("yarn"), playwrightDepsTask)
     args.set(listOf("jest", "--passWithNoTests"))
 }
 
