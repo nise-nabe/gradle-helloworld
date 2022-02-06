@@ -8,6 +8,6 @@ dependencies {
 
 configurations.all {
     resolutionStrategy {
-        cacheDynamicVersionsFor(7, "days")
+        cacheChangingModulesFor(31, "days")
     }
 }
