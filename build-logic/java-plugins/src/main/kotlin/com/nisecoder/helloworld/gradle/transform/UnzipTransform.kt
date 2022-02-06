@@ -35,7 +35,7 @@ abstract class UnzipTransform: TransformAction<TransformParameters.None> {
 
             when (change.changeType) {
                 ChangeType.ADDED, ChangeType.MODIFIED -> unzipTo(changedFile, unzipDir)
-                ChangeType.REMOVED, null -> unzipDir.delete()
+                ChangeType.REMOVED -> unzipDir.delete()
             }
         }
     }
