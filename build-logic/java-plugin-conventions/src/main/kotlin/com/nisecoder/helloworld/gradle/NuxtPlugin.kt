@@ -36,14 +36,18 @@ class NuxtPlugin: Plugin<Project> {
             configFile.convention(baseDir.file("nuxt.config.js"))
         }
 
+        val yarnTask = tasks.getByName("yarn")
+
         val nuxtBuildTask = tasks.register<NuxtBuildTask>("nuxtBuild") {
             src.set(nuxt.src)
             outputDir.convention(nuxt.nuxtBuild)
+            dependsOn(yarnTask)
         }
 
         val nuxtGenerateTask = tasks.register<NuxtGenerateTask>("nuxtGenerate") {
             src.set(nuxt.src)
             outputDir.convention(nuxt.dist)
+            dependsOn(yarnTask)
         }
 
         tasks.named("build") {
