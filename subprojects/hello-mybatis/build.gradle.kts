@@ -20,6 +20,7 @@ dependencies {
     testImplementation("org.testcontainers:testcontainers:1.+")
     testImplementation("org.testcontainers:mysql:1.+")
     testImplementation("org.testcontainers:junit-jupiter:1.+")
+    testImplementation("io.github.microutils:kotlin-logging-jvm:2.0.10")
 }
 
 tasks.test {
