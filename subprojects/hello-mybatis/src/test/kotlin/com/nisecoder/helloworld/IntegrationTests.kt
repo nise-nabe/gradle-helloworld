@@ -17,6 +17,7 @@ internal class IntegrationTests {
 
     @Container
     val container = mysql {
+        withReuse(true)
         withDatabaseName("db")
         withUsername("user")
         withPassword("password")
