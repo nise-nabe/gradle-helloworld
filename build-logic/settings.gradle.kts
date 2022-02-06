@@ -85,6 +85,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "build-logic"
 
-include("kotlin-dsl-conventions")
-include("java-plugin-conventions")
-include("spring-boot-conventions")
+include("kotlin-dsl-plugins")
+include("java-plugins")
+include("spring-boot-plugins")
