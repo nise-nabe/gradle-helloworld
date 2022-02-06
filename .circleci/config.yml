@@ -10,7 +10,11 @@ commands:
     steps:
       - restore_cache:
           name: Restoring Gradle Wrapper Cache
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: << parameters.cache-key >>-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+    parameters:
+      cache-key:
+        type: string
+        default: v1
 
   save_gradle_wrapper_cache:
     steps:
@@ -18,21 +22,28 @@ commands:
           name: Saving Gradle Wrapper Cache
           paths:
             - ~/.gradle/wrapper
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: << parameters.cache-key >>-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
           when: always
+    parameters:
+      cache-key:
+        type: string
+        default: v1
 
   restore_gradle_caches:
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
     steps:
       - restore_cache:
           name: Restoring Gradle Cache
           keys:
-            - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-            - v1-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-
-            - v1-gradle-caches-<< parameters.jdk-version >>-
+            - << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
+            - << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-
+            - << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-
+    parameters:
+      jdk-version:
+        type: string
+        default: "11.0"
+      cache-key:
+        type: string
+        default: v1
 
 # https://docs.gradle.org/current/userguide/travis-ci.html
   run_before_gradle_caches:
