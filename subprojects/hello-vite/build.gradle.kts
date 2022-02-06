@@ -7,7 +7,7 @@ plugins {
 
 node {
     download.set(true)
-    version.set("16.12.0")
+    version.set("16.13.2")
 }
 
 tasks.register<YarnTask>("yarnDev") {
