@@ -12,6 +12,6 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "npm"
-    directory: "/subprojects/hello-nuxtjs"
+    directory: "/subprojects"
     schedule:
       interval: "daily"
