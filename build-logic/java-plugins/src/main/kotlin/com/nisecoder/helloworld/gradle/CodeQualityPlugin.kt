@@ -15,17 +15,16 @@ class CodeQualityPlugin: Plugin<Project> {
         extensions.configure<DetektExtension> {
             buildUponDefaultConfig = true
             parallel = true
-            reports {
-                html.enabled = false
-                xml.enabled = false
-                txt.enabled = false
-                sarif.enabled = true
-            }
-
         }
 
         tasks.withType<Detekt>().configureEach {
             jvmTarget = JavaVersion.VERSION_11.toString()
+            reports {
+                html.required.set(false)
+                xml.required.set(false)
+                txt.required.set(false)
+                sarif.required.set(true)
+            }
         }
     }
 }
