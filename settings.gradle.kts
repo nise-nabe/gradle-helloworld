@@ -303,19 +303,11 @@ include("hello-vite")
 
 
 for (project in rootProject.children) {
-    val projectPath = when {
-        project.name.startsWith("hello-springboot") -> {
-            file("subprojects/springboot/${project.name}")
+    listOf("/", "springboot/", "intellij-idea-plugin/")
+        .map { file("subprojects/${it}${project.name}") }
+        .find { it.isDirectory }?.let {
+            project.projectDir = it
         }
-        project.name.startsWith("hello-intellij-idea-plugin") -> {
-            file("subprojects/intellij-idea-plugin/${project.name}")
-        }
-        else -> {
-            file("subprojects/${project.name}")
-        }
-    }
-
-    project.projectDir = projectPath
 }
 
 gradleEnterprise {
