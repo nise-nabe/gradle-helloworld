@@ -24,7 +24,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: ${{ matrix.java-version }}
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3
         name: gralde build cache
         with:
           path: |
@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-gradle-build-cache-${{ matrix.java-version }}-${{ github.sha }}
             ${{ runner.os }}-gradle-build-cache-${{ matrix.java-version }}-
             ${{ runner.os }}-gradle-build-cache-
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3
         name: gralde cache
         with:
           path: |
@@ -45,7 +45,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-cache-${{ hashFiles('**/*.gradle*') }}
             ${{ runner.os }}-gradle-cache-
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3
         name: gralde kotlin js
         with:
           path: |
