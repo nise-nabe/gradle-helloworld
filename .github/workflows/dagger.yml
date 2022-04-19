@@ -20,5 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dagger/dagger-for-github@v2
-        cmds: |
-          do helloworld --log-format=plain
+        with:
+          cmds: |
+            do helloworld --log-format=plain
