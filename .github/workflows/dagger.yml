@@ -1,0 +1,22 @@
+name: Dagger
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version: [ 11 ]
+        os: [ ubuntu-20.04, windows-2022 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dagger/dagger-for-github@v2
