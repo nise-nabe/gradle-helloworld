@@ -1,19 +1,17 @@
 package com.nisecoder.helloworld
 
-import io.ktor.application.Application
-import io.ktor.http.HttpMethod
+import io.ktor.client.request.get
+import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpStatusCode
-import io.ktor.server.testing.handleRequest
-import io.ktor.server.testing.withTestApplication
+import io.ktor.server.testing.testApplication
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 internal class HelloKtorApplicationTest {
     @Test
-    fun testRequest() = withTestApplication(Application::module) {
-        with(handleRequest(HttpMethod.Get, "/")) {
-            assertEquals(HttpStatusCode.OK, response.status())
-            assertEquals("Hello, world!", response.content)
-        }
+    fun testRequest() = testApplication {
+        val response = client.get("/")
+        assertEquals(HttpStatusCode.OK, response.status)
+        assertEquals("Hello, world!", response.bodyAsText())
     }
 }
