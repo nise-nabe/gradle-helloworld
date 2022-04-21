@@ -1,5 +1,5 @@
-import com.nisecoder.helloworld.gradle.idea.ext.packagePrefix
-import com.nisecoder.helloworld.gradle.idea.ext.settings
+import org.jetbrains.gradle.ext.packagePrefix
+import org.jetbrains.gradle.ext.settings
 
 plugins {
     id("com.nisecoder.helloworld.gradle.build-basic")
