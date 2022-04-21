@@ -1,15 +1,20 @@
 package com.nisecoder.helloworld
 
-import io.ktor.application.Application
-import io.ktor.application.call
-import io.ktor.response.respondText
-import io.ktor.routing.get
-import io.ktor.routing.routing
-import io.ktor.server.netty.EngineMain
+import io.ktor.server.application.Application
+import io.ktor.server.application.call
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import io.ktor.server.response.respondText
+import io.ktor.server.routing.get
+import io.ktor.server.routing.routing
 
-fun main(args: Array<String>) = EngineMain.main(args)
+fun main() {
+    embeddedServer(Netty) {
+        configureRouting()
+    }
+}
 
-fun Application.module() {
+fun Application.configureRouting() {
     routing {
         get("/") {
             call.respondText("Hello, world!")
