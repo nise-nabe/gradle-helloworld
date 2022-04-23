@@ -32,7 +32,7 @@ class IntellijRunnerPlugin: Plugin<Project> {
                 dependencies.create(
                     group = "com.jetbrains.intellij.idea",
                     name = "ideaIC",
-                    version = "2021.2.1",
+                    version = "2022.1",
                     ext = "zip"
                 )
             )
