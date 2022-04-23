@@ -66,64 +66,6 @@ dependencyResolutionManagement {
             }
         }
 
-        exclusiveContent {
-            forRepository {
-                maven {
-                    url = uri("https://cache-redirector.jetbrains.com/intellij-repository/releases")
-                    metadataSources {
-                        mavenPom()
-                    }
-                    mavenContent {
-                        releasesOnly()
-                    }
-                }
-            }
-            filter {
-                includeGroup("com.jetbrains.intellij.idea")
-                includeGroup("com.jetbrains.intellij.java")
-            }
-        }
-
-        exclusiveContent {
-            forRepository {
-                maven {
-                    url = uri("https://cache-redirector.jetbrains.com/intellij-dependencies")
-                }
-            }
-            filter {
-                includeGroup("org.jetbrains.intellij.deps")
-                includeGroup("com.intellij.remoterobot")
-            }
-        }
-
-        // for intellij idea plugin's jetbrains runtime jre repository
-        exclusiveContent {
-            forRepository {
-                ivy {
-                    url = uri("https://cache-redirector.jetbrains.com/intellij-jbr")
-                    patternLayout {
-                        artifact("[revision].tar.gz")
-                    }
-                    metadataSources {
-                        artifact()
-                    }
-                }
-            }
-            filter {
-                includeModule("com.jetbrains", "jbre")
-            }
-        }
-
-        exclusiveContent {
-            forRepository {
-                maven {
-                    url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-shared-indexes-public/")
-                }
-            }
-            filter {
-                includeGroup("com.jetbrains.intellij.indexing.shared")
-            }
-        }
 
         exclusiveContent {
             forRepository {
@@ -209,24 +151,6 @@ pluginManagement {
         exclusiveContent {
             forRepository {
                 maven {
-                    url = uri("https://cache-redirector.jetbrains.com/intellij-repository/releases")
-                    metadataSources {
-                        mavenPom()
-                    }
-                    mavenContent {
-                        releasesOnly()
-                    }
-                }
-            }
-            filter {
-                includeGroup("com.jetbrains.intellij.idea")
-                includeGroup("com.jetbrains.intellij.java")
-            }
-        }
-
-        exclusiveContent {
-            forRepository {
-                maven {
                     name = "HelloGithubPackage"
                     url = uri("https://maven.pkg.github.com/nise-nabe/gradle-plugins")
                     credentials(PasswordCredentials::class)
@@ -261,6 +185,7 @@ rootProject.name = "HelloWorld"
 
 includeBuild("build-platforms")
 includeBuild("build-logic")
+includeBuild("subprojects/intellij-idea-plugin")
 include("hello-kotlin")
 include("hello-typescript")
 include("hello-springboot")
@@ -290,10 +215,6 @@ include("hello-gradle-plugin")
 include("hello-gradle-settings-plugin")
 include("hello-minecraft-forge-mod")
 include("hello-minecraft-spigot-mod")
-include("hello-intellij-idea-plugin-simple")
-include("hello-intellij-idea-plugin-new-project-wizard")
-include("hello-intellij-idea-plugin-new-framework")
-include("hello-intellij-idea-plugin-tool-window")
 include("hello-exposed")
 include("hello-micronaut")
 include("hello-archunit")
@@ -302,7 +223,7 @@ include("hello-vite")
 
 
 for (project in rootProject.children) {
-    listOf("/", "springboot/", "intellij-idea-plugin/")
+    listOf("/", "springboot/")
         .map { file("subprojects/${it}${project.name}") }
         .find { it.isDirectory }?.let {
             project.projectDir = it
