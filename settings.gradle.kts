@@ -37,35 +37,6 @@ dependencyResolutionManagement {
             }
         }
 
-        exclusiveContent {
-            forRepository {
-                maven {
-                    url = uri("https://maven.minecraftforge.net/")
-                }
-            }
-
-            filter {
-                includeGroup("cpw.mods")
-                includeGroup("net.minecraftforge")
-                includeGroup("net.jodah")
-            }
-        }
-
-        exclusiveContent {
-            forRepository {
-                maven {
-                    url = uri("https://libraries.minecraft.net/")
-                    metadataSources {
-                        artifact()
-                    }
-                }
-            }
-
-            filter {
-                includeGroup("net.minecraft")
-            }
-        }
-
 
         exclusiveContent {
             forRepository {
@@ -99,20 +70,6 @@ dependencyResolutionManagement {
             filter {
                 includeModule("org.nodejs", "node")
             }
-        }
-
-        exclusiveContent {
-            forRepository {
-                maven {
-                    url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
-                }
-            }
-
-            filter {
-                includeGroup("org.spigotmc")
-                includeGroup("org.bukkit")
-            }
-
         }
 
         mavenCentral()
@@ -186,6 +143,8 @@ rootProject.name = "HelloWorld"
 includeBuild("build-platforms")
 includeBuild("build-logic")
 includeBuild("subprojects/intellij-idea-plugin")
+includeBuild("subprojects/minecraft-forge")
+includeBuild("subprojects/minecraft-spigot")
 include("hello-kotlin")
 include("hello-typescript")
 include("hello-springboot")
@@ -213,8 +172,6 @@ include("hello-testng")
 include("hello-fluency")
 include("hello-gradle-plugin")
 include("hello-gradle-settings-plugin")
-include("hello-minecraft-forge-mod")
-include("hello-minecraft-spigot-mod")
 include("hello-exposed")
 include("hello-micronaut")
 include("hello-archunit")
