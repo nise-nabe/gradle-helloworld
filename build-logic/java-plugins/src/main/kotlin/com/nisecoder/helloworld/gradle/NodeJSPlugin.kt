@@ -15,7 +15,7 @@ class NodeJSPlugin: Plugin<Project> {
 
         tasks.named<YarnTask>("yarn") {
             if ((System.getenv("CI") ?: "") == "true") {
-                args.add("--frozen-lockfile")
+                args.add("--immutable")
             }
         }
     }
