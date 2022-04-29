@@ -16,11 +16,11 @@ steps:
 ---
 
 kind: pipeline
-name: gradle-check-15
+name: gradle-check-17
 
 steps:
   - name: gradle check
-    image: eclipse-temurin:15
+    image: eclipse-temurin:17
     commands:
       - ./gradlew check --scan
     environment:
