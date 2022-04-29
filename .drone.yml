@@ -5,7 +5,7 @@ steps:
   - name: gradle check
     image: adoptopenjdk:11-jdk-hotspot
     commands:
-      - ./gradlew check --scan -x yarnJest
+      - ./gradlew check --scan
     environment:
       ORG_GRADLE_PROJECT_HelloGithubPackageUsername:
         from_secret: ORG_GRADLE_PROJECT_HelloGithubPackageUsername
@@ -22,7 +22,7 @@ steps:
   - name: gradle check
     image: adoptopenjdk:15-jdk-hotspot
     commands:
-      - ./gradlew check --scan -x yarnJest
+      - ./gradlew check --scan
     environment:
       ORG_GRADLE_PROJECT_HelloGithubPackageUsername:
         from_secret: ORG_GRADLE_PROJECT_HelloGithubPackageUsername
