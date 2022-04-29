@@ -114,7 +114,7 @@ pluginManagement {
                 }
             }
             filter {
-                includeGroupByRegex("com.nisecoder.*")
+                includeGroupByRegex("com\\.nisecoder\\..*")
             }
         }
 
@@ -130,7 +130,7 @@ pluginManagement {
                 }
             }
             filter {
-                includeGroup("com.nisecoder.nodejs")
+                includeModule("com.nisecoder.gradle", "nodejs-gradle-plugins")
             }
         }
     }
@@ -138,6 +138,7 @@ pluginManagement {
     plugins {
         id("com.google.osdetector") version "1.7.0"
         id("com.nisecoder.ci-detect") version "0.0.10"
+        id("com.nisecoder.nodejs") version "0.0.1"
     }
 
 }
@@ -185,6 +186,7 @@ include("hello-micronaut")
 include("hello-archunit")
 include("hello-unboundid")
 include("hello-vite")
+include("hello-my-nodejs")
 
 
 for (project in rootProject.children) {
