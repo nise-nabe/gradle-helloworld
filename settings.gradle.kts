@@ -114,22 +114,14 @@ pluginManagement {
                 }
             }
             filter {
-                includeGroup("com.nisecoder.gradle.plugin")
-            }
-        }
-
-    }
-
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id.startsWith("com.nisecoder.ci-detect")) {
-                useModule("com.nisecoder.gradle.plugin:ci-detect:0.0.3")
+                includeGroupByRegex("com.nisecoder.*")
             }
         }
     }
 
     plugins {
         id("com.google.osdetector") version "1.7.0"
+        id("com.nisecoder.ci-detect") version "0.0.10"
     }
 
 }
