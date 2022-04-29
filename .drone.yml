@@ -3,7 +3,7 @@ name: gradle-check-11
 
 steps:
   - name: gradle check
-    image: adoptopenjdk:11-jdk-hotspot
+    image: eclipse-temurin:11
     commands:
       - ./gradlew check --scan
     environment:
@@ -20,7 +20,7 @@ name: gradle-check-15
 
 steps:
   - name: gradle check
-    image: adoptopenjdk:15-jdk-hotspot
+    image: eclipse-temurin:15
     commands:
       - ./gradlew check --scan
     environment:
