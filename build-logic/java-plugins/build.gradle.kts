@@ -106,14 +106,6 @@ gradlePlugin {
             id = "com.nisecoder.helloworld.gradle.intellij-gradle-plugin"
             implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijGradlePlugin"
         }
-        register("nodejs") {
-            id = "com.nisecoder.helloworld.gradle.nodejs"
-            implementationClass = "com.nisecoder.helloworld.gradle.NodeJSPlugin"
-        }
-        register("nuxt") {
-            id = "com.nisecoder.helloworld.gradle.nuxt"
-            implementationClass = "com.nisecoder.helloworld.gradle.NuxtPlugin"
-        }
         register("xsd") {
             id = "com.nisecoder.helloworld.gradle.xsd"
             implementationClass = "com.nisecoder.helloworld.gradle.XSDPlugin"
