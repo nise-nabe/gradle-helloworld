@@ -6,7 +6,7 @@ plugins {
 
 afterEvaluate {
     tasks.named("yarnTest") {
-        dependsOn(tasks.named("yarnInstall"))
+        dependsOn(tasks.named("yarnInstall"), tasks.named("yarnPlaywrightDeps"))
     }
 }
 
