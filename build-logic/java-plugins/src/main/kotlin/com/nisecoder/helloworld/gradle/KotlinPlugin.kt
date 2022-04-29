@@ -6,6 +6,7 @@ import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
+import org.gradle.jvm.toolchain.JavaToolchainSpec
 import org.gradle.jvm.toolchain.JvmVendorSpec
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
@@ -14,26 +15,22 @@ import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.gradle.tasks.UsesKotlinJavaToolchain
 
 class KotlinPlugin: Plugin<Project> {
     override fun apply(project: Project) : Unit = project.run {
         plugins.apply("org.jetbrains.kotlin.jvm")
         plugins.apply(CodeQualityPlugin::class)
 
-        val compiler = extensions.getByName<JavaToolchainService>("javaToolchains") .compilerFor {
+        extensions.getByName<JavaToolchainService>("javaToolchains").compilerFor {
                 @Suppress("MagicNumber")
                 languageVersion.set(JavaLanguageVersion.of(11))
             @Suppress("UnstableApiUsage")
             vendor.set(JvmVendorSpec.ADOPTIUM)
         }
 
-        tasks.withType<UsesKotlinJavaToolchain>().configureEach {
-            compiler.get().metadata.let { metadata ->
-                kotlinJavaToolchain.jdk.use(
-                    metadata.installationPath.asFile.absolutePath,
-                    metadata.languageVersion
-                )
+        configure<KotlinJvmProjectExtension> {
+            jvmToolchain {
+                (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(11))
             }
         }
 
