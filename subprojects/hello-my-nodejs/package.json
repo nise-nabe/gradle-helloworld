@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "nuxi info"
+  },
+  "devDependencies": {
+    "nuxi": "3.0.0-rc.1"
+  },
+  "packageManager": "yarn@3.2.0"
+}
