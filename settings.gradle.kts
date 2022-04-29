@@ -117,6 +117,22 @@ pluginManagement {
                 includeGroupByRegex("com.nisecoder.*")
             }
         }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://maven.pkg.github.com/nise-nabe/nodejs-gradle-plugins")
+                    credentials {
+                        val hello = providers.credentials(PasswordCredentials::class, "HelloGithubPackage").get()
+                        username = hello.username
+                        password = hello.password
+                    }
+                }
+            }
+            filter {
+                includeGroup("com.nisecoder.nodejs")
+            }
+        }
     }
 
     plugins {
