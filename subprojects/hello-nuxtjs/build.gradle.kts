@@ -4,6 +4,12 @@ plugins {
     base
 }
 
+afterEvaluate {
+    tasks.named("yarnTest") {
+        dependsOn(tasks.named("yarnInstall"))
+    }
+}
+
 tasks.check {
     dependsOn(tasks.named("yarnTest"))
 }
