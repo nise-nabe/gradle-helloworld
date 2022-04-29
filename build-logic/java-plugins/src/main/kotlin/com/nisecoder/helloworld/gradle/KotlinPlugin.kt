@@ -24,7 +24,8 @@ class KotlinPlugin: Plugin<Project> {
         val compiler = extensions.getByName<JavaToolchainService>("javaToolchains") .compilerFor {
                 @Suppress("MagicNumber")
                 languageVersion.set(JavaLanguageVersion.of(11))
-                vendor.set(JvmVendorSpec.ADOPTOPENJDK)
+            @Suppress("UnstableApiUsage")
+            vendor.set(JvmVendorSpec.ADOPTIUM)
         }
 
         tasks.withType<UsesKotlinJavaToolchain>().configureEach {
