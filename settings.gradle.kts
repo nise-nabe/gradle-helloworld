@@ -138,7 +138,7 @@ pluginManagement {
     plugins {
         id("com.google.osdetector") version "1.7.0"
         id("com.nisecoder.ci-detect") version "0.0.10"
-        id("com.nisecoder.nodejs") version "0.0.3"
+        id("com.nisecoder.nodejs") version "0.0.4"
     }
 
 }

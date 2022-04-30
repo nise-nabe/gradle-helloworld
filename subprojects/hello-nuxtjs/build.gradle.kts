@@ -4,12 +4,10 @@ plugins {
     base
 }
 
-afterEvaluate {
-    tasks.named("yarnTest") {
-        dependsOn(tasks.named("yarnInstall"), tasks.named("yarnPlaywrightDeps"))
-    }
+tasks.named("yarnRunTest") {
+    dependsOn(tasks.named("yarnInstall"), tasks.named("yarnRunPlaywrightDeps"))
 }
 
 tasks.check {
-    dependsOn(tasks.named("yarnTest"))
+    dependsOn(tasks.named("yarnRunTest"))
 }
