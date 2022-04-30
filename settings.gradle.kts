@@ -187,6 +187,7 @@ include("hello-archunit")
 include("hello-unboundid")
 include("hello-vite")
 include("hello-my-nodejs")
+include("hello-nextjs")
 
 
 for (project in rootProject.children) {
