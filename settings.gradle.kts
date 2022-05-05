@@ -72,6 +72,14 @@ dependencyResolutionManagement {
             }
         }
 
+        maven {
+            name = "Gradle"
+            url = uri("https://repo.gradle.org/gradle/libs-releases")
+            content {
+                includeModule( "org.gradle", "gradle-tooling-api" )
+            }
+        }
+
         mavenCentral()
     }
 }
@@ -189,6 +197,7 @@ include("hello-unboundid")
 include("hello-vite")
 include("hello-my-nodejs")
 include("hello-nextjs")
+include("hello-gradle-tooling-api")
 
 
 for (project in rootProject.children) {
