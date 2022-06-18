@@ -64,7 +64,7 @@ dependencies {
 
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.+")
 
-    implementation("dev.fritz2:fritz2-gradle-plugin:0.+")
+    implementation("dev.fritz2:fritz2-gradle-plugin:0.14.3")
 
     implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.+")
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.+")
