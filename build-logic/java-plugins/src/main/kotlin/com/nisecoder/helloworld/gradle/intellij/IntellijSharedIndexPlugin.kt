@@ -65,7 +65,7 @@ class IntellijSharedIndexPlugin: Plugin<Project> {
         val cdnLayout: Configuration = configurations.create("cdnLayout").apply {
             isVisible = false
         }
-        cdnLayout.dependencies.add(dependencies.create("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66"))
+//        cdnLayout.dependencies.add(dependencies.create("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66"))
         return tasks.register<JavaExec>("cdnLayout") {
             group = "intellij shared index"
 
