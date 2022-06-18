@@ -8,7 +8,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.6.+") {
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.7.0") {
         because("springboot convention plugins")
     }
 }
