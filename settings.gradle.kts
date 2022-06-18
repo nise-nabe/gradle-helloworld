@@ -6,26 +6,6 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
 
     repositories {
-        maven {
-            name = "Spring Release Repository"
-            url = uri("https://repo.spring.io/release")
-            mavenContent {
-                releasesOnly()
-                includeGroup("org.springframework")
-                includeGroup("org.springframework.boot")
-            }
-        }
-
-        maven {
-            name = "Spring Snapshot Repository"
-            url = uri("https://repo.spring.io/snapshot")
-            mavenContent {
-                snapshotsOnly()
-                includeGroup("org.springframework")
-                includeGroup("org.springframework.boot")
-            }
-        }
-
         exclusiveContent {
             forRepository {
                 maven {
