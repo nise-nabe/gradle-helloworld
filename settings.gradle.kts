@@ -56,7 +56,7 @@ dependencyResolutionManagement {
             forRepository {
                 ivy {
                     name = "Yarn"
-                    setUrl("v[revision]/[artifact](-v[revision]).[ext]")
+                    setUrl("https://github.com/yarnpkg/yarn/releases/download")
                     patternLayout {
                         artifact("v[revision]/[artifact](-v[revision]).[ext]")
                     }
