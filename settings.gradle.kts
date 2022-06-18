@@ -52,6 +52,24 @@ dependencyResolutionManagement {
             }
         }
 
+        exclusiveContent {
+            forRepository {
+                ivy {
+                    name = "Yarn"
+                    setUrl("v[revision]/[artifact](-v[revision]).[ext]")
+                    patternLayout {
+                        artifact("v[revision]/[artifact](-v[revision]).[ext]")
+                    }
+                    metadataSources {
+                        artifact()
+                    }
+                }
+            }
+            filter {
+                includeModule("com.yarnpkg", "yarn")
+            }
+        }
+
         maven {
             name = "Gradle"
             url = uri("https://repo.gradle.org/gradle/libs-releases")
