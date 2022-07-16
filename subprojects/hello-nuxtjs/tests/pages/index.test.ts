@@ -1,11 +1,11 @@
-import { createPage, setupTest } from '@nuxt/test-utils'
+import { $fetch, setup } from '@nuxt/test-utils'
+import { describe, test, expect } from 'vitest'
 
-describe('browser', () => {
-    setupTest({ browser: true })
+describe('browser', async () => {
+    await setup({ browser: true })
 
-    it('renders the index page', async () => {
-        const page = await createPage('/')
-        const html = await page.innerHTML('body')
+    test('renders the index page', async () => {
+        const html = await $fetch('/')
 
         expect(html).toContain('Home page')
     })
