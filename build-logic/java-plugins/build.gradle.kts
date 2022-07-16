@@ -34,15 +34,15 @@ idea {
 }
 
 dependencies {
-    implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.+")
+    implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.5")
 
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.+")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.7.2")
 
-    implementation("com.google.protobuf:protobuf-gradle-plugin:0.+") {
+    implementation("com.google.protobuf:protobuf-gradle-plugin:0.8.18") {
         because("protobuf and grpc convention plugin")
     }
 
@@ -58,7 +58,7 @@ dependencies {
         because("nodejs convention plugin")
     }
 
-    implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.+") {
+    implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2") {
         because("asciidoc convention plugin")
     }
 
@@ -66,10 +66,10 @@ dependencies {
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
 
-    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.+")
-    implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.+")
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.7.0")
+    implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.3.1")
 
-    implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.+")
+    implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66")
 }
 
 gradlePlugin {
