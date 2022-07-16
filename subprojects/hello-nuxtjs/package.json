@@ -8,7 +8,7 @@
     "playwrightDeps": "playwright install-deps",
     "start": "nuxi preview",
     "prepare": "nuxi prepare",
-    "test": "vitest run"
+    "test": "nuxi test"
   },
   "dependencies": {
     "nuxt": "^3.0.0-rc.5",
