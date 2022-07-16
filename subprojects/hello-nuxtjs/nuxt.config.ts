@@ -1,15 +1,6 @@
-import { NuxtConfig } from "@nuxt/types";
+import { defineNuxtConfig } from "nuxt";
 
-const isProd = process.env.NODE_ENV !== 'production'
-
-const config: NuxtConfig = {
+export default defineNuxtConfig({
     components: true,
     target: "static",
-    build: {
-        analyze: {
-            analyzerMode: isProd ? "static" : "disabled"
-        }
-    }
-}
-
-export default config
+})
