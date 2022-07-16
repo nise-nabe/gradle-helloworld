@@ -42,7 +42,7 @@ dependencies {
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.7.2")
 
-    implementation("com.google.protobuf:protobuf-gradle-plugin:0.8.18") {
+    implementation("com.google.protobuf:protobuf-gradle-plugin:0.8.19") {
         because("protobuf and grpc convention plugin")
     }
 
