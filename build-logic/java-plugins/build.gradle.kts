@@ -70,6 +70,8 @@ dependencies {
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.3.1")
 
     implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66")
+
+    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.6.21-1.0.6")
 }
 
 gradlePlugin {

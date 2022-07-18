@@ -196,6 +196,7 @@ include("hello-vite")
 include("hello-my-nodejs")
 include("hello-nextjs")
 include("hello-gradle-tooling-api")
+include("hello-komapper")
 
 
 for (project in rootProject.children) {
