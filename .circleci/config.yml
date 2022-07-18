@@ -109,7 +109,7 @@ jobs:
       - restore_gradle_wrapper_cache
       - restore_gradle_caches
       - restore_yarn_cache
-      - run: ./gradlew check --scan
+      - run: ./gradlew check --no-daemon --scan
       - save_gradle_wrapper_cache
       - save_gradle_caches
       - save_yarn_cache
