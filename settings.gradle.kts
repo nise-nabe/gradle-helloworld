@@ -197,6 +197,7 @@ include("hello-my-nodejs")
 include("hello-nextjs")
 include("hello-gradle-tooling-api")
 include("hello-komapper")
+include("hello-ksp")
 
 
 for (project in rootProject.children) {
