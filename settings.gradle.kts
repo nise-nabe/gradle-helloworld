@@ -142,7 +142,7 @@ pluginManagement {
     }
 
     plugins {
-        id("com.google.osdetector") version "1.7.0"
+        id("com.google.osdetector") version "1.7.1"
         id("com.nisecoder.ci-detect") version "0.0.12"
         id("com.nisecoder.nodejs") version "0.0.5"
         id("org.gradle.crypto.checksum") version "1.4.0"
