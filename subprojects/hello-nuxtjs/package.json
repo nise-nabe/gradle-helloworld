@@ -18,7 +18,7 @@
     "@nuxt/test-utils": "^3.0.0-rc.6",
     "playwright": "^1.23.4",
     "ts-node": "^10.9.1",
-    "vitest": "^0.21.0"
+    "vitest": "^0.23.4"
   },
   "packageManager": "yarn@3.2.0"
 }
