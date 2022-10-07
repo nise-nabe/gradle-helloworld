@@ -409,7 +409,7 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
 
-"@nuxt/kit@3.0.0-rc.11", "@nuxt/kit@^3.0.0-rc.6", "@nuxt/kit@^3.0.0-rc.9":
+"@nuxt/kit@3.0.0-rc.11", "@nuxt/kit@^3.0.0-rc.9":
   version "3.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.11.tgz#d147ef65509c073f1101fa1a19071e309bcf634f"
   dependencies:
@@ -432,7 +432,7 @@
     unimport "^0.6.7"
     untyped "^0.5.0"
 
-"@nuxt/schema@3.0.0-rc.11", "@nuxt/schema@^3.0.0-rc.6":
+"@nuxt/schema@3.0.0-rc.11":
   version "3.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.0.0-rc.11.tgz#5600d9be3e54d933c0669755919bf2750c0fc6d0"
   dependencies:
@@ -473,17 +473,18 @@
     rc9 "^1.2.2"
     std-env "^3.2.1"
 
-"@nuxt/test-utils@^3.0.0-rc.6":
-  version "3.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils/-/test-utils-3.0.0-rc.6.tgz#b492bb3956f8edfb309871ca0d755f0214d2c841"
+"@nuxt/test-utils@^3.0.0-rc.11":
+  version "3.0.0-rc.11"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils/-/test-utils-3.0.0-rc.11.tgz#bcd9ac2d0df6756a51b6c2089c25b8cc4debca31"
   dependencies:
-    "@nuxt/kit" "^3.0.0-rc.6"
-    "@nuxt/schema" "^3.0.0-rc.6"
-    defu "^6.0.0"
+    "@nuxt/kit" "3.0.0-rc.11"
+    "@nuxt/schema" "3.0.0-rc.11"
+    consola "^2.15.3"
+    defu "^6.1.0"
     execa "^6.1.0"
-    get-port-please "^2.5.0"
-    jiti "^1.14.0"
-    ohmyfetch "^0.4.18"
+    get-port-please "^2.6.1"
+    jiti "^1.16.0"
+    ohmyfetch "^0.4.19"
 
 "@nuxt/ui-templates@^0.4.0":
   version "0.4.0"
@@ -1980,13 +1981,7 @@ get-func-name@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/get-func-name/-/get-func-name-2.0.0.tgz#ead774abee72e20409433a066366023dd6887a41"
 
-get-port-please@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/get-port-please/-/get-port-please-2.5.0.tgz#1e2d40a6f55c02a1caed99991c64ed84afe50c72"
-  dependencies:
-    fs-memo "^1.2.0"
-
-get-port-please@^2.6.1:
+get-port-please@^2.5.0, get-port-please@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/get-port-please/-/get-port-please-2.6.1.tgz#80143de24fcaab39b01df977f66ad967e06b17d1"
   dependencies:
@@ -2310,11 +2305,7 @@ jest-worker@^26.2.1:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jiti@^1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.14.0.tgz#5350fff532a4d891ca4bcd700c47c1f40e6ee326"
-
-jiti@^1.15.0, jiti@^1.16.0:
+jiti@^1.14.0, jiti@^1.15.0, jiti@^1.16.0:
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.16.0.tgz#f72065954446ad1866fa8d6bcc3bed3cc1cebdaa"
 
