@@ -6,7 +6,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "2.9.5"
+    "vite": "2.9.13"
   },
   "packageManager": "yarn@3.2.0"
 }
