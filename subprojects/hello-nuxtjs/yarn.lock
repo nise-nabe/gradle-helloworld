@@ -2966,15 +2966,15 @@ pkg-types@^0.3.5:
     mlly "^0.5.14"
     pathe "^0.3.7"
 
-playwright-core@1.26.1:
-  version "1.26.1"
-  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.26.1.tgz#a162f476488312dcf12638d97685144de6ada512"
+playwright-core@1.27.0:
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.27.0.tgz#e5f9d2bc19ebdd9581a01e74f019bb91aa7cf55d"
 
-playwright@^1.26.1:
-  version "1.26.1"
-  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.26.1.tgz#0082c1d6a1c9cefe3f7a593396ad8568746184d0"
+playwright@^1.27.0:
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.27.0.tgz#68a0e29f1756da105b22291a7c3f402ae749213a"
   dependencies:
-    playwright-core "1.26.1"
+    playwright-core "1.27.0"
 
 postcss-calc@^8.2.3:
   version "8.2.4"
