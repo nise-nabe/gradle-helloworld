@@ -62,7 +62,7 @@ dependencies {
         because("asciidoc convention plugin")
     }
 
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.20.0")
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.21.0")
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
 
