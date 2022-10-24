@@ -7,5 +7,5 @@ javaPlatform {
 }
 
 dependencies {
-    api(platform("org.springframework.boot:spring-boot-dependencies:2.7.0"))
+    api(platform("org.springframework.boot:spring-boot-dependencies:2.7.5"))
 }
