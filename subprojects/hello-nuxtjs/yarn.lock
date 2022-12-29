@@ -371,10 +371,6 @@
   version "0.16.12"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.16.12.tgz#132e61b2124eee6033bf7f0d5b312c02524d39db"
 
-"@esbuild/linux-loong64@0.14.53":
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.53.tgz#251b4cd6760fadb4d68a05815e6dc5e432d69cd6"
-
 "@esbuild/linux-loong64@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.10.tgz#78a42897c2cf8db9fd5f1811f7590393b77774c7"
@@ -741,9 +737,9 @@
   dependencies:
     "@types/chai" "*"
 
-"@types/chai@*", "@types/chai@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.3.tgz#3c90752792660c4b562ad73b3fbd68bf3bc7ae07"
+"@types/chai@*", "@types/chai@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.4.tgz#e913e8175db8307d78b4e8fa690408ba6b65dee4"
 
 "@types/estree@*", "@types/estree@^1.0.0":
   version "1.0.0"
@@ -930,15 +926,11 @@ abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
 
-acorn-walk@^8.1.1:
+acorn-walk@^8.1.1, acorn-walk@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
 
-acorn@^8.4.1, acorn@^8.5.0, acorn@^8.6.0, acorn@^8.8.0:
-  version "8.8.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
-
-acorn@^8.8.1:
+acorn@^8.4.1, acorn@^8.5.0, acorn@^8.6.0, acorn@^8.8.1:
   version "8.8.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.1.tgz#0a3f9cbecc4ec3bea6f0a80b66ae8dd2da250b73"
 
@@ -1205,13 +1197,13 @@ caniuse-lite@^1.0.30001426:
   version "1.0.30001441"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001441.tgz#987437b266260b640a23cd18fbddb509d7f69f3e"
 
-chai@^4.3.6:
-  version "4.3.6"
-  resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.6.tgz#ffe4ba2d9fa9d6680cc0b370adae709ec9011e9c"
+chai@^4.3.7:
+  version "4.3.7"
+  resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.7.tgz#ec63f6df01829088e8bf55fca839bcd464a8ec51"
   dependencies:
     assertion-error "^1.1.0"
     check-error "^1.0.2"
-    deep-eql "^3.0.1"
+    deep-eql "^4.1.2"
     get-func-name "^2.0.0"
     loupe "^2.3.1"
     pathval "^1.1.1"
@@ -1519,9 +1511,9 @@ debug@4, debug@^4.1.0, debug@^4.3.4:
   dependencies:
     ms "2.1.2"
 
-deep-eql@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/deep-eql/-/deep-eql-3.0.1.tgz#dfc9404400ad1c8fe023e7da1df1c147c4b444df"
+deep-eql@^4.1.2:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/deep-eql/-/deep-eql-4.1.3.tgz#7c7775513092f7df98d8df9996dd085eb668cc6d"
   dependencies:
     type-detect "^4.0.0"
 
@@ -1676,10 +1668,6 @@ errno@^0.1.3:
   dependencies:
     prr "~1.0.1"
 
-esbuild-android-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-android-64/-/esbuild-android-64-0.14.53.tgz#259bc3ef1399a3cad8f4f67c40ee20779c4de675"
-
 esbuild-android-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-android-64/-/esbuild-android-64-0.15.10.tgz#8a59a84acbf2eca96996cadc35642cf055c494f0"
@@ -1687,10 +1675,6 @@ esbuild-android-64@0.15.10:
 esbuild-android-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-android-64/-/esbuild-android-64-0.15.18.tgz#20a7ae1416c8eaade917fb2453c1259302c637a5"
-
-esbuild-android-arm64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-android-arm64/-/esbuild-android-arm64-0.14.53.tgz#2158253d4e8f9fdd2a081bbb4f73b8806178841e"
 
 esbuild-android-arm64@0.15.10:
   version "0.15.10"
@@ -1700,10 +1684,6 @@ esbuild-android-arm64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-android-arm64/-/esbuild-android-arm64-0.15.18.tgz#9cc0ec60581d6ad267568f29cf4895ffdd9f2f04"
 
-esbuild-darwin-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-darwin-64/-/esbuild-darwin-64-0.14.53.tgz#b4681831fd8f8d06feb5048acbe90d742074cc2a"
-
 esbuild-darwin-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-darwin-64/-/esbuild-darwin-64-0.15.10.tgz#778bd29c8186ff47b176c8af58c08cf0fb8e6b86"
@@ -1711,10 +1691,6 @@ esbuild-darwin-64@0.15.10:
 esbuild-darwin-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-darwin-64/-/esbuild-darwin-64-0.15.18.tgz#428e1730ea819d500808f220fbc5207aea6d4410"
-
-esbuild-darwin-arm64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.53.tgz#d267d957852d121b261b3f76ead86e5b5463acc9"
 
 esbuild-darwin-arm64@0.15.10:
   version "0.15.10"
@@ -1724,10 +1700,6 @@ esbuild-darwin-arm64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.15.18.tgz#b6dfc7799115a2917f35970bfbc93ae50256b337"
 
-esbuild-freebsd-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-freebsd-64/-/esbuild-freebsd-64-0.14.53.tgz#aca2af6d72b537fe66a38eb8f374fb66d4c98ca0"
-
 esbuild-freebsd-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-freebsd-64/-/esbuild-freebsd-64-0.15.10.tgz#ab301c5f6ded5110dbdd611140bef1a7c2e99236"
@@ -1735,10 +1707,6 @@ esbuild-freebsd-64@0.15.10:
 esbuild-freebsd-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-freebsd-64/-/esbuild-freebsd-64-0.15.18.tgz#4e190d9c2d1e67164619ae30a438be87d5eedaf2"
-
-esbuild-freebsd-arm64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-freebsd-arm64/-/esbuild-freebsd-arm64-0.14.53.tgz#76282e19312d914c34343c8a7da6cc5f051580b9"
 
 esbuild-freebsd-arm64@0.15.10:
   version "0.15.10"
@@ -1748,10 +1716,6 @@ esbuild-freebsd-arm64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-freebsd-arm64/-/esbuild-freebsd-arm64-0.15.18.tgz#18a4c0344ee23bd5a6d06d18c76e2fd6d3f91635"
 
-esbuild-linux-32@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-32/-/esbuild-linux-32-0.14.53.tgz#1045d34cf7c5faaf2af3b29cc1573b06580c37e5"
-
 esbuild-linux-32@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-linux-32/-/esbuild-linux-32-0.15.10.tgz#5282fe9915641caf9c8070e4ba2c3e16d358f837"
@@ -1759,10 +1723,6 @@ esbuild-linux-32@0.15.10:
 esbuild-linux-32@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-32/-/esbuild-linux-32-0.15.18.tgz#9a329731ee079b12262b793fb84eea762e82e0ce"
-
-esbuild-linux-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-64/-/esbuild-linux-64-0.14.53.tgz#ab3f2ee2ebb5a6930c72d9539cb34b428808cbe4"
 
 esbuild-linux-64@0.15.10:
   version "0.15.10"
@@ -1772,10 +1732,6 @@ esbuild-linux-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-64/-/esbuild-linux-64-0.15.18.tgz#532738075397b994467b514e524aeb520c191b6c"
 
-esbuild-linux-arm64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-arm64/-/esbuild-linux-arm64-0.14.53.tgz#1f5530412f6690949e78297122350488d3266cfe"
-
 esbuild-linux-arm64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-linux-arm64/-/esbuild-linux-arm64-0.15.10.tgz#2f0056e9d5286edb0185b56655caa8c574d8dbe7"
@@ -1783,10 +1739,6 @@ esbuild-linux-arm64@0.15.10:
 esbuild-linux-arm64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-arm64/-/esbuild-linux-arm64-0.15.18.tgz#5372e7993ac2da8f06b2ba313710d722b7a86e5d"
-
-esbuild-linux-arm@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-arm/-/esbuild-linux-arm-0.14.53.tgz#a44ec9b5b42007ab6c0d65a224ccc6bbd97c54cf"
 
 esbuild-linux-arm@0.15.10:
   version "0.15.10"
@@ -1796,10 +1748,6 @@ esbuild-linux-arm@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-arm/-/esbuild-linux-arm-0.15.18.tgz#e734aaf259a2e3d109d4886c9e81ec0f2fd9a9cc"
 
-esbuild-linux-mips64le@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.14.53.tgz#a4d0b6b17cfdeea4e41b0b085a5f73d99311be9f"
-
 esbuild-linux-mips64le@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.15.10.tgz#90ce1c4ee0202edb4ac69807dea77f7e5804abc4"
@@ -1807,10 +1755,6 @@ esbuild-linux-mips64le@0.15.10:
 esbuild-linux-mips64le@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.15.18.tgz#c0487c14a9371a84eb08fab0e1d7b045a77105eb"
-
-esbuild-linux-ppc64le@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-0.14.53.tgz#8c331822c85465434e086e3e6065863770c38139"
 
 esbuild-linux-ppc64le@0.15.10:
   version "0.15.10"
@@ -1820,10 +1764,6 @@ esbuild-linux-ppc64le@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-0.15.18.tgz#af048ad94eed0ce32f6d5a873f7abe9115012507"
 
-esbuild-linux-riscv64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.14.53.tgz#36fd75543401304bea8a2d63bf8ea18aaa508e00"
-
 esbuild-linux-riscv64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.15.10.tgz#d7420d806ece5174f24f4634303146f915ab4207"
@@ -1831,10 +1771,6 @@ esbuild-linux-riscv64@0.15.10:
 esbuild-linux-riscv64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.15.18.tgz#423ed4e5927bd77f842bd566972178f424d455e6"
-
-esbuild-linux-s390x@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-linux-s390x/-/esbuild-linux-s390x-0.14.53.tgz#1622677ab6824123f48f75d3afc031cd41936129"
 
 esbuild-linux-s390x@0.15.10:
   version "0.15.10"
@@ -1844,10 +1780,6 @@ esbuild-linux-s390x@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-linux-s390x/-/esbuild-linux-s390x-0.15.18.tgz#21d21eaa962a183bfb76312e5a01cc5ae48ce8eb"
 
-esbuild-netbsd-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-netbsd-64/-/esbuild-netbsd-64-0.14.53.tgz#e86d0efd0116658be335492ed12e66b26b4baf52"
-
 esbuild-netbsd-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-netbsd-64/-/esbuild-netbsd-64-0.15.10.tgz#6c06b3107e3df53de381e6299184d4597db0440f"
@@ -1855,10 +1787,6 @@ esbuild-netbsd-64@0.15.10:
 esbuild-netbsd-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-netbsd-64/-/esbuild-netbsd-64-0.15.18.tgz#ae75682f60d08560b1fe9482bfe0173e5110b998"
-
-esbuild-openbsd-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-openbsd-64/-/esbuild-openbsd-64-0.14.53.tgz#9bcbbe6f86304872c6e91f64c8eb73fc29c3588b"
 
 esbuild-openbsd-64@0.15.10:
   version "0.15.10"
@@ -1868,10 +1796,6 @@ esbuild-openbsd-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-openbsd-64/-/esbuild-openbsd-64-0.15.18.tgz#79591a90aa3b03e4863f93beec0d2bab2853d0a8"
 
-esbuild-sunos-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-sunos-64/-/esbuild-sunos-64-0.14.53.tgz#f7a872f7460bfb7b131f7188a95fbce3d1c577e8"
-
 esbuild-sunos-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-sunos-64/-/esbuild-sunos-64-0.15.10.tgz#5fe7bef267a02f322fd249a8214d0274937388a7"
@@ -1879,10 +1803,6 @@ esbuild-sunos-64@0.15.10:
 esbuild-sunos-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-sunos-64/-/esbuild-sunos-64-0.15.18.tgz#fd528aa5da5374b7e1e93d36ef9b07c3dfed2971"
-
-esbuild-windows-32@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-windows-32/-/esbuild-windows-32-0.14.53.tgz#c5e3ca50e2d1439cc2c9fe4defa63bcd474ce709"
 
 esbuild-windows-32@0.15.10:
   version "0.15.10"
@@ -1892,10 +1812,6 @@ esbuild-windows-32@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-windows-32/-/esbuild-windows-32-0.15.18.tgz#0e92b66ecdf5435a76813c4bc5ccda0696f4efc3"
 
-esbuild-windows-64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-windows-64/-/esbuild-windows-64-0.14.53.tgz#ec2ab4a60c5215f092ffe1eab6d01319e88238af"
-
 esbuild-windows-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-windows-64/-/esbuild-windows-64-0.15.10.tgz#387a9515bef3fee502d277a5d0a2db49a4ecda05"
@@ -1904,10 +1820,6 @@ esbuild-windows-64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-windows-64/-/esbuild-windows-64-0.15.18.tgz#0fc761d785414284fc408e7914226d33f82420d0"
 
-esbuild-windows-arm64@0.14.53:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.53.tgz#f71d403806bdf9f4a1f9d097db9aec949bd675c8"
-
 esbuild-windows-arm64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.15.10.tgz#5a6fcf2fa49e895949bf5495cf088ab1b43ae879"
@@ -1915,32 +1827,6 @@ esbuild-windows-arm64@0.15.10:
 esbuild-windows-arm64@0.15.18:
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.15.18.tgz#5b5bdc56d341d0922ee94965c89ee120a6a86eb7"
-
-esbuild@^0.14.47:
-  version "0.14.53"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.14.53.tgz#20b1007f686e8584f2a01a1bec5a37aac9498ce4"
-  optionalDependencies:
-    "@esbuild/linux-loong64" "0.14.53"
-    esbuild-android-64 "0.14.53"
-    esbuild-android-arm64 "0.14.53"
-    esbuild-darwin-64 "0.14.53"
-    esbuild-darwin-arm64 "0.14.53"
-    esbuild-freebsd-64 "0.14.53"
-    esbuild-freebsd-arm64 "0.14.53"
-    esbuild-linux-32 "0.14.53"
-    esbuild-linux-64 "0.14.53"
-    esbuild-linux-arm "0.14.53"
-    esbuild-linux-arm64 "0.14.53"
-    esbuild-linux-mips64le "0.14.53"
-    esbuild-linux-ppc64le "0.14.53"
-    esbuild-linux-riscv64 "0.14.53"
-    esbuild-linux-s390x "0.14.53"
-    esbuild-netbsd-64 "0.14.53"
-    esbuild-openbsd-64 "0.14.53"
-    esbuild-sunos-64 "0.14.53"
-    esbuild-windows-32 "0.14.53"
-    esbuild-windows-64 "0.14.53"
-    esbuild-windows-arm64 "0.14.53"
 
 esbuild@^0.15.14:
   version "0.15.18"
@@ -3449,7 +3335,7 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
 
-postcss@^8.1.10, postcss@^8.4.14:
+postcss@^8.1.10:
   version "8.4.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.14.tgz#ee9274d5622b4858c1007a74d76e42e56fd21caf"
   dependencies:
@@ -3622,12 +3508,6 @@ rollup-pluginutils@^2.8.2:
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
   dependencies:
     estree-walker "^0.6.1"
-
-rollup@^2.75.6:
-  version "2.77.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.2.tgz#6b6075c55f9cc2040a5912e6e062151e42e2c4e3"
-  optionalDependencies:
-    fsevents "~2.3.2"
 
 rollup@^2.79.1:
   version "2.79.1"
@@ -3845,12 +3725,6 @@ strip-final-newline@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-3.0.0.tgz#52894c313fbff318835280aed60ff71ebf12b8fd"
 
-strip-literal@^0.4.1:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/strip-literal/-/strip-literal-0.4.2.tgz#4f9fa6c38bb157b924e9ace7155ebf8a2342cbcf"
-  dependencies:
-    acorn "^8.8.0"
-
 strip-literal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-literal/-/strip-literal-1.0.0.tgz#0a484ed5a978cd9d2becf3cf8f4f2cb5ab0e1e74"
@@ -3953,9 +3827,9 @@ tiny-invariant@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.2.0.tgz#a1141f86b672a9148c72e978a19a73b9b94a15a9"
 
-tinybench@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/tinybench/-/tinybench-2.1.5.tgz#6864341415ff0f912ed160cfd90b7f833ece674c"
+tinybench@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tinybench/-/tinybench-2.3.1.tgz#14f64e6b77d7ef0b1f6ab850c7a808c6760b414d"
 
 tinypool@^0.3.0:
   version "0.3.0"
@@ -4151,6 +4025,17 @@ v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
 
+vite-node@0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-0.26.2.tgz#2624236b9d68ea62c753572ee465fe4fa0657572"
+  dependencies:
+    debug "^4.3.4"
+    mlly "^1.0.0"
+    pathe "^0.2.0"
+    source-map "^0.6.1"
+    source-map-support "^0.5.21"
+    vite "^3.0.0 || ^4.0.0"
+
 vite-node@^0.25.2:
   version "0.25.8"
   resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-0.25.8.tgz#b1477e9d84b9e86dddc559542179ae3d34a264e9"
@@ -4182,17 +4067,6 @@ vite-plugin-checker@^0.5.1:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
-"vite@^2.9.12 || ^3.0.0-0":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-3.0.4.tgz#c61688d6b97573e96cf5ac25f2d68597b5ce68e8"
-  dependencies:
-    esbuild "^0.14.47"
-    postcss "^8.4.14"
-    resolve "^1.22.1"
-    rollup "^2.75.6"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
 "vite@^3.0.0 || ^4.0.0":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/vite/-/vite-4.0.3.tgz#de27ad3f263a03ae9419cdc8bc07721eadcba8b9"
@@ -4215,21 +4089,25 @@ vite@~3.2.4:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@^0.23.4:
-  version "0.23.4"
-  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.23.4.tgz#7ebea620f203f4df09a27ca17819dc9da61f88ef"
+vitest@^0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.26.2.tgz#c1647e41d5619d1d059ff65d9c00672261ccac30"
   dependencies:
-    "@types/chai" "^4.3.3"
+    "@types/chai" "^4.3.4"
     "@types/chai-subset" "^1.3.3"
     "@types/node" "*"
-    chai "^4.3.6"
+    acorn "^8.8.1"
+    acorn-walk "^8.2.0"
+    chai "^4.3.7"
     debug "^4.3.4"
     local-pkg "^0.4.2"
-    strip-literal "^0.4.1"
-    tinybench "^2.1.5"
+    source-map "^0.6.1"
+    strip-literal "^1.0.0"
+    tinybench "^2.3.1"
     tinypool "^0.3.0"
     tinyspy "^1.0.2"
-    vite "^2.9.12 || ^3.0.0-0"
+    vite "^3.0.0 || ^4.0.0"
+    vite-node "0.26.2"
 
 vscode-jsonrpc@6.0.0:
   version "6.0.0"
