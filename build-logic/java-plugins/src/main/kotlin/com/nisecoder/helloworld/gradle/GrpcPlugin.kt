@@ -1,13 +1,11 @@
 package com.nisecoder.helloworld.gradle
 
-import com.google.protobuf.gradle.id
-import com.google.protobuf.gradle.plugins
-import com.google.protobuf.gradle.protobuf
-import com.google.protobuf.gradle.protoc
+import com.google.protobuf.gradle.ProtobufExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.configure
 import org.gradle.plugins.ide.idea.IdeaPlugin
 
 class GrpcPlugin: Plugin<Project> {
@@ -16,12 +14,12 @@ class GrpcPlugin: Plugin<Project> {
         plugins.apply(JavaPlugin::class)
         plugins.apply(IdeaPlugin::class)
 
-        protobuf {
+        configure<ProtobufExtension> {
             protoc {
                 artifact = "com.google.protobuf:protoc:3.17.3"
             }
             plugins {
-                id("grpc") {
+                register("grpc") {
                     artifact = "io.grpc:protoc-gen-grpc-java:1.39.0"
                 }
             }
