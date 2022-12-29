@@ -20,8 +20,8 @@ kotlinDslPluginOptions {
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
-        languageVersion = "1.5"
-        apiVersion = "1.5"
+        languageVersion = "1.7"
+        apiVersion = "1.7"
         javaParameters = true
     }
 }
