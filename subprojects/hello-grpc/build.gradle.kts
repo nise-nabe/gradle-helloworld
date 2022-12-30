@@ -5,6 +5,5 @@ plugins {
 }
 
 dependencies {
-    implementation(platform("com.nisecoder.helloworld:platform-grpc"))
-    api("com.google.protobuf:protobuf-java")
+    api("com.google.protobuf:protobuf-java:3.21.12")
 }
