@@ -65,10 +65,6 @@ gradlePlugin {
             id = "com.nisecoder.helloworld.gradle.build-basic"
             implementationClass = "com.nisecoder.helloworld.gradle.BuildBasicPlugin"
         }
-        register("kotlin") {
-            id = "com.nisecoder.helloworld.gradle.kotlin"
-            implementationClass = "com.nisecoder.helloworld.gradle.KotlinPlugin"
-        }
         register("intellij-gradle-plugin") {
             id = "com.nisecoder.helloworld.gradle.intellij-gradle-plugin"
             implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijGradlePlugin"
