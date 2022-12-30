@@ -64,6 +64,7 @@ dependencyResolutionManagement {
 rootProject.name = "build-logic"
 
 include("kotlin-dsl-plugins")
+include("java-plugins")
 include("kotlin-plugins")
 include("spring-boot-plugins")
 include("nuxt-plugin")
