@@ -46,10 +46,6 @@ dependencies {
         because("protobuf and grpc convention plugin")
     }
 
-    implementation("gradle.plugin.com.github.bjornvester:xjc-gradle-plugin:1.6.0") {
-        because("xsd convention plugin")
-    }
-
     implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.6.2") {
         because("graphql convention plugin")
     }
@@ -107,10 +103,6 @@ gradlePlugin {
         register("intellij-gradle-plugin") {
             id = "com.nisecoder.helloworld.gradle.intellij-gradle-plugin"
             implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijGradlePlugin"
-        }
-        register("xsd") {
-            id = "com.nisecoder.helloworld.gradle.xsd"
-            implementationClass = "com.nisecoder.helloworld.gradle.XSDPlugin"
         }
         register("intellij-runner") {
             id = "com.nisecoder.hello.gradle.intellij-runner"
