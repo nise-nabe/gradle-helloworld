@@ -4,5 +4,5 @@ plugins {
 }
 
 dependencies {
-    implementation("com.google.devtools.ksp:symbol-processing-api:1.6.21-1.0.6")
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.7.22-1.0.8")
 }
