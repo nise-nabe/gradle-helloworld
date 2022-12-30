@@ -43,10 +43,6 @@ dependencies {
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
-    implementation("com.google.protobuf:protobuf-gradle-plugin:0.9.1") {
-        because("protobuf and grpc convention plugin")
-    }
-
     implementation("com.github.node-gradle:gradle-node-plugin:3.3.0") {
         because("nodejs convention plugin")
     }
@@ -76,10 +72,6 @@ gradlePlugin {
         register("kotlin") {
             id = "com.nisecoder.helloworld.gradle.kotlin"
             implementationClass = "com.nisecoder.helloworld.gradle.KotlinPlugin"
-        }
-        register("grpc") {
-            id = "com.nisecoder.helloworld.gradle.grpc"
-            implementationClass = "com.nisecoder.helloworld.gradle.GrpcPlugin"
         }
         register("intellij-gradle-plugin") {
             id = "com.nisecoder.helloworld.gradle.intellij-gradle-plugin"
