@@ -1,131 +1,14 @@
 version: 2.1
 
-## cache strategy
-# gradle build cache
-# gradle wrapper
-# gradle node plugin's binary files
-
-commands:
-  restore_gradle_wrapper_cache:
-    steps:
-      - restore_cache:
-          name: Restoring Gradle Wrapper Cache
-          key: << parameters.cache-key >>-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-    parameters:
-      cache-key:
-        type: string
-        default: v1
-
-  save_gradle_wrapper_cache:
-    steps:
-      - save_cache:
-          name: Saving Gradle Wrapper Cache
-          paths:
-            - ~/.gradle/wrapper
-          key: << parameters.cache-key >>-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-          when: always
-    parameters:
-      cache-key:
-        type: string
-        default: v1
-
-  restore_gradle_caches:
-    steps:
-      - restore_cache:
-          name: Restoring Gradle Cache
-          keys:
-            - << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-            - << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-
-            - << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
-      cache-key:
-        type: string
-        default: v1
-
-  save_gradle_caches:
-    steps:
-      - save_cache:
-          name: Saving Gradle Cache
-          paths:
-            - ~/.gradle/caches
-            - ~/.gradle/notifications
-          key: << parameters.cache-key >>-gradle-caches-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
-      cache-key:
-        type: string
-        default: v1
-
-  restore_yarn_cache:
-    steps:
-      - restore_cache:
-          name: Restoring Yarn Cache
-          keys:
-          - << parameters.cache-key>>-yarn-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-          - << parameters.cache-key>>-yarn-<< parameters.jdk-version >>-{{ .Branch }}-
-          - << parameters.cache-key>>-yarn-<< parameters.jdk-version >>-
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
-      cache-key:
-        type: string
-        default: v1
-
-  save_yarn_cache:
-    steps:
-      - save_cache:
-          name: Saving Yarn Cache
-          paths:
-            # yarn cache config
-            - ~/.yarn/cache/v6
-          key: << parameters.cache-key >>-yarn-<< parameters.jdk-version >>-{{ .Branch }}-{{ .Revision }}
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
-      cache-key:
-        type: string
-        default: v1
-
-jobs:
-  gradle-check:
-    parameters:
-      jdk-version:
-        type: string
-        default: "11.0"
-
-    # testcontainers
-    machine:
-      image: ubuntu-2004:202104-01
-
-    steps:
-      - checkout
-      - restore_gradle_wrapper_cache
-      - restore_gradle_caches
-      - restore_yarn_cache
-      - run: ./gradlew check --no-daemon --scan
-      - save_gradle_wrapper_cache
-      - save_gradle_caches
-      - save_yarn_cache
-      - store_test_results:
-          path: build/test-results/junit/
-      - store_artifacts:
-          path: build/reports/tests/test/
+orbs:
+  gradle: circleci/gradle@3.0.0
 
 workflows:
   version: 2
   workflow:
     jobs:
-      - gradle-check:
-          matrix:
-            parameters:
-              jdk-version: [ "11.0" ]
+      - gradle/test:
+          command: check --no-daemon --scan
           filters:
             branches:
               only: master
