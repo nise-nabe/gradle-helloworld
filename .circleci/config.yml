@@ -8,7 +8,7 @@ workflows:
   workflow:
     jobs:
       - gradle/test:
-          command: check --no-daemon --scan
+          test_command: check --no-daemon --scan
           filters:
             branches:
               only: master
