@@ -40,7 +40,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.11.0")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
     implementation("com.google.protobuf:protobuf-gradle-plugin:0.9.1") {
         because("protobuf and grpc convention plugin")
