@@ -1,7 +1,5 @@
 package com.nisecoder.helloworld.gradle
 
-import org.gradle.kotlin.dsl.configure
-
 plugins {
     id("com.google.protobuf")
     java
