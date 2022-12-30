@@ -22,8 +22,8 @@ class IntellijGradlePlugin: Plugin<Project> {
 
         tasks.withType<KotlinCompile>().configureEach {
             kotlinOptions {
-                languageVersion = "1.6"
-                apiVersion = "1.6"
+                languageVersion = "1.7"
+                apiVersion = "1.7"
                 jvmTarget = JavaVersion.VERSION_11.toString()
                 javaParameters = true
             }
@@ -31,7 +31,7 @@ class IntellijGradlePlugin: Plugin<Project> {
 
         extensions.configure<IntelliJPluginExtension>("intellij") {
             type.set("IC")
-            version.set("2022.1.1")
+            version.set("2022.3.1")
             configureDefaultDependencies.set(false)
             downloadSources.set(true)
 
