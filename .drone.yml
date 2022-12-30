@@ -1,8 +1,0 @@
-kind: pipeline
-name: hello drone.io
-
-steps:
-  - name: gradle helloworld
-    image: gradle:7.5.0-jdk11
-    commands:
-      - echo "Hello World!"
