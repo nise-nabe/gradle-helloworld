@@ -1,7 +1,8 @@
 plugins {
     application
     id("com.nisecoder.helloworld.gradle.build-basic")
-    id("dev.fritz2.fritz2-gradle")
+    kotlin("multiplatform")
+    id("com.google.devtools.ksp")
 }
 
 kotlin {

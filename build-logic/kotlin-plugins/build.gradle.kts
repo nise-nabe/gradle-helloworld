@@ -40,8 +40,6 @@ dependencies {
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
-    implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
-
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.7")
     implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.11.0")
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.3.1")
