@@ -7,6 +7,6 @@ plugins {
 }
 
 dependencies {
-    implementation("org.redundent:kotlin-xml-builder:1.7.3")
+    implementation("org.redundent:kotlin-xml-builder:1.8.0")
     implementation("javax.xml.bind:jaxb-api:2.3.1")
 }
