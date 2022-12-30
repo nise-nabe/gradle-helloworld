@@ -30,7 +30,7 @@ class SpringBootConventionPlugin: Plugin<Project> {
 
                 add(IMPLEMENTATION_CONFIGURATION_NAME, kotlin("stdlib-jdk8"))
                 add(IMPLEMENTATION_CONFIGURATION_NAME, kotlin("reflect"))
-                add(TEST_IMPLEMENTATION_CONFIGURATION_NAME, "com.ninja-squad:springmockk:3.0.1")
+                add(TEST_IMPLEMENTATION_CONFIGURATION_NAME, "com.ninja-squad:springmockk:4.0.0")
             }
 
         }

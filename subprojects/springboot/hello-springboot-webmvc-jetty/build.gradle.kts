@@ -9,11 +9,7 @@ dependencies {
     kapt("org.springframework.boot:spring-boot-autoconfigure-processor")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-    implementation("org.springframework.boot:spring-boot-starter-web") {
-        exclude(group = "org.springframework.boot", module = "spring-boot-starter-tomcat")
-    }
-    implementation("org.springframework.boot:spring-boot-starter-jetty")
-
+    implementation("org.springframework.boot:spring-boot-starter-web")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     developmentOnly("org.springframework.boot:spring-boot-devtools")

@@ -5,28 +5,28 @@ plugins {
 }
 
 dependencies {
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.+")) {
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0")) {
     }
 
     implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.retrofit2:retrofit:2.+")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
     testImplementation("com.squareup.okhttp3:mockwebserver")
-    testImplementation("com.squareup.retrofit2:retrofit-mock:2.+")
+    testImplementation("com.squareup.retrofit2:retrofit-mock:2.9.0")
 }
 
 dependencies {
-    implementation("org.apache.httpcomponents.client5:httpclient5:5.1")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.2.1")
 }
 
 dependencies {
-    implementation(platform("com.linecorp.armeria:armeria-bom:1.6.+"))
+    implementation(platform("com.linecorp.armeria:armeria-bom:1.21.0"))
     implementation("com.linecorp.armeria:armeria")
 }
 
 dependencies {
-    implementation(platform("io.ktor:ktor-bom:1.6.3"))
-    testImplementation(platform("io.ktor:ktor-bom:1.6.3"))
+    implementation(platform("io.ktor:ktor-bom:2.2.1"))
+    testImplementation(platform("io.ktor:ktor-bom:2.2.1"))
 
     implementation("io.ktor:ktor-client-core")
     implementation("io.ktor:ktor-client-cio")

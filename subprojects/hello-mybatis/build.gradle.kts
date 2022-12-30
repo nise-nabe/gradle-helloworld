@@ -15,14 +15,14 @@ plugins {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2")
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.1")
     runtimeOnly("mysql:mysql-connector-java:8.0.31")
 
     testImplementation(platform("org.testcontainers:testcontainers-bom:1.17.3"))
     testImplementation("org.testcontainers:testcontainers")
     testImplementation("org.testcontainers:mysql")
     testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("io.github.microutils:kotlin-logging-jvm:2.1.23")
+    testImplementation("io.github.microutils:kotlin-logging-jvm:3.0.4")
 }
 
 tasks.test {

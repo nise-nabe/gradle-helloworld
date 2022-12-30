@@ -5,5 +5,5 @@ plugins {
 
 dependencies {
     implementation("org.gradle:gradle-tooling-api:7.4.2")
-    runtimeOnly("org.slf4j:slf4j-simple:1.7.36")
+    runtimeOnly("org.slf4j:slf4j-simple:2.0.5")
 }
