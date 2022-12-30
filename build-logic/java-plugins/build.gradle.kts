@@ -43,10 +43,6 @@ dependencies {
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
-    implementation("com.github.node-gradle:gradle-node-plugin:3.3.0") {
-        because("nodejs convention plugin")
-    }
-
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
