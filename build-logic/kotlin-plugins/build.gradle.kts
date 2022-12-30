@@ -34,21 +34,21 @@ idea {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
-    implementation("org.jetbrains.kotlin:kotlin-allopen")
-    implementation("org.jetbrains.kotlin:kotlin-noarg")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.22")
+    implementation("org.jetbrains.kotlin:kotlin-allopen:1.7.22")
+    implementation("org.jetbrains.kotlin:kotlin-noarg:1.7.22")
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
 
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.7")
-    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.10.0")
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.11.0")
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.3.1")
 
     implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66")
 
-    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.7.10-1.0.6")
+    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.7.22-1.0.8")
 }
 
 gradlePlugin {
