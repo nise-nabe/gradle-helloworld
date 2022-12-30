@@ -63,6 +63,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "build-logic"
 
+include("build-plugins")
 include("kotlin-dsl-plugins")
 include("java-plugins")
 include("kotlin-plugins")

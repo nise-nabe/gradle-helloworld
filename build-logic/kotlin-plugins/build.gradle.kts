@@ -34,20 +34,16 @@ idea {
 }
 
 dependencies {
-    implementation(project(":kotlin-dsl-plugins"))
-    implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.7")
-
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
-
     implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
 
-    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.7.0")
+    implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.7")
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.10.0")
     implementation("org.jetbrains.intellij.plugins:gradle-changelog-plugin:1.3.1")
 
     implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66")
@@ -57,24 +53,16 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("root-build") {
-            id = "com.nisecoder.helloworld.gradle.root-build"
-            implementationClass = "com.nisecoder.helloworld.gradle.RootBuildPlugin"
-        }
-        register("build-basic") {
-            id = "com.nisecoder.helloworld.gradle.build-basic"
-            implementationClass = "com.nisecoder.helloworld.gradle.BuildBasicPlugin"
-        }
         register("intellij-gradle-plugin") {
             id = "com.nisecoder.helloworld.gradle.intellij-gradle-plugin"
             implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijGradlePlugin"
         }
         register("intellij-runner") {
-            id = "com.nisecoder.hello.gradle.intellij-runner"
+            id = "com.nisecoder.helloworld.gradle.intellij-runner"
             implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijRunnerPlugin"
         }
         register("shared-index") {
-            id = "com.nisecoder.hello.gradle.shared-index"
+            id = "com.nisecoder.helloworld.gradle.shared-index"
             implementationClass = "com.nisecoder.helloworld.gradle.intellij.IntellijSharedIndexPlugin"
         }
     }

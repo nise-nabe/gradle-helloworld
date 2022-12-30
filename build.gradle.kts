@@ -1,5 +1,5 @@
 plugins {
-    id("com.nisecoder.helloworld.gradle.root-build")
+    id("com.nisecoder.helloworld.gradle.build-root")
 }
 
 allprojects {
