@@ -46,10 +46,6 @@ dependencies {
         because("protobuf and grpc convention plugin")
     }
 
-    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.6.2") {
-        because("graphql convention plugin")
-    }
-
     implementation("com.github.node-gradle:gradle-node-plugin:3.3.0") {
         because("nodejs convention plugin")
     }
@@ -83,10 +79,6 @@ gradlePlugin {
         register("kotlin") {
             id = "com.nisecoder.helloworld.gradle.kotlin"
             implementationClass = "com.nisecoder.helloworld.gradle.KotlinPlugin"
-        }
-        register("graphql") {
-            id = "com.nisecoder.helloworld.gradle.graphql"
-            implementationClass = "com.nisecoder.helloworld.gradle.GraphQLPlugin"
         }
         register("asciidoc") {
             id = "com.nisecoder.helloworld.gradle.asciidoc"
