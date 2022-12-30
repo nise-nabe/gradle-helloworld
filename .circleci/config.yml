@@ -16,7 +16,6 @@ workflows:
       - gradle/test:
           executor:
             name: ubuntu
-            tag: "11.0"
           test_command: check --no-daemon --scan
           filters:
             branches:
