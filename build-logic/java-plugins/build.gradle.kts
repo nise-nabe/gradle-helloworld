@@ -34,6 +34,7 @@ idea {
 }
 
 dependencies {
+    implementation(project(":kotlin-dsl-plugins"))
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.7")
 
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
@@ -83,10 +84,6 @@ gradlePlugin {
         register("asciidoc") {
             id = "com.nisecoder.helloworld.gradle.asciidoc"
             implementationClass = "com.nisecoder.helloworld.gradle.AsciidocPlugin"
-        }
-        register("code-quality") {
-            id = "com.nisecoder.helloworld.gradle.code-quality"
-            implementationClass = "com.nisecoder.helloworld.gradle.CodeQualityPlugin"
         }
         register("grpc") {
             id = "com.nisecoder.helloworld.gradle.grpc"

@@ -13,4 +13,6 @@ dependencies {
     implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.6.2") {
         because("graphql convention plugin")
     }
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
+
 }
