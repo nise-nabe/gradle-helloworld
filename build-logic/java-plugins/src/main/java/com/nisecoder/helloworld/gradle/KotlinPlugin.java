@@ -17,12 +17,12 @@ public class KotlinPlugin implements Plugin<Project> {
 
         JavaToolchainService javaToolchain = (JavaToolchainService) project.getExtensions().getByName("javaToolchains");
         javaToolchain.compilerFor(spec -> {
-            spec.getLanguageVersion().set(JavaLanguageVersion.of(11));
+            spec.getLanguageVersion().set(JavaLanguageVersion.of(17));
             spec.getVendor().set(JvmVendorSpec.ADOPTIUM);
         });
 
         project.getExtensions().configure(KotlinJvmProjectExtension.class, it ->
-            it.jvmToolchain(spec -> spec.getLanguageVersion().set(JavaLanguageVersion.of(11)))
+            it.jvmToolchain(spec -> spec.getLanguageVersion().set(JavaLanguageVersion.of(17)))
         );
 
         var tasks = project.getTasks();
@@ -30,7 +30,7 @@ public class KotlinPlugin implements Plugin<Project> {
             var options = task.getKotlinOptions();
             options.setLanguageVersion("1.7");
             options.setApiVersion("1.7");
-            options.setJvmTarget(JavaVersion.VERSION_11.toString());
+            options.setJvmTarget(JavaVersion.VERSION_17.toString());
             options.setJavaParameters(true);
         });
 

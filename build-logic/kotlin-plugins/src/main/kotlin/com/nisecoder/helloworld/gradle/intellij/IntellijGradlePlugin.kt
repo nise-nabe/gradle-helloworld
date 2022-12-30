@@ -24,7 +24,7 @@ class IntellijGradlePlugin: Plugin<Project> {
             kotlinOptions {
                 languageVersion = "1.7"
                 apiVersion = "1.7"
-                jvmTarget = JavaVersion.VERSION_11.toString()
+                jvmTarget = JavaVersion.VERSION_17.toString()
                 javaParameters = true
             }
         }

@@ -3,7 +3,7 @@ plugins {
 }
 
 kotlinDslPluginOptions {
-    jvmTarget.set(JavaVersion.VERSION_11.toString())
+    jvmTarget.set(JavaVersion.VERSION_17.toString())
 }
 
 dependencies {

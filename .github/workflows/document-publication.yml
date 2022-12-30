@@ -15,8 +15,8 @@ jobs:
       - name: Set up Java for Publication
         uses: actions/setup-java@v3
         with:
-          distribution: temurin
-          java-version: 11
+          distribution: 'temurin'
+          java-version: 17
 
       - name: Generate Document
         uses: gradle/gradle-build-action@v2
