@@ -51,10 +51,6 @@ dependencies {
         because("nodejs convention plugin")
     }
 
-    implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2") {
-        because("asciidoc convention plugin")
-    }
-
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
 
     implementation("dev.fritz2:fritz2-gradle-plugin:0.13")
@@ -80,10 +76,6 @@ gradlePlugin {
         register("kotlin") {
             id = "com.nisecoder.helloworld.gradle.kotlin"
             implementationClass = "com.nisecoder.helloworld.gradle.KotlinPlugin"
-        }
-        register("asciidoc") {
-            id = "com.nisecoder.helloworld.gradle.asciidoc"
-            implementationClass = "com.nisecoder.helloworld.gradle.AsciidocPlugin"
         }
         register("grpc") {
             id = "com.nisecoder.helloworld.gradle.grpc"
