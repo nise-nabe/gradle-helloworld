@@ -20,8 +20,8 @@ kotlinDslPluginOptions {
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
-        languageVersion = "1.7"
-        apiVersion = "1.7"
+        languageVersion = "1.8"
+        apiVersion = "1.8"
         javaParameters = true
     }
 }
@@ -34,9 +34,9 @@ idea {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.22")
-    implementation("org.jetbrains.kotlin:kotlin-allopen:1.7.22")
-    implementation("org.jetbrains.kotlin:kotlin-noarg:1.7.22")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0")
+    implementation("org.jetbrains.kotlin:kotlin-allopen:1.8.0")
+    implementation("org.jetbrains.kotlin:kotlin-noarg:1.8.0")
 
     implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
 
@@ -46,7 +46,7 @@ dependencies {
 
     implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66")
 
-    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.7.22-1.0.8")
+    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.8.0-1.0.8")
 }
 
 gradlePlugin {

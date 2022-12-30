@@ -28,8 +28,8 @@ public class KotlinPlugin implements Plugin<Project> {
         var tasks = project.getTasks();
         tasks.withType(KotlinJvmCompile.class).configureEach(task -> {
             var options = task.getKotlinOptions();
-            options.setLanguageVersion("1.7");
-            options.setApiVersion("1.7");
+            options.setLanguageVersion("1.8");
+            options.setApiVersion("1.8");
             options.setJvmTarget(JavaVersion.VERSION_17.toString());
             options.setJavaParameters(true);
         });
