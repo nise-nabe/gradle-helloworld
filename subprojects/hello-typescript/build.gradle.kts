@@ -15,9 +15,11 @@ kotlin {
         browser()
         binaries.executable()
         compilations.all {
-            compileKotlinTask.kotlinOptions.freeCompilerArgs += listOf(
-                "-opt-in=kotlin.js.ExperimentalJsExport"
-            )
+            compileTaskProvider.configure {
+                kotlinOptions.freeCompilerArgs += listOf(
+                    "-opt-in=kotlin.js.ExperimentalJsExport"
+                )
+            }
         }
     }
 }
