@@ -16,7 +16,6 @@ dependencies {
 kotlin {
     jvmToolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
-        @Suppress("UnstableApiUsage")
         vendor.set(JvmVendorSpec.ADOPTIUM)
     }
 }

@@ -9,13 +9,8 @@ plugins {
 kotlin {
     jvmToolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
-        @Suppress("UnstableApiUsage")
         vendor.set(JvmVendorSpec.ADOPTIUM)
     }
-}
-
-kotlinDslPluginOptions {
-    jvmTarget.set(JavaVersion.VERSION_17.toString())
 }
 
 tasks.withType<KotlinCompile>().configureEach {

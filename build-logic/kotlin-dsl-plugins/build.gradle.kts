@@ -2,8 +2,11 @@ plugins {
     `kotlin-dsl`
 }
 
-kotlinDslPluginOptions {
-    jvmTarget.set(JavaVersion.VERSION_17.toString())
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+    }
 }
 
 dependencies {
