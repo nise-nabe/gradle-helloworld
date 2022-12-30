@@ -3,13 +3,19 @@ version: 2.1
 orbs:
   gradle: circleci/gradle@3.0.0
 
+executors:
+  ubuntu:
+    # testcontainers
+    machine:
+      image: ubuntu-2004:202104-01
+
 workflows:
   version: 2
   workflow:
     jobs:
       - gradle/test:
           executor:
-            name: gradle/default
+            name: ubuntu
             tag: "11.0"
           test_command: check --no-daemon --scan
           filters:
