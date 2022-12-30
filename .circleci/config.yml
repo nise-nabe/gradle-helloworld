@@ -8,6 +8,9 @@ workflows:
   workflow:
     jobs:
       - gradle/test:
+          executor:
+            name: gradle/default
+            tag: "11.0"
           test_command: check --no-daemon --scan
           filters:
             branches:
