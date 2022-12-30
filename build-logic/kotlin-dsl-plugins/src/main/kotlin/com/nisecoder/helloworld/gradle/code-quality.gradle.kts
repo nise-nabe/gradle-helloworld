@@ -12,7 +12,7 @@ detekt {
 }
 
 tasks.withType<Detekt>().configureEach {
-    jvmTarget = JavaVersion.VERSION_17.toString()
+    jvmTarget = JavaVersion.VERSION_19.toString()
     reports {
         html.required.set(false)
         xml.required.set(false)

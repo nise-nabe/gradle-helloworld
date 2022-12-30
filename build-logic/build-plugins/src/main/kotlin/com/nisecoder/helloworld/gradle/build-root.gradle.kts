@@ -37,7 +37,7 @@ tasks.register<Detekt>("detektAll") {
 
     basePath = projectDir.path
 
-    jvmTarget = JavaVersion.VERSION_17.toString()
+    jvmTarget = JavaVersion.VERSION_19.toString()
 
     setSource(subprojects.filter {
         it.pluginManager.hasPlugin("com.nisecoder.helloworld.gradle.kotlin")

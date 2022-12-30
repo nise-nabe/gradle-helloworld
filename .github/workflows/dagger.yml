@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java-version: [ 17 ]
+        java-version: [ 19 ]
         os: [ ubuntu-latest, windows-latest, macos-latest ]
     steps:
       - uses: actions/checkout@v3

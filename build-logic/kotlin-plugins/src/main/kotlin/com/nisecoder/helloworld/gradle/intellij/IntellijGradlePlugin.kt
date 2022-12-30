@@ -24,7 +24,7 @@ class IntellijGradlePlugin: Plugin<Project> {
             kotlinOptions {
                 languageVersion = "1.8"
                 apiVersion = "1.8"
-                jvmTarget = JavaVersion.VERSION_17.toString()
+                jvmTarget = JavaVersion.VERSION_19.toString()
                 javaParameters = true
             }
         }

@@ -16,7 +16,7 @@ kotlin {
         binaries.executable()
         compilations.all {
             compileKotlinTask.kotlinOptions.freeCompilerArgs += listOf(
-                "-Xopt-in=kotlin.js.ExperimentalJsExport"
+                "-opt-in=kotlin.js.ExperimentalJsExport"
             )
         }
     }
