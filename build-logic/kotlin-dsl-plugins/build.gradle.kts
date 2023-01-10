@@ -20,7 +20,7 @@ dependencies {
     implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2") {
         because("asciidoc convention plugin")
     }
-    implementation("com.google.protobuf:protobuf-gradle-plugin:0.9.1") {
+    implementation("com.google.protobuf:protobuf-gradle-plugin:0.9.2") {
         because("protobuf and grpc convention plugin")
     }
 }
