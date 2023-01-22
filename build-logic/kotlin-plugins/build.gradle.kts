@@ -33,7 +33,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-allopen:1.8.0")
     implementation("org.jetbrains.kotlin:kotlin-noarg:1.8.0")
 
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.12.0")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.13.0")
 
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.7")
     implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.11.0")
