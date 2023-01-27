@@ -13,7 +13,7 @@ dependencies {
     implementation("gradle.plugin.com.github.bjornvester:xjc-gradle-plugin:1.6.0") {
         because("xsd convention plugin")
     }
-    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.6.6") {
+    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:5.6.9") {
         because("graphql convention plugin")
     }
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
