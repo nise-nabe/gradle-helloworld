@@ -41,7 +41,7 @@ dependencies {
 
     implementation("com.jetbrains.intellij.indexing.shared:cdn-layout-tool:0.8.66")
 
-    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.8.0-1.0.8")
+    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.8.10-1.0.9")
 }
 
 gradlePlugin {
